@@ -3,7 +3,7 @@ title: "博客上线：写作清单与计划"
 date: 2026-01-27 10:00:00 +08:00
 categories: [Log, Blog]
 tags: [setup, roadmap, 写作]
-image: /assets/img/og-cover.png
+image: /assets/img/og-cover.svg
 ---
 
 首篇记录，用来确认站点正常渲染，并列一份写作清单：

@@ -3,7 +3,7 @@ title: "Python 笔记：数据处理片段"
 date: 2026-01-27 14:00:00 +08:00
 categories: [Tech, Python]
 tags: [python, tips, data]
-image: /assets/img/og-cover.png
+image: /assets/img/og-cover.svg
 ---
 
 日常数据处理时常用的两段代码：

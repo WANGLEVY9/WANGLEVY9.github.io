@@ -3,7 +3,7 @@ title: "读书摘抄：专注力"
 date: 2026-01-26 21:00:00 +08:00
 categories: [Notes, Reading]
 tags: [reading, focus, 摘抄]
-image: /assets/img/og-cover.png
+image: /assets/img/og-cover.svg
 ---
 
 几段摘抄与感想：
