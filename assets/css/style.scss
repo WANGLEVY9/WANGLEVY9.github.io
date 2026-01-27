@@ -1,0 +1,17 @@
+---
+---
+@import "main";
+
+// Center avatar, name, and tagline in sidebar
+.sidebar .profile-wrapper {
+  text-align: center;
+}
+
+.sidebar .profile-wrapper .site-avatar {
+  margin: 0 auto 0.75rem;
+}
+
+.sidebar .site-title,
+.sidebar .site-subtitle {
+  text-align: center;
+}
