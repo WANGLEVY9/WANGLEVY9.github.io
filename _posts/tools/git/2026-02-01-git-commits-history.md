@@ -1,9 +1,9 @@
-﻿---
+---
 title: "Git 提交与历史：叙事、粒度与变更考古"
 date: 2026-02-01 11:05:00 +08:00
 categories: [Tools, Git]
 tags: [git, commit, history, bisect, changelog]
-image: /assets/img/og-cover.svg
+image: /assets/img/【哲风壁纸】二次元-动漫-夜景.png
 ---
 
 > 定位：这一篇只谈「提交粒度、信息表达与历史可读性」。不讨论分支模型、冲突解决、回退、PR/CI（这些在系列其他文章覆盖）。目标是让历史像一本易读的故事书：可追溯、可检索、可回滚，并能支持变更考古与回归定位。

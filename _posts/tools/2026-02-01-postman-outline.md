@@ -3,7 +3,7 @@ title: "Postman 提纲：接口调试与用例管理"
 date: 2026-02-01 10:05:00 +08:00
 categories: [Tools, Dev]
 tags: [postman, api, testing, collections]
-image: /assets/img/og-cover.svg
+image: /assets/img/【哲风壁纸】二次元-动漫.png
 ---
 
 > 提纲：从单接口调试到用例集合与自动化的实践要点。

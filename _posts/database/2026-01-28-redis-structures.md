@@ -3,7 +3,7 @@ title: "Redis 核心数据结构与命令"
 date: 2026-01-28 12:25:00 +08:00
 categories: [Database, Redis]
 tags: [redis, string, list, hash, set, zset]
-image: /assets/img/og-cover.svg
+image: /assets/img/【哲风壁纸】二次元-动漫-夜景 (1).png
 ---
 
 > 目标：掌握五大基础类型及常用命令，快速找到合适的数据结构。

@@ -3,7 +3,7 @@ title: "Postman 学习笔记：环境与变量治理"
 date: 2026-02-01 10:20:00 +08:00
 categories: [Tools, Postman]
 tags: [postman, api, testing, environments, variables]
-image: /assets/img/og-cover.svg
+image: /assets/img/【哲风壁纸】二次元-动漫-夜景.png
 ---
 
 > 学习笔记：系统化掌握 Postman 环境与变量治理，从概念、命名、密钥、安全、自动化到团队协作，附实践脚本与演练清单，覆盖 5000 词以上。

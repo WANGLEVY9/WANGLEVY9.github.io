@@ -3,7 +3,7 @@ title: "Postman 学习笔记：Newman 自动化与 CI 集成"
 date: 2026-02-01 10:24:00 +08:00
 categories: [Tools, Postman]
 tags: [postman, newman, ci, automation, reporting]
-image: /assets/img/og-cover.svg
+image: /assets/img/【哲风壁纸】SilentShore-俯瞰.png
 ---
 
 > 学习笔记：Newman 自动化、参数化、报告、CI/CD 集成、质量门禁与运维稳态的实践，5000 词以上。

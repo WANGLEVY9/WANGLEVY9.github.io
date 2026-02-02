@@ -3,7 +3,7 @@ title: "MySQL 锁机制：粒度、类型与实践"
 date: 2026-01-28 12:05:00 +08:00
 categories: [Database, MySQL]
 tags: [mysql, locks, innodb, transaction, row-lock]
-image: /assets/img/og-cover.svg
+image: /assets/img/【哲风壁纸】个性少女-二次元少女.png
 ---
 
 > 目标：理解锁粒度与类型，避免不必要的锁冲突和死锁。

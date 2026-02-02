@@ -1,9 +1,9 @@
-﻿---
+---
 title: "Git 回退与救援：场景剧本与自救指南"
 date: 2026-02-01 11:15:00 +08:00
 categories: [Tools, Git]
 tags: [git, reset, revert, stash, cherry-pick, reflog, recovery]
-image: /assets/img/og-cover.svg
+image: /assets/img/【哲风壁纸】二次元-动漫-夜景 (1).png
 ---
 
 > 定位：这一篇专注「误操作自救与回退策略」，覆盖 reset/revert/stash/cherry-pick/reflog 的使用边界、典型误操作剧本、数据找回与安全校验。分支模型、冲突、提交规范、评审/CI 在其他文章里，不在此重复。

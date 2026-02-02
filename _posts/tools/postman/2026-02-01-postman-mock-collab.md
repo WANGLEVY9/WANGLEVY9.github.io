@@ -3,7 +3,7 @@ title: "Postman 学习笔记：Mock、文档与协作"
 date: 2026-02-01 10:23:00 +08:00
 categories: [Tools, Postman]
 tags: [postman, mock, documentation, collaboration]
-image: /assets/img/og-cover.svg
+image: /assets/img/【哲风壁纸】二次元-动漫.png
 ---
 
 > 学习笔记：Mock Server、文档生成、权限协作、版本化、治理与运营的全流程，含实战脚本与演练，5000 词以上。

@@ -3,7 +3,7 @@ title: "MySQL 实战：索引优化与慢查询排查"
 date: 2026-01-28 12:15:00 +08:00
 categories: [Database, MySQL]
 tags: [mysql, tuning, slowlog, explain, index]
-image: /assets/img/og-cover.svg
+image: /assets/img/【哲风壁纸】SilentShore-俯瞰.png
 ---
 
 > 目标：结合索引/锁/事务知识，给出实际排查与优化清单。

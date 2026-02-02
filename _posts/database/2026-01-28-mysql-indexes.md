@@ -3,7 +3,7 @@ title: "MySQL 索引体系：聚集、非聚集、联合索引"
 date: 2026-01-28 12:00:00 +08:00
 categories: [Database, MySQL]
 tags: [mysql, index, btree, clustered, covering]
-image: /assets/img/og-cover.svg
+image: /assets/img/【哲风壁纸】SilentShore-俯瞰.png
 ---
 
 > 目标：理解 B+ 树索引的物理结构与成本，正确选择聚集/非聚集/联合索引并做基本优化。

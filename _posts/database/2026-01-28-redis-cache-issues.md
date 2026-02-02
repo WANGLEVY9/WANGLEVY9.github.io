@@ -3,7 +3,7 @@ title: "Redis 缓存问题与防护：穿透、击穿、雪崩、热 key"
 date: 2026-01-28 12:35:00 +08:00
 categories: [Database, Redis]
 tags: [redis, cache, penetration, breakdown, avalanche, hotspot]
-image: /assets/img/og-cover.svg
+image: /assets/img/【哲风壁纸】二次元少女-动漫.png
 ---
 
 > 目标：梳理常见缓存风险与解决方案，确保高并发场景的稳定性。

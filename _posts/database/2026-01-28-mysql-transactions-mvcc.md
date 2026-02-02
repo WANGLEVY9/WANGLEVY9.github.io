@@ -3,7 +3,7 @@ title: "MySQL 事务、隔离级别与 MVCC"
 date: 2026-01-28 12:10:00 +08:00
 categories: [Database, MySQL]
 tags: [mysql, transaction, mvcc, isolation, acid]
-image: /assets/img/og-cover.svg
+image: /assets/img/【哲风壁纸】二次元少女-动漫.png
 ---
 
 > 目标：掌握 ACID、隔离级别、MVCC 的实现与常见问题排查。

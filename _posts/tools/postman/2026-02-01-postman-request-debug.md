@@ -3,7 +3,7 @@ title: "Postman 学习笔记：请求调试与接口规约"
 date: 2026-02-01 10:21:00 +08:00
 categories: [Tools, Postman]
 tags: [postman, api, request, debug, auth]
-image: /assets/img/og-cover.svg
+image: /assets/img/【哲风壁纸】SilentShore-俯瞰 (1).png
 ---
 
 > 学习笔记：从单接口调试到可复用请求模板，覆盖协议细节、鉴权、错误定位、可靠性、案例演练与规范化实践。

@@ -3,7 +3,7 @@ title: "Redis 场景：缓存、分布式锁、消息队列、计数器"
 date: 2026-01-28 12:20:00 +08:00
 categories: [Database, Redis]
 tags: [redis, cache, lock, mq, counter]
-image: /assets/img/og-cover.svg
+image: /assets/img/【哲风壁纸】二次元-动漫-夜景.png
 ---
 
 > 目标：梳理 Redis 在常见业务中的使用模式与注意点。

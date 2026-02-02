@@ -3,7 +3,7 @@ title: "Postman 学习笔记：脚本、断言与数据驱动"
 date: 2026-02-01 10:22:00 +08:00
 categories: [Tools, Postman]
 tags: [postman, testing, scripts, assertions, data]
-image: /assets/img/og-cover.svg
+image: /assets/img/【哲风壁纸】二次元-动漫.png
 ---
 
 > 学习笔记：Postman 的 pre-request/tests 脚本、断言模式、数据驱动、可复用组件与鲁棒性治理，带实战片段与排障清单，5000 词以上。

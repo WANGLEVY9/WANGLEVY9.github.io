@@ -3,7 +3,7 @@ title: "Navicat 提纲：数据库可视化与日常运维"
 date: 2026-02-01 10:15:00 +08:00
 categories: [Tools, Dev]
 tags: [navicat, mysql, redis, db-admin]
-image: /assets/img/og-cover.svg
+image: /assets/img/【哲风壁纸】SilentShore-俯瞰 (1).png
 ---
 
 > 提纲：MySQL/Redis 等多数据源的连接、管理、导入导出与常见操作。

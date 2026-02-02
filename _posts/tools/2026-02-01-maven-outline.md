@@ -3,7 +3,7 @@ title: "Maven 提纲：构建、依赖与多模块管理"
 date: 2026-02-01 10:20:00 +08:00
 categories: [Tools, Dev]
 tags: [maven, build, dependency, pom, lifecycle]
-image: /assets/img/og-cover.svg
+image: /assets/img/【哲风壁纸】二次元-动漫.png
 ---
 
 > 提纲：覆盖 Maven 核心概念、常用命令、多模块与仓库管理。

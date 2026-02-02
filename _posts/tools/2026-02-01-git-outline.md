@@ -3,7 +3,7 @@ title: "Git 实战提纲：分支、协作与排查"
 date: 2026-02-01 10:00:00 +08:00
 categories: [Tools, Dev]
 tags: [git, vcs, branch, merge, rebase]
-image: /assets/img/og-cover.svg
+image: /assets/img/【哲风壁纸】SilentShore-俯瞰 (1).png
 ---
 
 > 提纲：覆盖高频工作流、团队协作规范与排障要点。

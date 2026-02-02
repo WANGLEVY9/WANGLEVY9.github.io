@@ -3,7 +3,7 @@ title: "IntelliJ IDEA 提纲：高效开发与调试"
 date: 2026-02-01 10:10:00 +08:00
 categories: [Tools, Dev]
 tags: [idea, jetbrains, shortcut, debug, productivity]
-image: /assets/img/og-cover.svg
+image: /assets/img/【哲风壁纸】二次元少女-动漫.png
 ---
 
 > 提纲：聚焦快捷键、调试、插件与性能优化，适配 Java 后端开发。

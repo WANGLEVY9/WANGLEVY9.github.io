@@ -3,7 +3,7 @@ title: "Redis 过期与淘汰、持久化机制"
 date: 2026-01-28 12:30:00 +08:00
 categories: [Database, Redis]
 tags: [redis, persistence, rdb, aof, eviction, ttl]
-image: /assets/img/og-cover.svg
+image: /assets/img/【哲风壁纸】个性少女-二次元少女.png
 ---
 
 > 目标：理解键过期、内存淘汰策略，以及 RDB/AOF 持久化差异。

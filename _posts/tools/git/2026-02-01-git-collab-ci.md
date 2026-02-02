@@ -3,7 +3,7 @@ title: "Git 协作、代码评审与 CI：流程、文化与门禁体系"
 date: 2026-02-01 11:20:00 +08:00
 categories: [Tools, Git]
 tags: [git, collaboration, pr, ci, governance]
-image: /assets/img/og-cover.svg
+image: /assets/img/【哲风壁纸】二次元少女-动漫.png
 ---
 
 > 定位：本篇讨论团队层面的协作体系——从 PR 模板、评审文化、分支保护、钩子与 CI 门禁，到文档与度量治理。提交粒度、冲突处理、回退与分支模型在系列其它文章已有覆盖，此处不再重复。
