@@ -1,17 +1,16 @@
-﻿git fetch origin
-git rebase origin/main
-git switch main
-git merge --no-ff feature/foo
----
+﻿---
 title: "Git 合并与变基：算法、冲突类型与解决剧本"
 date: 2026-02-01 11:10:00 +08:00
-categories: [Tools, Dev]
+categories: [Tools, Git]
 tags: [git, merge, rebase, conflict, rerere]
 image: /assets/img/og-cover.svg
 ---
 
 > 定位：本篇只讨论「合并/变基策略、冲突类型与解决剧本」。不覆盖提交规范、回退、PR/CI、分支模型（在系列其他文章）。目标是弄清楚：Git 背后如何做三方合并；常见冲突长什么样；遇到棘手场景时如何自救与预防。
-
+> git fetch origin
+> git rebase origin/main
+> git switch main
+> git merge --no-ff feature/foo
 ## 1. 合并与变基的本质
 - merge：创建一个新的合并提交，保留两个父节点；历史呈现菱形，信息保留「何时融合」。
 - rebase：取一系列提交，重新应用到目标分支末尾；历史线性，像是「把补丁重放到新底座」。

@@ -1,7 +1,7 @@
 ---
 title: "Postman 学习笔记：环境与变量治理"
 date: 2026-02-01 10:20:00 +08:00
-categories: [Tools, Dev]
+categories: [Tools, Postman]
 tags: [postman, api, testing, environments, variables]
 image: /assets/img/og-cover.svg
 ---

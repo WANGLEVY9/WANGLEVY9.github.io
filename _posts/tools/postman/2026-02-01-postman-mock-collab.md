@@ -1,7 +1,7 @@
 ---
 title: "Postman 学习笔记：Mock、文档与协作"
 date: 2026-02-01 10:23:00 +08:00
-categories: [Tools, Dev]
+categories: [Tools, Postman]
 tags: [postman, mock, documentation, collaboration]
 image: /assets/img/og-cover.svg
 ---

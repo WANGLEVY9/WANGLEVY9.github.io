@@ -1,13 +1,14 @@
-﻿git switch -c feature/xxx
----
+﻿---
 title: "Git 工作流与分支模型深度实践"
 date: 2026-02-01 11:00:00 +08:00
-categories: [Tools, Dev]
+categories: [Tools, Git]
 tags: [git, workflow, branch, release, feature-flag]
 image: /assets/img/og-cover.svg
 ---
 
 > 定位：这是一本「流程工程」视角的学习笔记，专注于分支模型、发布节奏、环境映射、指标与改进方法，不讨论提交信息/冲突/回滚/CI 细节（这些在系列其他文章覆盖）。目标是：让团队在不同规模与节奏下都能拿到可执行的工作流蓝图，并配上真实情境的操作脚本。
+
+> git switch -c feature/xxx
 
 ## 1. 模型决策框架：先问三个问题
 1) 交付节奏：是「每日多次上线」还是「双周/季度发布」？

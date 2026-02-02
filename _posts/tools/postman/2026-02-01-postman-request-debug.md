@@ -1,12 +1,12 @@
 ---
 title: "Postman 学习笔记：请求调试与接口规约"
 date: 2026-02-01 10:21:00 +08:00
-categories: [Tools, Dev]
+categories: [Tools, Postman]
 tags: [postman, api, request, debug, auth]
 image: /assets/img/og-cover.svg
 ---
 
-> 学习笔记：从单接口调试到可复用请求模板，覆盖协议细节、鉴权、错误定位、可靠性、案例演练与规范化实践，5000 词以上。
+> 学习笔记：从单接口调试到可复用请求模板，覆盖协议细节、鉴权、错误定位、可靠性、案例演练与规范化实践。
 
 ## 0. 调试前的心智模型
 - 请求组成：URL（协议/域名/路径/查询）、方法、Headers、Body、鉴权、代理/证书。

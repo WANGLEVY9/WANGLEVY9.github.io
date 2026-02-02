@@ -1,7 +1,7 @@
 ---
 title: "Postman 学习笔记：脚本、断言与数据驱动"
 date: 2026-02-01 10:22:00 +08:00
-categories: [Tools, Dev]
+categories: [Tools, Postman]
 tags: [postman, testing, scripts, assertions, data]
 image: /assets/img/og-cover.svg
 ---

@@ -1,7 +1,7 @@
 ﻿---
 title: "Git 回退与救援：场景剧本与自救指南"
 date: 2026-02-01 11:15:00 +08:00
-categories: [Tools, Dev]
+categories: [Tools, Git]
 tags: [git, reset, revert, stash, cherry-pick, reflog, recovery]
 image: /assets/img/og-cover.svg
 ---

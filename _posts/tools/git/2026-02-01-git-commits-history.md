@@ -1,7 +1,7 @@
 ﻿---
 title: "Git 提交与历史：叙事、粒度与变更考古"
 date: 2026-02-01 11:05:00 +08:00
-categories: [Tools, Dev]
+categories: [Tools, Git]
 tags: [git, commit, history, bisect, changelog]
 image: /assets/img/og-cover.svg
 ---

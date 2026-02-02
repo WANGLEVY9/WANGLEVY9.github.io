@@ -1,7 +1,7 @@
 ---
 title: "Git 协作、代码评审与 CI：流程、文化与门禁体系"
 date: 2026-02-01 11:20:00 +08:00
-categories: [Tools, Dev]
+categories: [Tools, Git]
 tags: [git, collaboration, pr, ci, governance]
 image: /assets/img/og-cover.svg
 ---

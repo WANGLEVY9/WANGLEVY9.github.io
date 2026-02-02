@@ -1,7 +1,7 @@
 ---
 title: "Postman 学习笔记：Newman 自动化与 CI 集成"
 date: 2026-02-01 10:24:00 +08:00
-categories: [Tools, Dev]
+categories: [Tools, Postman]
 tags: [postman, newman, ci, automation, reporting]
 image: /assets/img/og-cover.svg
 ---
