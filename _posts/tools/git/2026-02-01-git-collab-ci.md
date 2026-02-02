@@ -19,31 +19,42 @@ image: /assets/img/og-cover.svg
 - 模板字段（示例 .github/pull_request_template.md）：
 ```markdown
 ## 背景 / 动机
-- 
+- （为什么改？需求/缺陷/性能/合规）
 
 ## 变更摘要
-- 
+- （主要改动点，按模块/接口列）
 
 ## 风险与影响
-- 
+- 行为变化：
+- 影响面：受影响服务/客户端/环境
+- 兼容性：是否有开关/双写/降级
 
-## 验证（勾选）
-- [ ] 单测
-- [ ] 冒烟 / 手测
-- [ ] 压测 / 观测截图
+## 验证（勾选与说明）
+- [ ] 单测：命令/覆盖范围
+- [ ] 冒烟 / 手测：场景与结果
+- [ ] 契约 / e2e：脚本/报告链接
+- [ ] 压测 / 观测截图：指标对比
 - [ ] 无需（理由： ）
 
 ## 回滚方案
+- （revert 提交或开关回滚，需注明脚本/命令）
+
+## 数据变更（如有）
+- 迁移脚本：路径 / dry-run 命令
+- 回滚脚本：路径 / 依赖
+
+## 截图 / 录屏（前端或接口对照）
 - 
 
 ## 关联
 - Issue: #
 - 文档 / 设计链接：
+- 监控 / 仪表盘：
 ```
 - 要点：
-  - 要求提供「风险与影响」与「回滚方案」，否则拒绝合并。
-  - 对前端/接口改动，附截图或接口对照表；对数据变更，附迁移脚本与回滚脚本路径。
-  - 跨团队改动，必须 @ 相关 owner 并在描述中说明沟通结论。
+  - 「风险与影响」「回滚方案」为必填，缺失拒绝合并；验证项需写明命令或报告链接。
+  - 前端/接口改动附截图或对照表；数据改动必须写迁移+回滚脚本路径与 dry-run 结果。
+  - 跨团队改动必须 @ owner，并在描述中写清沟通结论与生效范围。
 
 ## 3. 评审文化与 Checklist
 - 评审的目标：发现风险、共享知识、确保一致性，而不是挑格式；格式应由工具解决。
@@ -227,3 +238,201 @@ image: /assets/img/og-cover.svg
 - 立刻：启用 CODEOWNERS 与分支保护；补充 PR 模板必填项校验；开启 secret 扫描。
 - 本周：上线按路径触发的 CI；建立评审 SLA；为公共目录指定 Owner；整理危机响应电话树。
 - 本月：搭建指标看板与月度复盘机制；完成一次紧急回滚演练；为依赖/许可扫描设自动报告。
+
+## 23. 配置与脚本示例（可直接落地）
+- **pre-commit（lefthook 版）**：
+```yaml
+pre-commit:
+  parallel: true
+  commands:
+    fmt:
+      run: npm run lint && npm run format
+    secrets:
+      run: detect-secrets-hook --baseline .secrets.baseline || true
+    size-guard:
+      run: ./tools/check-size.sh
+    license:
+      run: ./tools/license-scan.sh
+
+pre-push:
+  commands:
+    unit:
+      run: npm test -- --runInBand
+    smoke:
+      run: ./scripts/smoke.sh
+```
+- **Danger 规则示例**（补全 PR 信息，限制大改动）：
+```ruby
+fail("请填写风险与回滚方案") if pr_body_missing?(["风险", "回滚"])
+warn("PR 超过 800 行，建议拆分") if git.lines_of_code > 800
+warn("缺少测试说明") unless pr_body_contains?("验证")
+fail("检测到密钥") unless secrets_scan_clean?
+```
+- **commitlint 配置示例**（限制类型与 scope）：
+```js
+module.exports = {
+  extends: ['@commitlint/config-conventional'],
+  rules: {
+    'type-enum': [2, 'always', ['feat','fix','perf','refactor','chore','docs','test','build','ci','revert','security']],
+    'scope-enum': [2, 'always', ['api','ui','db','infra','auth','payment','deploy','ops','observability']],
+    'subject-max-length': [2, 'always', 72]
+  }
+}
+```
+
+## 24. GitHub Actions 与 GitLab CI 双栈示例
+- **GitHub Actions（前后端混合仓库）**：
+```yaml
+name: ci
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'frontend/**'
+      - 'backend/**'
+      - '.github/workflows/ci.yml'
+  push:
+    branches: [main]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        service: [frontend, backend]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: Cache deps
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ github.workspace }}/frontend/node_modules
+            ${{ github.workspace }}/backend/node_modules
+          key: ${{ runner.os }}-${{ matrix.service }}-${{ hashFiles(matrix.service + '/package-lock.json') }}
+      - name: Install
+        run: cd ${{ matrix.service }} && npm ci
+      - name: Lint & Test
+        run: cd ${{ matrix.service }} && npm run lint && npm test -- --runInBand
+
+  contract-test:
+    needs: lint-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run pact tests
+        run: ./scripts/pact-verify.sh
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: aquasecurity/trivy-action@v0.20.0
+        with:
+          scan-type: 'fs'
+          exit-code: '1'
+          ignore-unfixed: true
+          severity: 'CRITICAL,HIGH'
+```
+- **GitLab CI（按路径触发 + 分层流水线）**：
+```yaml
+stages: [lint, test, build]
+
+variables:
+  NODE_ENV: test
+
+lint:
+  stage: lint
+  rules:
+    - changes: ["frontend/**"]
+  script:
+    - cd frontend && npm ci && npm run lint
+
+unit-test:
+  stage: test
+  rules:
+    - changes: ["backend/**"]
+  script:
+    - cd backend && npm ci && npm test -- --runInBand
+
+contract:
+  stage: test
+  needs: [unit-test]
+  script:
+    - ./scripts/pact-verify.sh
+
+build-image:
+  stage: build
+  needs: [lint, unit-test]
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+  script:
+    - docker build -t registry.example.com/app:$CI_COMMIT_SHORT_SHA .
+    - docker push registry.example.com/app:$CI_COMMIT_SHORT_SHA
+```
+
+## 25. 分层门禁与风险分级实践
+- **分层门禁**：
+  - L0（基础）：格式化、lint、secret 扫描、单测；全量阻断。
+  - L1（兼容）：契约测试、schema diff、依赖/许可扫描；高风险路径必跑。
+  - L2（系统）：集成/e2e/性能基线；对高风险 PR 或发布分支触发。
+- **风险分级模板**：
+  - 低：文案、样式、注释；仅需 L0。
+  - 中：局部业务逻辑、接口兼容改；需 L0+L1。
+  - 高：架构变更、依赖升级、跨服务协议；需 L0+L1+L2，且安排同步合并窗口与回滚人。
+- **门禁例外流程**：记录豁免理由、时间窗口、责任人，发布后 24 小时内补测并回填结果。
+
+## 26. 评审与 CI 协同剧本
+- **先验规则对齐**：在 README 标明「必跑测试列表」「阻断条件」「何时需要双人评审」。
+- **自动标记风险**：CI 机器人根据改动路径打标签（如 security/db/infra），自动请求对应 Owner。
+- **PR 体自动补全**：脚本抓取改动路径与测试输出，回填到 PR 描述，减少手填遗漏。
+- **回滚预案校验**：CI 检查 PR 描述中是否有「回滚脚本/Feature Flag 名」，缺失则标红。
+
+## 27. 典型场景扩展案例
+- **数据迁移 PR**：
+  - 描述：写清目标表/列、数据范围、迁移窗口、dry-run 命令、回滚脚本。
+  - CI：schema diff、迁移脚本 lint、预生产 dry-run；上线前自动生成「回滚指南」链接。
+  - 评审：DBA/数据 Owner 必审；检查幂等与长事务风险。
+- **前端跨域改动**：
+  - 描述：列出受影响域名/环境、缓存策略、兼容旧版本的策略。
+  - CI：Cypress/Playwright 冒烟，构建产物大小对比，bundle analyzer 报告。
+- **网关/权限策略变更**：
+  - 描述：权限矩阵 diff、默认行为、回滚开关；通知相关服务 Owner。
+  - CI：契约测试 + 关键路径 API 冒烟；安全扫描规则加严。
+
+## 28. 培训与 Onboarding 套件
+- 新人训练营：
+  - 第 1 天：拉仓库、跑本地 lint/test、提一个小 PR，体验模板与门禁；
+  - 第 3 天：模拟一次回滚流程，在沙箱分支演练 revert + 回填发布记录；
+  - 第 5 天：审阅一份老 PR，写出评审意见与风险点。
+- 速查手册：一页纸列出「必跑脚本」「风险分级」「热线联系人」，放在仓库根目录并在 PR 模板中链接。
+- 影子评审：新人前 3 个 PR 由资深工程师 shadow，帮助建立评审预期与风险嗅觉。
+
+## 29. 指标计算与看板示例
+- **指标定义**：
+  - PR 周期 = 合并时间 − 创建时间；
+  - 首次响应时间 = 第一条非机器人评论时间 − 创建时间；
+  - 回滚率 = 回滚提交数 ÷ 总发布数；
+  - 红灯时间 = CI 失败到恢复成功的时间。
+- **看板配置建议**：
+  - 按团队/目录拆分视图，避免信息过载；
+  - 展示过去 30/90 天趋势，突出回归点；
+  - 关联事故记录与触发的改动，形成因果链。
+- **改进闭环**：每月选一个指标做 10% 改进，例如「PR 周期 2 天→1.8 天」，对应行动可能是拆 PR、自动分配 Reviewer、加路径触发。
+
+## 30. 规模化与多代码仓治理
+- **统一规范中心**：把模板、lint、CI 片段、Danger 规则放到模板仓库或 npm/gem 包，通过自动化分发到各仓；定期同步版本。
+- **跨仓变更**：使用变更提案 + 批量脚本生成 PR；在中央看板追踪状态；设「冻结窗口」避免大规模同步冲突。
+- **服务目录与 Owner**：维护一个服务清单，包含仓库链接、Owner、发布节奏、关键仪表盘；PR 机器人按清单自动 @ 责任人。
+- **合规审计**：对生产分支强制 PR 合并；CI 输出审计日志（谁批准、哪些检查通过、发布链接），方便审计与追责。
+
+## 31. FAQ（扩展版）
+- PR 里需要放二进制文件吗？不建议。若必须（如字体、图片），在 PR 描述说明来源与许可，CI 里开启大文件检查。
+- 评审人与作者意见不一致怎么办？用数据（测试、指标）和规范作为裁决；无法达成一致时由守门人拍板，并在 PR 记录决策依据。
+- CI 过慢但又不想拆仓库？按路径拆任务、引入 test impact analysis、对超长测试设夜间异步流水线；关键路径测试保留阻断。
+- 如何确保模板被填写？在 CI 或 Danger 校验字段，未填直接失败；对高风险改动要求附截图/日志，否则不允许合并。
+
+## 32. 结语（扩展）
+流程文件化、责任人清晰、工具化门禁、指标驱动改进，是协作体系的四根支柱。把「好习惯」写进模板、脚本与 CI，让正确的事默认发生，团队就能在规模化与远程协作中保持高速度、低事故率。

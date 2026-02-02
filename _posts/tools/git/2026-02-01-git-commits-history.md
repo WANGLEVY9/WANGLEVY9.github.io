@@ -227,3 +227,156 @@ Refs: DATA-4521
 - 长期：
   - 持续用指标驱动提交质量（粒度、Body 覆盖、回滚率）；
   - 将关键验证脚本沉淀到仓库并在提交中引用。
+
+## 23. 常见提交味道与重写示例
+- **味道 1：标题无对象**：`fix issue`。
+  - 重写：`fix(search): handle empty keyword`。
+- **味道 2：混合多类改动**：一次提交包含重命名 + 逻辑 + 依赖升级。
+  - 重写：拆为 `chore(rename): align dto`、`feat(api): add discount pipeline`、`build(deps): bump spring 6.2`。
+- **味道 3：缺少验证信息**：Body 只有一句「tested locally」。
+  - 重写：列出自动化/手测命令、环境、基线指标；例：
+```
+Verification:
+- Unit: DiscountServiceTest
+- Integration: checkout-it.sh (staging)
+- Metrics: P95 420ms -> 260ms after cache
+```
+- **味道 4：模糊根因**：`fix bug`。
+  - 重写：
+```
+fix(order): avoid double charge on retry
+
+Background:
+- Payment retry logic reuses same idempotency key but charges twice when gateway timeout occurs.
+
+Change:
+- Persist retry marker; skip if key seen in last 10 minutes.
+
+Verification:
+- Unit: PaymentRetryGuardTest
+- Manual: curl x3 with forced timeout; only 1 charge created.
+```
+
+## 24. Monorepo/多服务的提交策略
+- **按路径 scope**：`feat(auth): add mfa flow`、`chore(ci): add path filter for webapp`，方便过滤。
+- **契约先行**：跨服务改动先提交「契约提交」，例如共享 proto/schema/DTO；实现放后续提交，降低破坏性。
+- **双写/灰度**：对协议/存储变更，先提交双写与标记开关，后续提交切换主读路径；每步都可独立回滚。
+- **跨仓同步**：用脚本生成多仓 PR，并在提交 Body 附「对应仓库链接 + 版本号」，方便追溯。
+
+## 25. 开源协作提交礼仪
+- 遵循仓库 CONTRIBUTING 与 commit 规范，使用仓库定义的 type/scope。
+- 对文档/示例提交说明测试范围（如 `npm test`、`mdlint`）。
+- 提供最小可复现示例的路径或脚本；不要提交与修复无关的格式化。
+- 对破坏性变更明确 `BREAKING CHANGE`，描述迁移步骤；维护者更容易审核与发布。
+
+## 26. 自动生成与规范化工具组合拳
+- **git config**：`git config commit.template .gitmessage` 强制加载模板。
+- **提交前格式化**：pre-commit/lefthook 绑定 `lint-staged`，确保提交内容经过格式化。
+- **提交后校验**：CI 跑 commitlint、许可证扫描、changelog 校验（确保 type/scope 合法）。
+- **changelog 自动化**：Conventional Commits + `conventional-changelog` 或 `changesets` 自动生成发布记录。
+- **验证脚本引用**：在提交 Body 中标记脚本路径，CI 通过 `grep Verification:` 提取并展示到 PR。
+
+## 27. git notes、trailers 与审计
+- **git notes**：可在不改提交历史的情况下附加审计信息（如安全评审结论、风险分级）。
+- **trailers**：在 Body 末尾用 `Reviewed-by:`、`Co-authored-by:`、`Risk:`、`Impact:` 标记，方便自动化解析。
+- **安全/合规场景**：对含敏感改动的提交增加 `Security-Impact: high` trailer；CI 根据 trailer 决定是否强制安全评审。
+
+## 28. 提交与 PR/issue 关联策略
+- **单向引用**：Body 末尾统一写 `Refs: #1234`；对自动关闭用 `Fixes #1234`（慎用，确保关联 issue 与环境一致）。
+- **多问题关联**：用列表 `Refs: OPS-12, SRE-99`；注意避免一提交解决多个需求，拆分更清晰。
+- **审计对照**：发布说明自动拉取「本次发布包含的 issue/PR/提交」，便于审计和客户沟通。
+
+## 29. 高风险提交清单（可打印贴墙）
+- 是否有 Feature Flag/开关以快速回滚？
+- 数据/协议是否有向后兼容策略？
+- 是否附带迁移脚本与回滚脚本？
+- 监控与日志是否补充？
+- 性能假设是否有基线与验证数据？
+- 相关团队是否已知情并评审？
+
+## 30. 案例演练：从糟糕到优秀
+- **初版提交**：`fix: adjust payment logic`，无 Body。
+- **改进版**：
+```
+fix(payment): avoid duplicate refund on webhook retries
+
+Background:
+- Provider sometimes sends duplicated webhook with same tx_id; we double-refund and go negative.
+
+Change:
+- Add idempotency store with 24h TTL keyed by tx_id.
+- Return 200 for duplicates without refund call.
+
+Impact/Risk:
+- Slight extra Redis load (~200 rps peak); acceptable.
+- If Redis unavailable, fallback to old path (risk: duplicate refund). Mitigated by alert on >1 refund per tx_id.
+
+Verification:
+- Unit: RefundServiceTest
+- Integration: webhook-it.sh against staging provider sandbox
+- Metrics: refund duplicate rate from 0.7% -> 0% in sandbox load test
+
+Refs: PAY-2331
+```
+- **收益**：动机、方案、风险、验证、指标齐全；可快速回滚或追溯。
+
+## 31. 提交健康看板设计
+- 数据源：`git log` + commitlint 结果 + CI 元数据；可用自建脚本或接入 Sonar/GitInsights。
+- 图表：
+  - 提交行数/文件数分布直方图；
+  - Body 覆盖率趋势；
+  - revert/回滚提交占比；
+  - 关键目录的提交频率热图（识别热点与潜在风险）。
+- 触发动作：当「过大提交比例」或「空 Body 占比」超过阈值，自动在周会上生成改进项。
+
+## 32. 跨时区团队的提交策略
+- 工作日尾部避免合并高风险提交，留出观测窗口。
+- 对夜间发布的提交，Body 必须写清「值班人/回滚人」与联系方式。
+- 对异步协作，提交 Body 写得更像「可重放的实验记录」，附验证命令和预期输出截图链接。
+
+## 33. 实用 alias 与脚本（节省时间）
+- alias：
+```
+alias gca='git commit --amend --no-edit'
+alias gls='git log --stat --oneline -10'
+alias gcf='git commit -am'
+alias gpick='git cherry-pick'
+```
+- 提交模板自动生成脚本：
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+
+TYPE=${1:-feat}
+SCOPE=${2:-app}
+SUMMARY=${3:-"describe change"}
+
+cat <<'TEMPLATE'
+<type>(<scope>): <summary>
+
+Background:
+
+Change:
+
+Impact/Risk:
+
+Verification:
+
+Refs:
+TEMPLATE
+```
+在 shell 中替换变量后写入 `.gitmessage`，新人可直接 `git commit` 自动加载。
+
+## 34. 复杂发布场景下的提交分层
+- **双活/多活切换**：先提交「探针 + 观测」铺路；再提交「流量开关」；最后提交「切换默认」。每层都可回滚。
+- **合规审计窗口**：提交 Body 写明「合规需求号、数据范围、留痕位置、到期日」；发布后自动推送审计报告。
+- **A/B 实验**：提交中标注实验编号、实验组配置、下线时间；防止实验代码常驻。
+
+## 35. FAQ（扩展版）
+- 我能在提交里放截图吗？不建议；改为把截图放文档或附件，Body 写链接，保持历史轻量。
+- 多人对同一提交贡献怎么办？使用 `Co-authored-by:` trailer，或拆分为多条提交各自署名。
+- 提交里能包含大二进制吗？避免；使用 LFS 或制品仓；若必须，注明来源、许可、大小。
+- 想改旧提交但已推送怎么办？追加 fixup，再通过 squash/merge；公共分支避免强推。
+
+## 36. 结语（扩展版）
+高质量的提交是团队知识的最小单元。让每条提交都能回答「为什么」「怎么做」「有何影响」「如何验证」，再配合自动化与度量，历史就会从沉默的日志变成可检索、可学习、可回放的资产。
