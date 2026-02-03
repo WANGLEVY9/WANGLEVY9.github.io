@@ -1,7 +1,7 @@
 ---
 title: "Maven：多模块项目治理"
 date: 2026-02-01 10:38:00 +08:00
-categories: [Tools, Dev]
+categories: [Tools, Maven]
 tags: [maven, multimodule, governance]
 image: /assets/img/【哲风壁纸】二次元-动漫.png
 ---

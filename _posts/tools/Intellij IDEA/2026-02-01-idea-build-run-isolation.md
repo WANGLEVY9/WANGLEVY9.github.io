@@ -1,7 +1,7 @@
 ---
 title: "IntelliJ IDEA：构建、运行与环境隔离"
 date: 2026-02-01 10:33:00 +08:00
-categories: [Tools, Dev]
+categories: [Tools, Intellij IDEA]
 tags: [idea, build, run, config]
 image: /assets/img/【哲风壁纸】二次元少女-动漫.png
 ---

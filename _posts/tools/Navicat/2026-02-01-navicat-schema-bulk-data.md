@@ -1,7 +1,7 @@
 ---
 title: "Navicat：表结构设计与数据批处理"
 date: 2026-02-01 10:41:00 +08:00
-categories: [Tools, Dev]
+categories: [Tools, Navicat]
 tags: [navicat, schema, import, export]
 image: /assets/img/【哲风壁纸】SilentShore-俯瞰 (1).png
 ---

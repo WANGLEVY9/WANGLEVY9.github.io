@@ -1,7 +1,7 @@
 ---
 title: "IntelliJ IDEA：初始化与团队规范落地"
 date: 2026-02-01 10:30:00 +08:00
-categories: [Tools, Dev]
+categories: [Tools, Intellij IDEA]
 tags: [idea, setup, style, template]
 image: /assets/img/【哲风壁纸】二次元少女-动漫.png
 ---

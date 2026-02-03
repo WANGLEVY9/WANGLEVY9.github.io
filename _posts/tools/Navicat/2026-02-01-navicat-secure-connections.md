@@ -1,7 +1,7 @@
 ---
 title: "Navicat：安全连接与账号治理"
 date: 2026-02-01 10:40:00 +08:00
-categories: [Tools, Dev]
+categories: [Tools, Navicat]
 tags: [navicat, security, connection]
 image: /assets/img/【哲风壁纸】SilentShore-俯瞰 (1).png
 ---

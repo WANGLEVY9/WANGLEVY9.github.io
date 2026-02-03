@@ -1,7 +1,7 @@
 ---
 title: "Navicat：备份、恢复与调度"
 date: 2026-02-01 10:43:00 +08:00
-categories: [Tools, Dev]
+categories: [Tools, Navicat]
 tags: [navicat, backup, restore, schedule]
 image: /assets/img/【哲风壁纸】SilentShore-俯瞰 (1).png
 ---

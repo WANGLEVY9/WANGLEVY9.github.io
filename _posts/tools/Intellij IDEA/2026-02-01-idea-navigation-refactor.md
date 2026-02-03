@@ -1,7 +1,7 @@
 ---
 title: "IntelliJ IDEA：高效导航与重构动作手册"
 date: 2026-02-01 10:31:00 +08:00
-categories: [Tools, Dev]
+categories: [Tools, Intellij IDEA]
 tags: [idea, refactor, shortcut, navigation]
 image: /assets/img/【哲风壁纸】二次元少女-动漫.png
 ---

@@ -1,7 +1,7 @@
 ---
 title: "IntelliJ IDEA：性能调优与插件选型"
 date: 2026-02-01 10:34:00 +08:00
-categories: [Tools, Dev]
+categories: [Tools, Intellij IDEA]
 tags: [idea, performance, plugin, git]
 image: /assets/img/【哲风壁纸】二次元少女-动漫.png
 ---

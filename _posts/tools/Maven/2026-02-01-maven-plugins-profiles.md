@@ -1,7 +1,7 @@
 ---
 title: "Maven：插件体系与构建增强"
 date: 2026-02-01 10:37:00 +08:00
-categories: [Tools, Dev]
+categories: [Tools, Maven]
 tags: [maven, plugin, profile, build]
 image: /assets/img/【哲风壁纸】二次元-动漫.png
 ---

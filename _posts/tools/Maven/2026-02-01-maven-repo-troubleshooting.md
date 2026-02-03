@@ -1,7 +1,7 @@
 ---
 title: "Maven：仓库、镜像与故障排查"
 date: 2026-02-01 10:39:00 +08:00
-categories: [Tools, Dev]
+categories: [Tools, Maven]
 tags: [maven, repository, mirror, troubleshooting]
 image: /assets/img/【哲风壁纸】二次元-动漫.png
 ---

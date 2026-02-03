@@ -1,7 +1,7 @@
 ---
 title: "IntelliJ IDEA：调试与故障注入实战"
 date: 2026-02-01 10:32:00 +08:00
-categories: [Tools, Dev]
+categories: [Tools, Intellij IDEA]
 tags: [idea, debug, breakpoint, troubleshooting]
 image: /assets/img/【哲风壁纸】二次元少女-动漫.png
 ---

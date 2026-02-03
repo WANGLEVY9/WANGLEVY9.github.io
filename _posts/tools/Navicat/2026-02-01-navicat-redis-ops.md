@@ -1,7 +1,7 @@
 ---
 title: "Navicat：Redis 管理与风险提示"
 date: 2026-02-01 10:44:00 +08:00
-categories: [Tools, Dev]
+categories: [Tools, Navicat]
 tags: [navicat, redis, operations]
 image: /assets/img/【哲风壁纸】SilentShore-俯瞰 (1).png
 ---
