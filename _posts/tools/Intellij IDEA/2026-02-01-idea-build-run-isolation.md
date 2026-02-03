@@ -1,8 +1,10 @@
+---
 title: "IntelliJ IDEA：构建、运行与环境隔离"
 date: 2026-02-01 10:33:00 +08:00
 categories: [Tools, Intellij IDEA]
 tags: [idea, build, run, config]
 image: /assets/img/【哲风壁纸】二次元少女-动漫.png
+---
 
 > 写在前面：本篇聚焦「Run/Debug 配置、JVM/Agent 参数、Maven/Gradle 集成、数据与配置隔离、常见运行故障排查」。目标是让开发者在本地、预发、CI 三种场景下都能快速起服务、隔离环境、抓到证据。提供示例模板、配置片段和排查清单，可直接放入团队 Wiki。
 
