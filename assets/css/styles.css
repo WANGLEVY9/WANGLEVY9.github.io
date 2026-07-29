@@ -727,13 +727,21 @@ main,
 .research-copy h3 {
   margin: 0;
   font-family: var(--serif);
-  font-size: clamp(29px, 3vw, 42px);
+  font-size: clamp(27px, 2.7vw, 40px);
   font-weight: 500;
+  line-height: 1.16;
+}
+
+.research-advisor {
+  margin: 12px 0 0;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .research-copy > p:last-child {
   max-width: 620px;
-  margin: 18px 0 0;
+  margin: 16px 0 0;
   color: rgba(255, 255, 255, 0.68);
 }
 
