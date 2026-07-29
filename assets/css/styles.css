@@ -461,31 +461,36 @@ main,
   line-height: 1.35;
 }
 
-.education-fact dd {
+.education-fact dd,
+.industry-fact dd {
   display: flex;
   align-items: center;
   gap: 13px;
 }
 
-.education-logo {
+.education-logo,
+.industry-logo {
   width: 50px;
   height: 50px;
   flex: 0 0 auto;
   object-fit: contain;
 }
 
-.education-copy {
+.education-copy,
+.industry-copy {
   display: grid;
   gap: 1px;
   min-width: 0;
 }
 
-.education-copy strong {
+.education-copy strong,
+.industry-copy strong {
   font-size: 17px;
   font-weight: 600;
 }
 
-.education-copy span {
+.education-copy span,
+.industry-copy span {
   color: var(--ink-soft);
   font-family: var(--sans);
   font-size: 11px;
@@ -828,9 +833,22 @@ main,
 }
 
 .timeline-date {
+  display: grid;
+  align-content: start;
+  justify-items: start;
+  gap: 24px;
   color: var(--ink-soft);
   font-family: var(--serif);
   font-size: 15px;
+}
+
+.timeline-company-logo {
+  width: 58px;
+  height: 58px;
+  padding: 9px;
+  object-fit: contain;
+  background: #fff;
+  border: 1px solid var(--line);
 }
 
 .timeline-content {
@@ -1543,16 +1561,19 @@ main,
     border-left: 0;
   }
 
-  .education-logo {
+  .education-logo,
+  .industry-logo {
     width: 40px;
     height: 40px;
   }
 
-  .education-copy strong {
+  .education-copy strong,
+  .industry-copy strong {
     font-size: 14px;
   }
 
-  .education-copy span {
+  .education-copy span,
+  .industry-copy span {
     font-size: 10px;
   }
 
@@ -1648,6 +1669,19 @@ main,
   .timeline-item {
     gap: 14px;
     padding: 30px 0;
+  }
+
+  .timeline-date {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .timeline-company-logo {
+    order: -1;
+    width: 40px;
+    height: 40px;
+    padding: 6px;
   }
 
   .project-grid {
