@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#f4f1ea"/>
+  <rect x="7.5" y="7.5" width="49" height="49" fill="none" stroke="#17211d"/>
+  <text x="32" y="38" fill="#17211d" font-family="Georgia,serif" font-size="18" text-anchor="middle">WTJ</text>
+</svg>
