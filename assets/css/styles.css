@@ -468,10 +468,16 @@ main,
   gap: 13px;
 }
 
-.education-logo,
-.industry-logo {
+.education-logo {
   width: 50px;
   height: 50px;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.industry-logo {
+  width: 74px;
+  height: auto;
   flex: 0 0 auto;
   object-fit: contain;
 }
@@ -843,12 +849,9 @@ main,
 }
 
 .timeline-company-logo {
-  width: 58px;
-  height: 58px;
-  padding: 9px;
+  width: 92px;
+  height: auto;
   object-fit: contain;
-  background: #fff;
-  border: 1px solid var(--line);
 }
 
 .timeline-content {
@@ -1561,10 +1564,14 @@ main,
     border-left: 0;
   }
 
-  .education-logo,
-  .industry-logo {
+  .education-logo {
     width: 40px;
     height: 40px;
+  }
+
+  .industry-logo {
+    width: 64px;
+    height: auto;
   }
 
   .education-copy strong,
@@ -1679,9 +1686,8 @@ main,
 
   .timeline-company-logo {
     order: -1;
-    width: 40px;
-    height: 40px;
-    padding: 6px;
+    width: 78px;
+    height: auto;
   }
 
   .project-grid {
