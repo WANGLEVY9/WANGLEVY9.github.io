@@ -1,6 +1,8 @@
-# WANGLEVY9 Academic Portfolio
+# WANGLEVY9 Developer Research Portfolio
 
-A static, dependency-free academic portfolio for GitHub Pages.
+A static, dependency-free developer research portfolio for GitHub Pages. The
+visual system combines a terminal-like interface with research, project, and
+engineering context.
 
 ## Local preview
 
@@ -24,9 +26,16 @@ Then visit `http://127.0.0.1:4173`.
     └── DESIGN_SYSTEM.md
 ```
 
-The design rationale, content architecture, palette, typography, component
-rules, and portrait specification are documented in
+The design rationale, content architecture, palette, typography, responsive
+behavior, and accessibility rules are documented in
 `docs/DESIGN_SYSTEM.md`.
+
+## GitHub profile README
+
+`profile/README.md` is the separate GitHub Profile Overview README designed for
+`WANGLEVY9/WANGLEVY9`. GitHub only renders a profile README from that exact
+same-name repository, so copy the file to its root as `README.md` after creating
+or opening that repository.
 
 The source CV is used locally for content planning and is intentionally ignored
 by Git because it contains private contact information. Publish only a sanitized

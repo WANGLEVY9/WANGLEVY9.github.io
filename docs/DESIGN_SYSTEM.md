@@ -1,120 +1,60 @@
-# Taijie Wang Academic Portfolio — Design Foundation
+# WANGLEVY9 Developer Research Portfolio
 
-## 1. Positioning
+## Direction
 
-The site presents Taijie Wang as a researcher in formation and an engineer in
-practice. Its central narrative is not a chronological resume dump. It is the
-connection between three concerns:
+The portfolio translates the signal density of a strong developer README into
+a standalone personal site. Its visual thesis is **research under inspection**:
+terminal syntax, repo-like section labels, system status, and explicit evidence
+make the engineering identity legible before the visitor reaches the details.
+The design is inspired by developer profile conventions at the level of
+hierarchy and information rhythm only. It does not reuse another profile's
+identity, copy, or assets.
 
-1. AI for software testing.
-2. Human-agent collaboration.
-3. Assurance for autonomous systems.
+## Information architecture
 
-The visual tone should feel composed, rigorous, quiet, and assured. It should
-avoid startup marketing language, excessive decoration, and generic academic
-blog styling.
+| Section | Purpose |
+| --- | --- |
+| Hero | `whoami` introduction, current status, metrics, and GitHub CTA |
+| About | Short research-minded biography and portrait |
+| Research | Three active threads with advisors, dates, and concise contributions |
+| Manuscripts | Two selected manuscripts with authorship and conservative status labels |
+| Projects | Visual project index for autonomous-system testing, SynTriageGUI, and VidForge |
+| Stack | Languages, systems, and engineering habits |
+| Contact | Research and collaboration invitation |
 
-## 2. Information Architecture
+## Visual language
 
-| Section | Purpose | Primary evidence |
-| --- | --- | --- |
-| Hero | Establish name, affiliation, and research identity | NJU, research statement |
-| Profile | Give a concise academic biography | Education, affiliations, interests |
-| Research Focus | Explain the intellectual agenda | Three connected research themes |
-| Experience | Show academic and professional trajectory | Labs, Tencent, leadership |
-| Selected Work | Turn methods into tangible systems | Testing platform, VidForge |
-| Honors | Provide concise external validation | Competitions, scholarships |
-| Contact | Invite research and engineering conversations | Email, GitHub, CV |
+- Background: `#08110F`, with raised surfaces at `#0D1916` and `#111F1B`.
+- Text: `#E8EFE8`; secondary copy: `#98AAA0`; structural lines use low-opacity
+  versions of the same palette.
+- Acid green `#C8FF5A` is reserved for actions, prompts, active states, and
+  data accents. Mint `#83D8B0` carries research emphasis. Orange `#FF9C6B`
+  marks the occasional status exception.
+- `Space Grotesk` handles display and body copy. `DM Mono` handles navigation,
+  labels, code-like content, metadata, and status indicators.
+- Shapes are mostly square, with thin borders and grid lines. Rings, route
+  lines, and terminal panels are interface/data graphics rather than narrative
+  illustrations.
 
-Later additions can introduce Publications and News between Research Focus and
-Experience without changing the overall visual rhythm.
+## Interaction and accessibility
 
-## 3. Visual Language
+- The desktop header remains fixed and exposes numbered section anchors. At
+  `1000px` and below it becomes a compact top bar with an explicit mobile menu.
+- Scroll reveals are progressive enhancements. The full semantic content is
+  present without JavaScript and `prefers-reduced-motion` disables reveals,
+  typing, and looping decorative motion.
+- Native links, visible focus states, a skip link, descriptive image alt text,
+  semantic headings, and responsive wrapping form the baseline.
+- No third-party image assets are used for the new visuals. The portrait is the
+  existing provided `assets/images/portrait.jpg` asset. Fonts are loaded from
+  Google Fonts with local system fallbacks.
 
-### Palette
+## Implementation
 
-- Paper: `#F4F1EA`
-- Bright paper: `#FBFAF6`
-- Ink: `#17211D`
-- Forest: `#143B34`
-- Deep forest: `#0D2924`
-- Academic blue: `#345B72`
-- Champagne gold: `#AD8B50`
-- Oxblood accent: `#713F3D`
-
-Gold is an annotation color, not a dominant fill. Forest carries the main
-institutional tone. Blue and oxblood prevent the system from becoming a
-single-hue palette.
-
-### Typography
-
-- Display and editorial copy: Cormorant Garamond, with Iowan Old Style and
-  Georgia as local fallbacks.
-- Navigation, metadata, and interface copy: Manrope, with the system UI stack as
-  a fallback.
-- The serif family provides an expressive editorial voice; the sans-serif
-  family preserves precision and legibility for navigation and dense metadata.
-- Display sizes use bounded `clamp()` values and retain stable mobile limits.
-
-### Shape and spacing
-
-- Corners stay square or nearly square.
-- Major sections are full-width bands.
-- Cards are reserved for repeated project items.
-- Borders are thin and structural.
-- Section rhythm uses a generous `96–176px` vertical range.
-
-## 4. Interaction Principles
-
-- Motion is quiet and directional: short reveals, line travel, and a subtle
-  research-graph canvas.
-- Every animation has a reduced-motion fallback.
-- A fixed left-side index provides desktop navigation and reflects the active
-  section without consuming vertical space.
-- Tablet and mobile layouts return to a compact top navigation bar with explicit
-  open and close states.
-- Email, GitHub, CV, and future paper/code links remain standard links.
-
-## 5. Content Rules
-
-- English is the sole public language for the first international release.
-- Wording should follow professional academic English rather than literal
-  translations of resume shorthand.
-- Avoid claims that are not publicly verifiable or ready to announce.
-- Planned submissions must be phrased as ongoing work, not accepted work.
-- Publications should expose `paper`, `code`, `data`, and `demo` as optional
-  links.
-- Project descriptions should foreground the problem and contribution before
-  listing technology.
-
-## 6. Portrait Specification
-
-The reserved portrait area expects:
-
-- A vertical image with a `4:5` crop.
-- Neutral or architectural background.
-- Soft directional light, natural expression, and restrained clothing.
-- At least `1600 × 2000px`.
-- No heavy beauty retouching or busy laboratory props.
-
-The current portrait is stored at `assets/images/portrait.jpg` and displayed
-with a non-destructive CSS crop. Adjust `object-position`, `transform`, and
-`transform-origin` to refine the composition without modifying the source image.
-
-## 7. Planned Components
-
-- `PublicationItem`: preview, venue, title, author line, and optional links.
-- `NewsEntry`: date, event, and optional source.
-- `ProjectCard`: category, period, visual, description, tags, links.
-- `TimelineItem`: period, type, institution, role, and contribution.
-- `HonorRow`: year, award, and level.
-- `LanguageSwitch`: future full Chinese/English content switch.
-
-## 8. Accessibility Baseline
-
-- Semantic regions and heading order.
-- Keyboard-accessible navigation and skip link.
-- Visible focus behavior through native browser outlines.
-- Minimum body contrast against both paper and forest backgrounds.
-- Responsive text wrapping down to `320px`.
-- Reduced-motion support.
+- Dependency-free static HTML, CSS, and JavaScript for GitHub Pages.
+- `assets/js/site.js` owns menu state, active section state, reveal observers,
+  year rendering, and the restrained terminal typing loop.
+- `assets/css/styles.css` owns the responsive layout, system graphics, motion,
+  focus/hover states, and reduced-motion fallback.
+- No smooth-scroll library or WebGL runtime is used. The page uses native
+  browser scrolling to keep the site portable and lightweight.
