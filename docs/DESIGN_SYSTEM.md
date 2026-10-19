@@ -53,12 +53,15 @@ small labels retain readable contrast.
 
 ### Typography
 
-- Display and editorial copy: Cormorant Garamond, with Iowan Old Style and
-  Georgia as local fallbacks.
-- Navigation, metadata, and interface copy: Manrope, with the system UI stack as
-  a fallback.
-- The serif family provides an expressive editorial voice; the sans-serif
-  family preserves precision and legibility for navigation and dense metadata.
+- Display and art-directed headlines: Cormorant Garamond, with Iowan Old Style
+  and Georgia as local fallbacks.
+- Body, navigation, buttons, metadata, award rows, and general interface copy:
+  EB Garamond, a more text-safe Garamond companion with matching proportions.
+- Technical instrumentation only: Manrope is reserved for the execution-trace
+  card, GUI diagram labels, and other deliberately designed instrument text.
+- General text keeps natural title case. Uppercase tracking is not used for
+  navigation, section labels, status chips, or metadata because it reads as
+  mixed Chinese/English resume formatting rather than an English editorial page.
 - Display sizes use bounded `clamp()` values and retain stable mobile limits.
 
 ### Shape and spacing
