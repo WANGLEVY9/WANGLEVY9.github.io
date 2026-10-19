@@ -31,8 +31,8 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./assets/css/core.css?v=20261019-pages2" />
-    <link rel="stylesheet" href="./assets/css/pages.css?v=20261019-pages2" />
+    <link rel="stylesheet" href="./assets/css/core.css?v=20261019-pages4" />
+    <link rel="stylesheet" href="./assets/css/pages.css?v=20261019-pages4" />
     <noscript>
       <style>
         .reveal {
@@ -41,7 +41,7 @@
         }
       </style>
     </noscript>
-    <script src="./assets/js/site.js?v=20261019-pages2" defer></script>
+    <script src="./assets/js/site.js?v=20261019-pages4" defer></script>
   </head>
   <body data-page="industry">
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -153,128 +153,359 @@
       </header>
 
       <section class="industry-story" aria-labelledby="tencent-story-title">
-        <div class="shell tencent-case">
-          <aside class="case-sidebar reveal">
-            <p class="meta-label">Case study</p>
-            <h2>Weixin<br />Commerce</h2>
-            <p>
-              Three connected surfaces: turn policy into decisions, route those
-              decisions into review, and recover the errors that leak through.
-            </p>
-            <div class="company-lockup">
+        <div class="shell industry-editorial">
+          <div class="industry-topline reveal">
+            <p class="meta-label">Case study / Weixin commerce</p>
+            <div class="tencent-badge">
               <img
                 src="./assets/images/tencent-wordmark.png"
                 alt="Tencent"
                 width="74"
                 height="15"
               />
-              <span>Weixin Group<br />2026—present</span>
+              <span>Weixin Group · E-commerce Governance</span>
             </div>
-          </aside>
+          </div>
 
-          <div class="case-main">
-            <div class="case-intro">
-              <h3 id="tencent-story-title" class="reveal">
-                Governance is a loop,<br />not a <em>single verdict.</em>
+          <div class="industry-hero-grid">
+            <div class="industry-hero-copy reveal">
+              <p class="eyebrow">Policy → decision → action → evidence</p>
+              <h3 id="tencent-story-title">
+                <span>Governance</span>
+                <span>is a loop.</span>
+                <em>Not one verdict.</em>
               </h3>
-              <p class="reveal">
-                Each system has to connect policy context, model output,
-                business routing, and human review without losing the evidence
-                needed for the next decision.
+              <p class="industry-lead">
+                I work where policy, model output, business routing, and human
+                review have to agree—without losing the trail that explains the
+                next decision.
               </p>
+              <dl class="industry-facts">
+                <div>
+                  <dt>Surfaces</dt>
+                  <dd>03 governance systems</dd>
+                </div>
+                <div>
+                  <dt>Focus</dt>
+                  <dd>Dispatch · policy · risk review</dd>
+                </div>
+                <div>
+                  <dt>Role</dt>
+                  <dd>Backend engineering intern</dd>
+                </div>
+              </dl>
             </div>
 
-            <ol class="governance-loop governance-flow reveal">
-              <li>
-                <span>01</span>
-                <strong>Policy grounding</strong>
-                <small>retrieval + business constraints</small>
-              </li>
-              <li>
-                <span>02</span>
-                <strong>Decision generation</strong>
-                <small>rules under governance logic</small>
-              </li>
-              <li>
-                <span>03</span>
-                <strong>Audit dispatch</strong>
-                <small>decomposition · batching · routing</small>
-              </li>
-              <li>
-                <span>04</span>
-                <strong>Review feedback</strong>
-                <small>validation · fallback · replay</small>
-              </li>
-            </ol>
+            <div class="industry-media-wall reveal">
+              <figure class="industry-photo industry-photo-wide">
+                <img
+                  src="./assets/images/tencent/workspace-golden-hour.jpg"
+                  alt="Golden-hour sunlight filling the office workspace"
+                  width="1280"
+                  height="1704"
+                  loading="lazy"
+                />
+                <figcaption>Workspace / last light</figcaption>
+              </figure>
 
-            <div class="impact-grid">
-              <article class="impact-card reveal">
-                <span class="impact-index">01</span>
-                <p class="impact-kicker">Dispatch architecture</p>
-                <h4>Weixin Mini Shop audit dispatch platform</h4>
-                <p>
-                  Owned the business architecture and core-path implementation
-                  for the audit dispatch workbench, spanning task decomposition,
-                  workflow orchestration, batch consolidation, routing, and
-                  result replay. Rebuilt aggregation and distribution to absorb
-                  the campaign surge while linking policy decisions directly to
-                  review execution.
-                </p>
-                <dl class="impact-metrics">
-                  <div>
-                    <dt>Campaign peak</dt>
-                    <dd>~300k QPM</dd>
-                  </div>
-                  <div>
-                    <dt>Batch consolidation</dt>
-                    <dd>~77%</dd>
-                  </div>
-                </dl>
-              </article>
+              <figure class="industry-photo industry-photo-tall">
+                <img
+                  src="./assets/images/tencent/office-dusk.jpg"
+                  alt="View from the Tencent office at dusk overlooking Guangzhou"
+                  width="1600"
+                  height="1202"
+                  loading="lazy"
+                />
+                <figcaption>Office window / Guangzhou</figcaption>
+              </figure>
 
-              <article class="impact-card reveal">
-                <span class="impact-index">02</span>
-                <p class="impact-kicker">Policy intelligence</p>
-                <h4>B-side LLM policy engine</h4>
-                <p>
-                  Developed core modules for the merchant-side audit policy
-                  engine, grounding rule generation and review decisions in
-                  retrieved historical policies and business knowledge.
-                  Connected rule configuration, policy execution, and audit
-                  scheduling into one executable path, turning governance
-                  knowledge into iterable policy rather than static review
-                  guidance.
-                </p>
-                <ul class="impact-tags">
-                  <li>Retrieval-grounded rules</li>
-                  <li>Policy execution</li>
-                  <li>Audit orchestration</li>
-                </ul>
-              </article>
-
-              <article class="impact-card reveal">
-                <span class="impact-index">03</span>
-                <p class="impact-kicker">Risk-control assurance</p>
-                <h4>C-side false-positive review</h4>
-                <p>
-                  Designed and implemented a reusable re-review system for order
-                  routing and policy interceptions. Added secondary validation,
-                  exception fallback, result feedback, and monitoring to close
-                  the strategy feedback loop while protecting transaction
-                  experience.
-                </p>
-                <dl class="impact-metrics">
-                  <div>
-                    <dt>Peak review load</dt>
-                    <dd>~100k QPM</dd>
-                  </div>
-                  <div>
-                    <dt>Misflags corrected</dt>
-                    <dd>~3.7% avg.</dd>
-                  </div>
-                </dl>
-              </article>
+              <figure class="tencent-kit">
+                <div class="tencent-kit-head">
+                  <span>Tencent / field kit</span>
+                  <img
+                    src="./assets/images/tencent-wordmark.png"
+                    alt="Tencent"
+                    width="74"
+                    height="15"
+                  />
+                </div>
+                <div class="tencent-kit-stage" aria-hidden="true">
+                  <span class="kit-object kit-tote">
+                    <span class="kit-handle"></span>
+                    <span class="kit-print">
+                      <img
+                        src="./assets/images/tencent-wordmark.png"
+                        alt=""
+                        width="74"
+                        height="15"
+                      />
+                    </span>
+                  </span>
+                  <span class="kit-object kit-mug">
+                    <span class="kit-mug-body">
+                      <img
+                        src="./assets/images/tencent-wordmark.png"
+                        alt=""
+                        width="74"
+                        height="15"
+                      />
+                    </span>
+                    <span class="kit-mug-handle"></span>
+                  </span>
+                  <span class="kit-object kit-notebook">
+                    <span class="kit-band"></span>
+                    <img
+                      src="./assets/images/tencent-wordmark.png"
+                      alt=""
+                      width="74"
+                      height="15"
+                    />
+                  </span>
+                  <span class="kit-object kit-badge">
+                    <img
+                      src="./assets/images/tencent-wordmark.png"
+                      alt=""
+                      width="74"
+                      height="15"
+                    />
+                  </span>
+                </div>
+                <figcaption>
+                  Illustrative brand study; not a photograph of official
+                  merchandise.
+                </figcaption>
+              </figure>
             </div>
+          </div>
+
+          <div
+            class="governance-console reveal"
+            data-governance
+            data-governance-stage="policy"
+          >
+            <div class="console-topline">
+              <span>Governance control loop</span>
+              <span>Representative system view</span>
+            </div>
+
+            <div class="console-layout">
+              <div
+                class="console-tabs"
+                role="tablist"
+                aria-label="Governance workflow stages"
+              >
+                <button
+                  type="button"
+                  role="tab"
+                  id="governance-tab-policy"
+                  aria-selected="true"
+                  aria-controls="governance-panel-policy"
+                  data-governance-tab="policy"
+                >
+                  <span>01</span>
+                  <strong>Ground</strong>
+                  <small>policy context</small>
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  id="governance-tab-decision"
+                  aria-selected="false"
+                  aria-controls="governance-panel-decision"
+                  data-governance-tab="decision"
+                >
+                  <span>02</span>
+                  <strong>Decide</strong>
+                  <small>rule execution</small>
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  id="governance-tab-dispatch"
+                  aria-selected="false"
+                  aria-controls="governance-panel-dispatch"
+                  data-governance-tab="dispatch"
+                >
+                  <span>03</span>
+                  <strong>Route</strong>
+                  <small>audit dispatch</small>
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  id="governance-tab-review"
+                  aria-selected="false"
+                  aria-controls="governance-panel-review"
+                  data-governance-tab="review"
+                >
+                  <span>04</span>
+                  <strong>Review</strong>
+                  <small>feedback loop</small>
+                </button>
+              </div>
+
+              <div class="console-screen">
+                <div class="console-map" aria-hidden="true">
+                  <span class="map-line map-line-a"></span>
+                  <span class="map-line map-line-b"></span>
+                  <span class="map-line map-line-c"></span>
+                  <span class="map-node" data-node="policy">
+                    <i>01</i><b>Policy</b>
+                  </span>
+                  <span class="map-node" data-node="decision">
+                    <i>02</i><b>Decision</b>
+                  </span>
+                  <span class="map-node" data-node="dispatch">
+                    <i>03</i><b>Dispatch</b>
+                  </span>
+                  <span class="map-node" data-node="review">
+                    <i>04</i><b>Review</b>
+                  </span>
+                  <span class="map-core">
+                    <img
+                      src="./assets/images/tencent-wordmark.png"
+                      alt=""
+                      width="74"
+                      height="15"
+                    />
+                    <small>auditable action</small>
+                  </span>
+                  <span class="map-pulse"></span>
+                </div>
+
+                <div class="console-readout">
+                  <div
+                    id="governance-panel-policy"
+                    role="tabpanel"
+                    aria-labelledby="governance-tab-policy"
+                    data-governance-panel="policy"
+                  >
+                    <span>Policy grounding</span>
+                    <strong>Evidence before generation.</strong>
+                    <p>
+                      Historical policy and business constraints are retrieved
+                      before a decision can become an executable rule.
+                    </p>
+                  </div>
+                  <div
+                    id="governance-panel-decision"
+                    role="tabpanel"
+                    aria-labelledby="governance-tab-decision"
+                    data-governance-panel="decision"
+                    hidden
+                  >
+                    <span>Decision generation</span>
+                    <strong>Rules meet business logic.</strong>
+                    <p>
+                      Generation, policy configuration, and review scheduling
+                      share one execution path instead of separate handoffs.
+                    </p>
+                  </div>
+                  <div
+                    id="governance-panel-dispatch"
+                    role="tabpanel"
+                    aria-labelledby="governance-tab-dispatch"
+                    data-governance-panel="dispatch"
+                    hidden
+                  >
+                    <span>Audit dispatch</span>
+                    <strong>Load is shaped, not dropped.</strong>
+                    <p>
+                      Decomposition, batching, and routing absorb campaign
+                      spikes while keeping each decision traceable to its
+                      review.
+                    </p>
+                  </div>
+                  <div
+                    id="governance-panel-review"
+                    role="tabpanel"
+                    aria-labelledby="governance-tab-review"
+                    data-governance-panel="review"
+                    hidden
+                  >
+                    <span>Review feedback</span>
+                    <strong>The result becomes the next signal.</strong>
+                    <p>
+                      Validation, fallback, and replay close the loop between
+                      automated interception and human review.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="console-metrics">
+              <div>
+                <span>Campaign peak</span>
+                <strong>~300k QPM</strong>
+              </div>
+              <div>
+                <span>Batch consolidation</span>
+                <strong>~77%</strong>
+              </div>
+              <div>
+                <span>Peak review load</span>
+                <strong>~100k QPM</strong>
+              </div>
+              <div>
+                <span>Misflags corrected</span>
+                <strong>~3.7% avg.</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="impact-grid">
+            <article class="impact-card reveal">
+              <div class="impact-visual dispatch-visual" aria-hidden="true">
+                <span class="queue-item"></span>
+                <span class="queue-item"></span>
+                <span class="queue-merge">merge</span>
+                <span class="queue-route">review</span>
+              </div>
+              <span class="impact-index">01</span>
+              <p class="impact-kicker">Dispatch architecture</p>
+              <h4>Weixin Mini Shop audit dispatch platform</h4>
+              <p>
+                Owned the core-path architecture for decomposition,
+                orchestration, consolidation, routing, and replay; rebuilt
+                distribution for campaign-scale spikes.
+              </p>
+            </article>
+
+            <article class="impact-card reveal">
+              <div class="impact-visual policy-visual" aria-hidden="true">
+                <span>policy</span>
+                <i></i>
+                <span>rule</span>
+                <i></i>
+                <span>audit</span>
+              </div>
+              <span class="impact-index">02</span>
+              <p class="impact-kicker">Policy intelligence</p>
+              <h4>B-side LLM policy engine</h4>
+              <p>
+                Built retrieval-grounded policy modules and connected rule
+                generation, execution, and audit scheduling into one iterable
+                path.
+              </p>
+            </article>
+
+            <article class="impact-card reveal">
+              <div class="impact-visual risk-visual" aria-hidden="true">
+                <span>intercept</span>
+                <span class="risk-branch">recheck</span>
+                <span>release</span>
+                <i></i>
+              </div>
+              <span class="impact-index">03</span>
+              <p class="impact-kicker">Risk-control assurance</p>
+              <h4>C-side false-positive review</h4>
+              <p>
+                Designed reusable re-review with secondary validation, exception
+                fallback, result feedback, and monitoring to protect transaction
+                experience.
+              </p>
+            </article>
           </div>
         </div>
       </section>

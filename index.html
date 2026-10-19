@@ -36,8 +36,8 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./assets/css/core.css?v=20261019-pages2" />
-    <link rel="stylesheet" href="./assets/css/pages.css?v=20261019-pages2" />
+    <link rel="stylesheet" href="./assets/css/core.css?v=20261019-pages4" />
+    <link rel="stylesheet" href="./assets/css/pages.css?v=20261019-pages4" />
     <link
       rel="preload"
       as="image"
@@ -52,7 +52,7 @@
         }
       </style>
     </noscript>
-    <script src="./assets/js/site.js?v=20261019-pages2" defer></script>
+    <script src="./assets/js/site.js?v=20261019-pages4" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -155,10 +155,12 @@
               <span class="hero-surname">Wang</span>
             </h1>
             <p class="hero-statement reveal">
-              I study how AI-driven software can be <strong>tested</strong>,
-              <strong>diagnosed</strong>, and made accountable—from the first
-              faulty action in a GUI trajectory to the systems that keep
-              production decisions traceable.
+              I build and evaluate testing methods that make AI-driven software
+              <strong>testable, traceable, and accountable.</strong>
+            </p>
+            <p class="hero-substatement reveal">
+              Current focus: root-cause localisation for GUI agents, web UI test
+              comparison, and dependable generative workflows.
             </p>
 
             <div class="hero-actions reveal">
@@ -172,53 +174,179 @@
           </div>
 
           <div class="hero-visual reveal">
-            <figure class="hero-portrait">
-              <img
-                src="./assets/images/portrait.jpg"
-                alt="Portrait of Taijie Wang"
-                width="1279"
-                height="1706"
-                fetchpriority="high"
-              />
-              <figcaption>Portrait / Nanjing</figcaption>
-            </figure>
-
-            <div class="trace-card" aria-hidden="true">
-              <div class="trace-card-head">
-                <span>Execution trace</span>
-                <span>016 / GUI</span>
-              </div>
-              <div class="trace-sequence">
-                <span><i>01</i> observe</span>
-                <span><i>02</i> act</span>
-                <span class="trace-fault"><i>03</i> verify</span>
-                <span><i>04</i> repair</span>
-              </div>
-              <div class="trace-callout">
-                <span>root cause</span>
-                <strong>step 03</strong>
-              </div>
-            </div>
-
-            <figure class="hero-field-photo">
-              <picture>
-                <source
-                  srcset="./assets/images/tencent/pearl-river-dusk.webp"
-                  type="image/webp"
-                />
+            <div class="hero-gallery">
+              <figure class="hero-portrait">
                 <img
-                  src="./assets/images/tencent/pearl-river-dusk.jpg"
-                  alt="Guangzhou skyline and the Pearl River at dusk"
-                  width="1800"
-                  height="1350"
+                  src="./assets/images/portrait.jpg"
+                  alt="Portrait of Taijie Wang"
+                  width="1279"
+                  height="1706"
+                  fetchpriority="high"
+                />
+                <figcaption>Portrait / Nanjing</figcaption>
+              </figure>
+
+              <figure class="hero-field-photo">
+                <picture>
+                  <source
+                    srcset="./assets/images/tencent/pearl-river-dusk.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="./assets/images/tencent/pearl-river-dusk.jpg"
+                    alt="Guangzhou skyline and the Pearl River at dusk"
+                    width="1800"
+                    height="1350"
+                    loading="lazy"
+                  />
+                </picture>
+                <figcaption>
+                  <span>Field note 06</span>
+                  <span>Guangzhou / dusk</span>
+                </figcaption>
+              </figure>
+
+              <figure class="hero-detail-photo">
+                <img
+                  src="./assets/images/tencent/canton-tower.jpg"
+                  alt="Canton Tower framed by the curved architecture of a Guangzhou plaza"
+                  width="1600"
+                  height="1067"
                   loading="lazy"
                 />
-              </picture>
-              <figcaption>
-                <span>Field note 06</span>
-                <span>Guangzhou / dusk</span>
-              </figcaption>
-            </figure>
+                <figcaption>
+                  <span>Field note 03</span>
+                  <span>Guangzhou / Canton Tower</span>
+                </figcaption>
+              </figure>
+            </div>
+
+            <section
+              class="trace-card"
+              data-trace-card
+              data-trace-stage="verify"
+              aria-label="Paper diagram for GUI failure root localisation"
+            >
+              <div class="trace-card-head">
+                <span>Paper diagram / SOCRATES</span>
+                <span>Trace 016 / GUI</span>
+              </div>
+
+              <div class="trace-title-row">
+                <p>Find the earliest faulty action.</p>
+                <span>Risk × review cost</span>
+              </div>
+
+              <div
+                class="trace-tabs"
+                role="tablist"
+                aria-label="Root localisation trace stages"
+              >
+                <button
+                  type="button"
+                  role="tab"
+                  id="home-trace-tab-observe"
+                  aria-selected="false"
+                  aria-controls="home-trace-panel-observe"
+                  data-trace-tab="observe"
+                >
+                  <i>01</i><span>Observe</span>
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  id="home-trace-tab-act"
+                  aria-selected="false"
+                  aria-controls="home-trace-panel-act"
+                  data-trace-tab="act"
+                >
+                  <i>02</i><span>Act</span>
+                </button>
+                <button
+                  class="trace-fault"
+                  type="button"
+                  role="tab"
+                  id="home-trace-tab-verify"
+                  aria-selected="true"
+                  aria-controls="home-trace-panel-verify"
+                  data-trace-tab="verify"
+                >
+                  <i>03</i><span>Verify</span>
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  id="home-trace-tab-repair"
+                  aria-selected="false"
+                  aria-controls="home-trace-panel-repair"
+                  data-trace-tab="repair"
+                >
+                  <i>04</i><span>Repair</span>
+                </button>
+              </div>
+
+              <div class="trace-detail-shell">
+                <div
+                  class="trace-detail"
+                  id="home-trace-panel-observe"
+                  role="tabpanel"
+                  aria-labelledby="home-trace-tab-observe"
+                  data-trace-panel="observe"
+                  hidden
+                >
+                  <span>Candidate interval</span>
+                  <strong>01—04</strong>
+                  <p>
+                    Screens, controls, and page deltas are encoded as step-level
+                    evidence.
+                  </p>
+                </div>
+                <div
+                  class="trace-detail"
+                  id="home-trace-panel-act"
+                  role="tabpanel"
+                  aria-labelledby="home-trace-tab-act"
+                  data-trace-panel="act"
+                  hidden
+                >
+                  <span>Candidate interval</span>
+                  <strong>02—05</strong>
+                  <p>
+                    Action risk narrows the range before a human spends review
+                    budget.
+                  </p>
+                </div>
+                <div
+                  class="trace-detail"
+                  id="home-trace-panel-verify"
+                  role="tabpanel"
+                  aria-labelledby="home-trace-tab-verify"
+                  data-trace-panel="verify"
+                >
+                  <span>Earliest root</span>
+                  <strong>Step 03</strong>
+                  <p>
+                    The failure seed is localised before downstream errors
+                    obscure the cause.
+                  </p>
+                </div>
+                <div
+                  class="trace-detail"
+                  id="home-trace-panel-repair"
+                  role="tabpanel"
+                  aria-labelledby="home-trace-tab-repair"
+                  data-trace-panel="repair"
+                  hidden
+                >
+                  <span>Post-review state</span>
+                  <strong>Feedback</strong>
+                  <p>
+                    Human confirmation and repair update the reliability of
+                    later decisions.
+                  </p>
+                </div>
+              </div>
+            </section>
           </div>
         </div>
 

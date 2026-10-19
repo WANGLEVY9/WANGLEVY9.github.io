@@ -135,6 +135,19 @@ document.querySelectorAll("[data-instrument]").forEach((container) => {
   initTabs(container, "data-process-tab", "data-process-panel", "data-mode");
 });
 
+document.querySelectorAll("[data-trace-card]").forEach((container) => {
+  initTabs(container, "data-trace-tab", "data-trace-panel", "data-trace-stage");
+});
+
+document.querySelectorAll("[data-governance]").forEach((container) => {
+  initTabs(
+    container,
+    "data-governance-tab",
+    "data-governance-panel",
+    "data-governance-stage",
+  );
+});
+
 document.querySelectorAll("[data-workflow]").forEach((container) => {
   initTabs(container, "data-workflow-tab", "data-workflow-panel", "data-stage");
 });

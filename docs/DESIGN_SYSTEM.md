@@ -60,8 +60,9 @@ natural sentence case.
 - Repeated cards are reserved for project states, field notes, and awards.
 - Sections use generous vertical intervals without turning each page into a
   single continuous scroll.
-- Image composition is asymmetric: the profile collage overlaps a portrait
-  with a field photograph; the Industry page uses a full-bleed city image.
+- Image composition is asymmetric but not crowded: the profile page uses a
+  three-photo editorial grid plus a full-width paper diagram; the Industry page
+  uses a full-bleed city image and a separate photo/brand-study wall.
 
 ## 4. Interaction Principles
 
@@ -71,8 +72,10 @@ natural sentence case.
   page-level progress line.
 - The Field Notes gallery supports drag, swipe, arrow keys, visible previous and
   next controls, a live counter, and a modal lightbox.
-- SynTriageGUI and VidForge use accessible tab patterns with arrow, Home, and
-  End key support.
+- The profile paper diagram and the Industry governance console use accessible
+  tab patterns with arrow, Home, and End key support.
+- SynTriageGUI and VidForge use the same interaction grammar for their
+  instrument panels.
 - All motion has a reduced-motion fallback.
 
 ## 5. Content Rules
@@ -99,6 +102,9 @@ natural sentence case.
   `<picture>` element is used.
 - The Industry masthead uses the Pearl River dusk photograph at
   `assets/images/tencent/pearl-river-dusk.*`.
+- The Tencent field kit is a code-native illustration using the official
+  wordmark. It is explicitly captioned as a brand study rather than official
+  merchandise photography.
 - Additional photographs require both a visible caption and a lightbox caption
   in `industry.html`. Gallery counts update automatically from the number of
   figures.
@@ -114,6 +120,12 @@ natural sentence case.
   review feedback.
 - `FieldNotesGallery`: horizontally scrollable, snap-aligned photo sequence with
   controls and lightbox.
+- `TraceDiagram`: a four-stage paper-workflow summary for SOCRATES that can be
+  inspected by stage without leaving the profile page.
+- `GovernanceConsole`: a four-stage, responsive view of the Tencent governance
+  loop with changing readouts and representative system metrics.
+- `TencentFieldKit`: an illustrative tote, mug, notebook, and badge composition
+  that supplies visual brand context without posing as documentary photography.
 - `ProjectInstrument`: interactive trace and risk view for SynTriageGUI.
 - `WorkflowInstrument`: four-stage stateful workflow view for VidForge.
 - `AwardGroup`: year, title, and awarding level.

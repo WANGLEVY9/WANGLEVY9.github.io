@@ -65,6 +65,8 @@ compositions, galleries, project instruments, and page-level responsive rules.
   in `assets/images/tencent/`, should be resized before publication, and should
   be added as another `figure` in `industry.html`; gallery controls and the
   counter derive their state from the markup.
+- The Tencent field-kit treatment is a code-native editorial illustration. Its
+  caption states that it is not a photograph of official merchandise.
 - The site uses English for the public research narrative. Resume wording is
   paraphrased rather than copied mechanically.
 
