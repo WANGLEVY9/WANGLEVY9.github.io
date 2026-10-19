@@ -2,13 +2,13 @@
 
 ## 1. Positioning
 
-The site presents Taijie Wang as a researcher in formation and an engineer in
-practice. Its central narrative is not a chronological resume dump. It is the
-connection between three concerns:
+The site presents Taijie Wang as a researcher and engineer working on the
+reliability of AI-driven software. Its central narrative is not a chronological
+resume dump. It is the connection between three concerns:
 
-1. AI for software testing.
-2. Human-agent collaboration.
-3. Assurance for autonomous systems.
+1. Testing AI-driven software.
+2. Diagnosing where agent behavior first fails.
+3. Turning research methods into dependable systems.
 
 The visual tone should feel composed, rigorous, quiet, and assured. It should
 avoid startup marketing language, excessive decoration, and generic academic
@@ -16,18 +16,18 @@ blog styling.
 
 ## 2. Information Architecture
 
-| Section | Purpose | Primary evidence |
-| --- | --- | --- |
-| Hero | Establish name, affiliation, and research identity | NJU, research statement |
-| Profile | Give a concise academic biography | Education, affiliations, interests |
-| Research Focus | Explain the intellectual agenda | Three connected research themes |
-| Experience | Show academic and professional trajectory | Labs, Tencent, leadership |
-| Selected Work | Turn methods into tangible systems | Testing platform, VidForge |
-| Honors | Provide concise external validation | Competitions, scholarships |
-| Contact | Invite research and engineering conversations | Email, GitHub, CV |
+| Section       | Purpose                                            | Primary evidence                    |
+| ------------- | -------------------------------------------------- | ----------------------------------- |
+| Hero          | Establish name, affiliation, and research identity | NJU, research statement             |
+| Profile       | Give a concise academic biography                  | Education, affiliations, interests  |
+| Research      | Present the current evidence base                  | Three submitted manuscripts         |
+| Industry      | Show production engineering scope                  | Tencent governance systems          |
+| Selected Work | Turn methods into tangible systems                 | SynTriageGUI, VidForge              |
+| Recognition   | Provide concise external validation                | Competitions, scholarships, service |
+| Contact       | Invite research and engineering conversations      | Email, GitHub, CV                   |
 
-Later additions can introduce Publications and News between Research Focus and
-Experience without changing the overall visual rhythm.
+The Research section doubles as the publication ledger until enough accepted
+work exists to justify a separate Publications page.
 
 ## 3. Visual Language
 
@@ -39,12 +39,17 @@ Experience without changing the overall visual rhythm.
 - Forest: `#143B34`
 - Deep forest: `#0D2924`
 - Academic blue: `#345B72`
-- Champagne gold: `#AD8B50`
+- Accessible annotation gold: `#85672F`
+- Bright gold on forest: `#C4A46D`
 - Oxblood accent: `#713F3D`
+- Verification signal: `#B0472E`
 
 Gold is an annotation color, not a dominant fill. Forest carries the main
 institutional tone. Blue and oxblood prevent the system from becoming a
-single-hue palette.
+single-hue palette. The verification signal is reserved for the failure nodes,
+status rules, and active trace points that connect the design to the actual
+research subject. Light-background annotation text uses the darker gold so
+small labels retain readable contrast.
 
 ### Typography
 
@@ -63,11 +68,14 @@ single-hue palette.
 - Cards are reserved for repeated project items.
 - Borders are thin and structural.
 - Section rhythm uses a generous `96–176px` vertical range.
+- The hero's execution-trace card and the GUI project visual establish a
+  recurring visual grammar: steps, a marked failure point, and a verification
+  boundary.
 
 ## 4. Interaction Principles
 
-- Motion is quiet and directional: short reveals, line travel, and a subtle
-  research-graph canvas.
+- Motion is quiet and directional: short reveals and line travel. The
+  execution-trace card is static so the page stays legible and fast.
 - Every animation has a reduced-motion fallback.
 - A fixed left-side index provides desktop navigation and reflects the active
   section without consuming vertical space.
@@ -82,10 +90,16 @@ single-hue palette.
   translations of resume shorthand.
 - Avoid claims that are not publicly verifiable or ready to announce.
 - Planned submissions must be phrased as ongoing work, not accepted work.
+- The current three manuscripts must remain labeled `Submitted` until a formal
+  decision or camera-ready record is available.
 - Publications should expose `paper`, `code`, `data`, and `demo` as optional
   links.
 - Project descriptions should foreground the problem and contribution before
   listing technology.
+- Do not publish private resume fields such as phone number, birthday, or
+  messaging IDs.
+- Do not publish Tencent's internal throughput, correction-rate, or operational
+  metrics; describe the system scope and visible engineering contribution.
 
 ## 6. Portrait Specification
 
@@ -103,12 +117,14 @@ with a non-destructive CSS crop. Adjust `object-position`, `transform`, and
 
 ## 7. Planned Components
 
-- `PublicationItem`: preview, venue, title, author line, and optional links.
+- `ResearchEntry`: venue, submission status, author role, title, affiliation,
+  summary, and method tags.
 - `NewsEntry`: date, event, and optional source.
 - `ProjectCard`: category, period, visual, description, tags, links.
 - `TimelineItem`: period, type, institution, role, and contribution.
 - `HonorRow`: year, award, and level.
-- `LanguageSwitch`: future full Chinese/English content switch.
+- `LanguageSwitch`: future full Chinese/English content switch. English remains
+  the default public language for the current release.
 
 ## 8. Accessibility Baseline
 

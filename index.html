@@ -5,15 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="The academic portfolio of Taijie Wang, whose work focuses on AI for software testing, human-agent collaboration, and intelligent systems engineering."
+      content="Taijie Wang is a software engineering undergraduate at Nanjing University working on LLM-assisted software testing, GUI-agent failure diagnosis, and trustworthy AI."
     />
     <meta name="theme-color" content="#f4f1ea" />
-    <title>Taijie Wang | Academic Portfolio</title>
+    <meta
+      name="keywords"
+      content="Taijie Wang, software testing, GUI agents, AI for software engineering, trustworthy AI, Nanjing University"
+    />
+    <link rel="canonical" href="https://wanglevy9.github.io/" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Taijie Wang | Software Testing &amp; Trustworthy AI"
+    />
+    <meta
+      property="og:description"
+      content="Research on testable, traceable, and accountable behavior in AI-driven software systems."
+    />
+    <meta property="og:url" content="https://wanglevy9.github.io/" />
+    <meta
+      property="og:image"
+      content="https://wanglevy9.github.io/assets/images/portrait.jpg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Taijie Wang | Software Testing &amp; Trustworthy AI"
+    />
+    <meta
+      name="twitter:description"
+      content="Research on testable, traceable, and accountable behavior in AI-driven software systems."
+    />
+    <title>Taijie Wang | Software Testing &amp; Trustworthy AI</title>
     <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./assets/css/styles.css" />
@@ -26,6 +54,31 @@
       </style>
     </noscript>
     <script src="./assets/js/site.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Taijie Wang",
+        "url": "https://wanglevy9.github.io/",
+        "email": "mailto:231250082@smail.nju.edu.cn",
+        "image": "https://wanglevy9.github.io/assets/images/portrait.jpg",
+        "affiliation": {
+          "@type": "CollegeOrUniversity",
+          "name": "Nanjing University"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Nanjing University"
+        },
+        "sameAs": ["https://github.com/WANGLEVY9"],
+        "knowsAbout": [
+          "Software Testing",
+          "AI for Software Engineering",
+          "GUI Agents",
+          "Trustworthy AI"
+        ]
+      }
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -42,7 +95,7 @@
           <a href="#research"><span>02</span>Research</a>
           <a href="#experience"><span>03</span>Industry</a>
           <a href="#projects"><span>04</span>Projects</a>
-          <a href="#honors"><span>05</span>Honors</a>
+          <a href="#honors"><span>05</span>Recognition</a>
         </nav>
 
         <div class="header-actions">
@@ -69,18 +122,22 @@
         </div>
       </div>
 
-      <nav class="mobile-nav" id="mobile-navigation" aria-label="Mobile navigation" data-mobile-nav>
+      <nav
+        class="mobile-nav"
+        id="mobile-navigation"
+        aria-label="Mobile navigation"
+        data-mobile-nav
+      >
         <a href="#profile">Profile <span>01</span></a>
         <a href="#research">Research <span>02</span></a>
         <a href="#experience">Industry <span>03</span></a>
         <a href="#projects">Projects <span>04</span></a>
-        <a href="#honors">Honors <span>05</span></a>
+        <a href="#honors">Recognition <span>05</span></a>
       </nav>
     </header>
 
     <main id="main-content">
       <section class="hero" id="top" aria-labelledby="hero-title">
-        <canvas class="research-canvas" data-research-canvas aria-hidden="true"></canvas>
         <div class="hero-grid" aria-hidden="true"></div>
 
         <div class="shell hero-inner">
@@ -92,34 +149,32 @@
 
           <div class="hero-copy">
             <p class="hero-field reveal">
-              Software Testing &amp; Security · AI for Software Engineering · Trustworthy AI
+              Software Testing &amp; Security · GUI Agents · Trustworthy AI
             </p>
             <h1 id="hero-title" class="reveal">
               <span>Taijie</span>
               <span class="hero-surname">Wang</span>
             </h1>
             <p class="hero-statement reveal">
-              I investigate how large language models can advance software testing,
-              autonomous-system assurance, and human-agent decision making, with an
-              emphasis on methods that are verifiable, reliable, and useful in practice.
+              I build and evaluate test methods that make AI-driven software
+              behavior testable, traceable, and accountable—from GUI-agent
+              failure diagnosis to web UI testing and autonomous-system
+              assurance.
             </p>
 
             <div class="hero-actions reveal">
               <a class="primary-action" href="#research">
-                Explore Research
+                Read Research
                 <span aria-hidden="true">↓</span>
               </a>
-              <a
-                class="secondary-action"
-                href="#experience"
-              >
-                View Industry
+              <a class="secondary-action" href="#projects">
+                Explore Systems
                 <span aria-hidden="true">↓</span>
               </a>
             </div>
           </div>
 
-          <div class="portrait-slot reveal" aria-label="Reserved portrait area">
+          <div class="portrait-slot reveal">
             <div class="portrait-frame">
               <img
                 src="./assets/images/portrait.jpg"
@@ -127,6 +182,22 @@
                 width="1279"
                 height="1706"
               />
+            </div>
+            <div class="trace-card" aria-hidden="true">
+              <div class="trace-card-head">
+                <span>Execution trace</span>
+                <span>016 / GUI</span>
+              </div>
+              <div class="trace-sequence">
+                <span><i>01</i> observe</span>
+                <span><i>02</i> act</span>
+                <span class="trace-fault"><i>03</i> verify</span>
+                <span><i>04</i> repair</span>
+              </div>
+              <div class="trace-callout">
+                <span>root cause</span>
+                <strong>step 03</strong>
+              </div>
             </div>
           </div>
 
@@ -143,17 +214,17 @@
                 />
                 <span class="education-copy">
                   <strong>Nanjing University</strong>
-                  <span>2023.09 — 2027.07 (Expected)</span>
+                  <span>2023.09 — 2027.06 (Expected)</span>
                   <span>B.E. in Software Engineering</span>
                 </span>
               </dd>
             </div>
             <div>
-              <dt>Research Interests</dt>
+              <dt>Current Research</dt>
               <dd>
-                Software Testing &amp; Security<br />
-                AI for Software Engineering<br />
-                Trustworthy AI
+                LLM-assisted testing<br />
+                GUI-agent diagnosis<br />
+                Autonomous-system assurance
               </dd>
             </div>
             <div class="industry-fact">
@@ -168,7 +239,7 @@
                 />
                 <span class="industry-copy">
                   <strong>Tencent</strong>
-                  <span>Backend &amp; Agent Development</span>
+                  <span>Weixin Group · Backend Engineering</span>
                 </span>
               </dd>
             </div>
@@ -189,41 +260,82 @@
           </div>
 
           <div class="profile-intro">
-            <p class="eyebrow reveal">Researcher in formation · Engineer in practice</p>
+            <p class="eyebrow reveal">
+              Research profile · Updated October 2026
+            </p>
             <h2 class="display-title reveal">
-              Building verifiable connections
-              <em>between rigorous inquiry and working systems.</em>
+              Making AI-driven software
+              <em>testable, traceable, and accountable.</em>
             </h2>
           </div>
 
           <div class="profile-body reveal">
             <p class="lead">
-              I am an undergraduate in Software Engineering at Nanjing University,
-              conducting research with two software engineering laboratories.
+              I am a final-year Software Engineering undergraduate at Nanjing
+              University, working where software testing, GUI agents, and
+              trustworthy AI meet.
             </p>
             <p>
-              My research interests are Software Testing and Security, AI for
-              Software Engineering, and Trustworthy AI. Beyond whether a model
-              can complete a task, I study how its behavior can be verified,
-              when human judgment should intervene, and how AI-assisted
-              software systems can remain dependable in practice.
+              My work asks a practical question: once an AI system acts, how do
+              we know whether it acted correctly, where it first went wrong, and
+              when a human should step in? I study controlled agent evaluation,
+              root-cause localization for failed GUI trajectories, and
+              human-in-the-loop inspection under limited budgets. I collaborate
+              with labs at Nanjing University and Nanyang Technological
+              University, and build production systems at Tencent's Weixin
+              Group.
             </p>
+            <dl class="capability-grid">
+              <div>
+                <dt>Research</dt>
+                <dd>
+                  Agent evaluation · failure attribution · multimodal sequence
+                  modeling · probabilistic decision making
+                </dd>
+              </div>
+              <div>
+                <dt>Building</dt>
+                <dd>
+                  Python · C++ · Java · PostgreSQL · Redis · LangGraph ·
+                  WebSocket · FFmpeg
+                </dd>
+              </div>
+              <div>
+                <dt>Service</dt>
+                <dd>
+                  NJU Red Cross · student science association · OpenHarmony club
+                  · volunteer leadership
+                </dd>
+              </div>
+            </dl>
             <div class="inline-links">
-              <a href="mailto:231250082@smail.nju.edu.cn">Email <span>↗</span></a>
-              <a href="https://github.com/WANGLEVY9" target="_blank" rel="noreferrer">
+              <a href="mailto:231250082@smail.nju.edu.cn"
+                >Email <span>↗</span></a
+              >
+              <a
+                href="https://github.com/WANGLEVY9"
+                target="_blank"
+                rel="noreferrer"
+              >
                 GitHub <span>↗</span>
               </a>
+              <a href="#research">Selected research <span>↓</span></a>
             </div>
           </div>
 
           <aside class="profile-meta reveal" aria-label="Profile summary">
             <div>
               <span>Education</span>
-              <p>B.E. in Software Engineering<br />2023.09 — 2027.07 (Expected)</p>
+              <p>
+                B.E. in Software Engineering<br />2023.09 — 2027.06 (Expected)
+              </p>
             </div>
             <div>
-              <span>Affiliation</span>
-              <p>Nanjing University<br />School of Software</p>
+              <span>Current appointment</span>
+              <p>
+                Tencent · Weixin Group<br />E-commerce Governance · 2026.05 —
+                Present
+              </p>
             </div>
             <div>
               <span>Languages</span>
@@ -241,12 +353,12 @@
               <p>Research Experience</p>
             </div>
             <h2 class="reveal">
-              Research shaped through sustained work<br />
-              across questions, systems, and evidence.
+              Evidence first.<br />
+              Claims second.
             </h2>
             <p class="reveal">
-              Three appointments spanning software testing, AI for software
-              engineering, and cybersecurity.
+              Three submitted manuscripts on how AI-driven software is tested,
+              diagnosed, and made more dependable.
             </p>
           </div>
 
@@ -254,15 +366,32 @@
             <article class="research-item reveal">
               <span class="research-number">A</span>
               <div class="research-copy">
-                <p class="research-label">Sep 2024 — Present · Research Member</p>
-                <h3>State Key Laboratory for Novel Software Technology, Nanjing University</h3>
-                <p class="research-advisor">Advisor: Prof. Enyi Tang</p>
-                <p>
-                  Studying LLM-assisted testing for unmanned autonomous systems,
-                  with emphasis on scenario generation, retrieval-grounded
-                  oracle support, and failure attribution. I synthesize current
-                  methods, open challenges, and promising research directions.
+                <div class="paper-meta">
+                  <span class="paper-status"
+                    >FSE 2027 Research Track · Submitted</span
+                  >
+                  <span class="paper-role">First author</span>
+                </div>
+                <h3>
+                  Computer-Use Agents for Web UI Testing: What Do We Need to
+                  Know?
+                </h3>
+                <p class="research-affiliation">
+                  Nanyang Technological University · Cybersecurity Lab
                 </p>
+                <p>
+                  A controlled empirical framework that compares visual agents,
+                  structure-aware agents, and scripted tests for web UI testing.
+                  The study separates task completion from check execution and
+                  judgment correctness, then examines preparation cost,
+                  repeatability, and complementary coverage under equal
+                  execution budgets.
+                </p>
+                <ul class="research-tags">
+                  <li>Controlled comparison</li>
+                  <li>Agent evaluation</li>
+                  <li>Coverage</li>
+                </ul>
               </div>
               <div class="research-orbit" aria-hidden="true">
                 <span></span><span></span><i></i>
@@ -272,17 +401,35 @@
             <article class="research-item reveal">
               <span class="research-number">B</span>
               <div class="research-copy">
-                <p class="research-label">Sep 2025 — Present · Project Lead</p>
-                <h3>Intelligent Software Engineering Lab, Nanjing University</h3>
-                <p class="research-advisor">Advisor: Prof. Chunrong Fang</p>
-                <p>
-                  Studying LLM-assisted software automation for GUI-intensive
-                  systems, with emphasis on automated testing, human-agent
-                  collaboration boundaries, and workflow support for developers.
-                  I co-design the framework and its collaboration-aware evaluation.
+                <div class="paper-meta">
+                  <span class="paper-status">TOSEM · Submitted 2026</span>
+                  <span class="paper-role">First author · 2-person team</span>
+                </div>
+                <h3>
+                  SOCRATES: Cost-Aware Human–AI Root Localization for Failed GUI
+                  Agent Executions
+                </h3>
+                <p class="research-affiliation">
+                  Nanjing University · Intelligent Software Engineering Lab
                 </p>
+                <p>
+                  A human–AI method for finding the earliest faulty action in
+                  long GUI trajectories. SOCRATES jointly models action-level
+                  root-cause probability and the cost of human inspection, using
+                  interval dynamic programming to choose what to check next and
+                  shrink the candidate range without exhausting the review
+                  budget.
+                </p>
+                <ul class="research-tags">
+                  <li>Root-cause analysis</li>
+                  <li>Human–AI collaboration</li>
+                  <li>Interval DP</li>
+                </ul>
               </div>
-              <div class="research-orbit research-orbit-offset" aria-hidden="true">
+              <div
+                class="research-orbit research-orbit-offset"
+                aria-hidden="true"
+              >
                 <span></span><span></span><i></i>
               </div>
             </article>
@@ -290,21 +437,46 @@
             <article class="research-item reveal">
               <span class="research-number">C</span>
               <div class="research-copy">
-                <p class="research-label">Sep 2024 — Sep 2025 · Project Lead</p>
-                <h3>Software Engineering Teaching Laboratory Center, Nanjing University</h3>
-                <p class="research-advisor">Advisor: Prof. Feng Liu</p>
-                <p>
-                  Led research on a federated-learning-based cybersecurity
-                  analysis system under a National-level Undergraduate
-                  Innovation Program, directing project scoping, system design,
-                  and implementation toward a registered software copyright.
+                <div class="paper-meta">
+                  <span class="paper-status">TOSEM · Submitted 2026</span>
+                  <span class="paper-role"
+                    >First author · listed second of 3</span
+                  >
+                </div>
+                <h3>
+                  Unmanned Autonomous Systems Testing in the Era of Large
+                  Models: State of the Art, Challenges, and Opportunities
+                </h3>
+                <p class="research-affiliation">
+                  Nanjing University · State Key Laboratory for Novel Software
+                  Technology
                 </p>
+                <p>
+                  A systematic survey spanning autonomous driving, UAVs, and
+                  robotics. The work organizes methods across testing stages,
+                  model techniques, and test granularity, then compares
+                  technical transfer and limits in scenario generation, test
+                  oracles, and result analysis.
+                </p>
+                <ul class="research-tags">
+                  <li>Systematic survey</li>
+                  <li>Autonomous systems</li>
+                  <li>Test oracles</li>
+                </ul>
               </div>
-              <div class="research-orbit research-orbit-wide" aria-hidden="true">
+              <div
+                class="research-orbit research-orbit-wide"
+                aria-hidden="true"
+              >
                 <span></span><span></span><i></i>
               </div>
             </article>
           </div>
+          <p class="research-footnote reveal">
+            Status reflects the latest CV (October 2026). Submitted manuscripts
+            are not publications; this page will distinguish decisions and
+            camera-ready records as they become available.
+          </p>
         </div>
       </section>
 
@@ -317,7 +489,9 @@
 
           <div class="experience-heading">
             <p class="eyebrow reveal">Industry experience</p>
-            <h2 class="display-title reveal">Engineering research-minded systems, <em>at production scale.</em></h2>
+            <h2 class="display-title reveal">
+              Building governance systems, <em>from policy to review.</em>
+            </h2>
           </div>
 
           <div class="timeline">
@@ -334,14 +508,35 @@
               </div>
               <div class="timeline-content">
                 <p class="timeline-type">Industry</p>
-                <h3>Tencent · Weixin Group</h3>
-                <p class="timeline-role">Backend Engineering Intern, E-commerce Governance</p>
-                <p>
-                  Contributing to policy-engine and risk-review services. I apply
-                  agentic architectures, RAG, and chain-of-thought reasoning to
-                  rule generation and decision workflows, while improving review
-                  mechanisms for false-positive interceptions.
+                <h3>
+                  Tencent · Weixin Group<br />
+                  <span>E-commerce Governance</span>
+                </h3>
+                <p class="timeline-role">
+                  Backend Engineering Intern · 2026.05 — Present
                 </p>
+                <ul class="impact-list">
+                  <li>
+                    <strong>Audit scheduling workbench</strong>
+                    Designed the core architecture connecting task
+                    decomposition, workflow orchestration, batching, dispatch,
+                    and result return, including high-traffic campaign handling
+                    and duplicate-review reduction.
+                  </li>
+                  <li>
+                    <strong>B-side policy engine</strong>
+                    Connected historical policies and retrieved business
+                    knowledge to rule generation and review decisions, joining
+                    configuration, execution, and audit scheduling into one
+                    updateable path.
+                  </li>
+                  <li>
+                    <strong>C-side false-positive review</strong>
+                    Built a general re-review workflow with secondary
+                    validation, exception fallbacks, result feedback, and
+                    monitoring for intercepted orders.
+                  </li>
+                </ul>
               </div>
             </article>
           </div>
@@ -356,36 +551,53 @@
               <p>Selected Work</p>
             </div>
             <div>
-              <p class="eyebrow reveal">Research translated into systems</p>
-              <h2 class="display-title reveal">From methods to systems, <em>where ideas meet operation.</em></h2>
+              <p class="eyebrow reveal">
+                Research translated into runnable systems
+              </p>
+              <h2 class="display-title reveal">
+                Models, workflows, and infrastructure that
+                <em>hold up outside a notebook.</em>
+              </h2>
             </div>
           </div>
 
           <div class="project-grid">
             <article class="project-card project-featured reveal">
               <div class="project-topline">
-                <span>Research Platform</span>
-                <span>2024 — 2026</span>
+                <span>Research system</span>
+                <span>2025.09 — 2026.08</span>
               </div>
-              <div class="project-visual autonomous-visual" aria-hidden="true">
-                <div class="road-line"></div>
-                <span class="signal signal-a"></span>
-                <span class="signal signal-b"></span>
-                <span class="signal signal-c"></span>
-                <p>SCENE → EXECUTE → EVALUATE → ATTRIBUTE</p>
+              <div class="project-visual gui-visual" aria-hidden="true">
+                <div class="gui-window">
+                  <span></span><span></span><span></span>
+                  <b>CHECKOUT / CONFIRM ORDER</b>
+                </div>
+                <div class="gui-path">
+                  <span class="path-step">01 click</span>
+                  <span class="path-step">02 fill</span>
+                  <span class="path-step path-step-fault">03 submit</span>
+                  <span class="path-step">04 verify</span>
+                </div>
+                <div class="gui-annotations">
+                  <span>candidate root</span>
+                  <strong>earliest faulty action</strong>
+                </div>
               </div>
               <div class="project-content">
-                <h3>LLM-Assisted Testing Platform for Automated Driving</h3>
+                <h3>SynTriageGUI · Human–AI diagnosis for failed GUI agents</h3>
                 <p>
-                  An end-to-end workflow connecting scenario generation, test
-                  execution, evaluation, and failure attribution through
-                  multi-agent coordination, a RAG knowledge base, and cross-module memory.
+                  A test framework for long GUI trajectories that models action
+                  risk, fuses evidence from confidence, history, and similar
+                  traces, then schedules human inspection where it is most
+                  useful. The training pipeline turns screenshots, controls,
+                  actions, and UI changes into reproducible root-cause
+                  experiments.
                 </p>
-                <ul class="tag-list" aria-label="Related technologies">
-                  <li>Multi-Agent</li>
-                  <li>RAG</li>
-                  <li>Memory System</li>
-                  <li>Autonomous Driving</li>
+                <ul class="tag-list">
+                  <li>CLIP features</li>
+                  <li>Sequence models</li>
+                  <li>Bayesian fusion</li>
+                  <li>Interval DP</li>
                 </ul>
               </div>
             </article>
@@ -404,41 +616,44 @@
               <div class="project-content">
                 <h3>VidForge · Agentic Video Generation for E-commerce</h3>
                 <p>
-                  A LangGraph workflow orchestrating asset understanding, script
-                  generation, video synthesis, and quality evaluation, with
-                  automatic replanning and end-to-end process observability.
+                  A stateful LangGraph workflow that turns product assets into
+                  scripts and finished videos. Durable jobs, dual-queue
+                  scheduling, WebSocket progress, and graceful FFmpeg fallbacks
+                  keep long generation tasks observable and recoverable.
                 </p>
-                <ul class="tag-list" aria-label="Related technologies">
+                <ul class="tag-list">
                   <li>LangGraph</li>
+                  <li>PostgreSQL + Redis</li>
                   <li>WebSocket</li>
                   <li>FFmpeg</li>
-                  <li>Vector Search</li>
                 </ul>
               </div>
             </article>
 
-            <article class="project-card project-note reveal">
+            <article class="project-card project-compact reveal">
               <div class="project-topline">
-                <span>Open Source</span>
-                <span>Growing</span>
+                <span>Research platform</span>
+                <span>2024 — 2026</span>
               </div>
-              <div class="project-content">
-                <p class="project-note-mark">↗</p>
-                <h3>More research code and engineering work</h3>
+              <div class="project-content compact-content">
+                <p class="project-note-mark">↳</p>
+                <h3>LLM-Assisted Testing for Automated Driving</h3>
                 <p>
-                  Public repositories will be connected as they are prepared.
-                  Each project entry is designed to support links to papers,
-                  code, demonstrations, and datasets.
+                  An end-to-end workflow linking scenario generation, execution,
+                  evaluation, and failure attribution through multi-agent
+                  coordination, retrieval, and cross-module memory.
                 </p>
-                <a
-                  class="project-link"
-                  href="https://github.com/WANGLEVY9"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Browse GitHub
-                  <span aria-hidden="true">↗</span>
-                </a>
+                <div class="compact-loop" aria-hidden="true">
+                  <span>Scene</span>
+                  <span>Execute</span>
+                  <span>Evaluate</span>
+                  <span>Attribute</span>
+                </div>
+                <ul class="tag-list">
+                  <li>Multi-agent</li>
+                  <li>RAG</li>
+                  <li>Failure attribution</li>
+                </ul>
               </div>
             </article>
           </div>
@@ -449,12 +664,16 @@
         <div class="shell section-grid">
           <div class="section-index reveal">
             <span>05</span>
-            <p>Honors</p>
+            <p>Recognition</p>
           </div>
 
           <div class="honors-heading">
-            <p class="eyebrow reveal">Selected awards & recognition</p>
-            <h2 class="display-title reveal">Milestones of recognition, <em>notes on a longer pursuit.</em></h2>
+            <p class="eyebrow reveal">
+              Selected awards, service &amp; leadership
+            </p>
+            <h2 class="display-title reveal">
+              External signals, <em>and work done with others.</em>
+            </h2>
           </div>
 
           <div class="honors-list">
@@ -519,23 +738,62 @@
               </div>
               <div class="honor-row reveal">
                 <span class="honor-year">2025</span>
-                <p>China Undergraduate Mathematical Contest in Modeling · Jiangsu Province</p>
+                <p>
+                  China Undergraduate Mathematical Contest in Modeling · Jiangsu
+                  Province
+                </p>
                 <strong>Second Prize</strong>
               </div>
               <div class="honor-row reveal">
                 <span class="honor-year">2025</span>
-                <p>National College Computer System Ability Competition · Compiler System Implementation Track</p>
-                <strong>Third Prize</strong>
-              </div>
-              <div class="honor-row reveal">
-                <span class="honor-year">2024</span>
-                <p>Baidu "Galaxy Cup" Large Model Creative Development Competition · Campus Finals</p>
+                <p>
+                  National College Computer System Ability Competition ·
+                  Compiler System Implementation Track
+                </p>
                 <strong>Second Prize</strong>
               </div>
               <div class="honor-row reveal">
                 <span class="honor-year">2024</span>
-                <p>School of Software EL Programming Development Competition · Campus Finals</p>
+                <p>
+                  Baidu "Galaxy Cup" Large Model Creative Development
+                  Competition · Campus Finals
+                </p>
                 <strong>Second Prize</strong>
+              </div>
+              <div class="honor-row reveal">
+                <span class="honor-year">2024</span>
+                <p>
+                  School of Software EL Programming Development Competition ·
+                  Campus Finals
+                </p>
+                <strong>Second Prize</strong>
+              </div>
+            </section>
+
+            <section class="honor-group" aria-labelledby="service-leadership">
+              <div class="honor-group-heading reveal">
+                <h3 id="service-leadership">Service &amp; Leadership</h3>
+                <span>Building communities beyond the lab</span>
+              </div>
+              <div class="honor-row reveal">
+                <span class="honor-year">NJU</span>
+                <p>Red Cross Student Branch</p>
+                <strong>Vice President</strong>
+              </div>
+              <div class="honor-row reveal">
+                <span class="honor-year">NJU</span>
+                <p>Kaijia College Youth Volunteer Association</p>
+                <strong>Executive Chair</strong>
+              </div>
+              <div class="honor-row reveal">
+                <span class="honor-year">NJU</span>
+                <p>School of Software Science and Technology Association</p>
+                <strong>Competition Department Lead</strong>
+              </div>
+              <div class="honor-row reveal">
+                <span class="honor-year">NJU</span>
+                <p>Huawei OpenHarmony Club</p>
+                <strong>Core Member</strong>
               </div>
             </section>
           </div>
@@ -543,17 +801,34 @@
       </section>
 
       <section class="contact section" id="contact">
-        <div class="contact-field" aria-hidden="true">CONTACT · COLLABORATE · CREATE</div>
+        <div class="contact-field" aria-hidden="true">
+          CONTACT · COLLABORATE · CREATE
+        </div>
         <div class="shell contact-inner">
           <p class="eyebrow reveal">Open to thoughtful conversations</p>
           <h2 class="reveal">
             Software testing, agentic systems,<br />
-            or a question worth examining carefully.
+            or a failure worth understanding.
           </h2>
-          <a class="contact-email reveal" href="mailto:231250082@smail.nju.edu.cn">
-            231250082@smail.nju.edu.cn
-            <span aria-hidden="true">↗</span>
-          </a>
+          <div class="contact-actions reveal">
+            <a class="contact-email" href="mailto:231250082@smail.nju.edu.cn">
+              231250082@smail.nju.edu.cn
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a
+              class="contact-link"
+              href="https://github.com/WANGLEVY9"
+              target="_blank"
+              rel="noreferrer"
+            >
+              github.com/WANGLEVY9
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <p class="contact-note reveal">
+            For paper drafts, research collaboration, or engineering
+            conversations, email is the best place to start.
+          </p>
         </div>
       </section>
     </main>
@@ -561,7 +836,7 @@
     <footer class="site-footer">
       <div class="shell footer-inner">
         <p>© <span data-year></span> Taijie Wang</p>
-        <p>Designed for research, built with restraint.</p>
+        <p>Nanjing University · School of Software · Updated October 2026</p>
         <a href="#top">Back to top ↑</a>
       </div>
     </footer>
