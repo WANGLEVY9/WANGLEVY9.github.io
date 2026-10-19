@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Selected systems by Taijie Wang: SynTriageGUI for human–AI GUI failure diagnosis and VidForge for stateful generative video workflows."
+    />
+    <meta name="theme-color" content="#071f1c" />
+    <link rel="canonical" href="https://wanglevy9.github.io/projects.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Projects | Taijie Wang" />
+    <meta
+      property="og:description"
+      content="Two systems built to make failure diagnosis and long generative workflows observable, inspectable, and recoverable."
+    />
+    <meta
+      property="og:url"
+      content="https://wanglevy9.github.io/projects.html"
+    />
+    <meta
+      property="og:image"
+      content="https://wanglevy9.github.io/assets/images/portrait.jpg"
+    />
+    <title>Projects | Taijie Wang</title>
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/core.css?v=20261019-pages" />
+    <link rel="stylesheet" href="./assets/css/pages.css?v=20261019-pages" />
+    <noscript>
+      <style>
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      </style>
+    </noscript>
+    <script src="./assets/js/site.js?v=20261019-pages" defer></script>
+  </head>
+  <body data-page="projects">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a
+          class="wordmark"
+          href="./index.html"
+          aria-label="Taijie Wang, profile"
+        >
+          <span class="wordmark-mark" aria-hidden="true">WTJ</span>
+          <span class="wordmark-lockup">
+            <strong>Taijie Wang</strong>
+            <small>Research &amp; systems</small>
+          </span>
+        </a>
+
+        <nav class="desktop-nav" aria-label="Primary navigation">
+          <a href="./index.html">Profile</a>
+          <a href="./research.html">Research</a>
+          <a href="./industry.html">Industry</a>
+          <a href="./projects.html" aria-current="page">Projects</a>
+          <a href="./recognition.html">Recognition</a>
+        </nav>
+
+        <div class="header-actions">
+          <a class="text-action" href="mailto:231250082@smail.nju.edu.cn">
+            Contact <span aria-hidden="true">↗</span>
+          </a>
+          <button
+            class="menu-button"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="mobile-navigation"
+            data-menu-button
+          >
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+      <span class="scroll-progress" data-scroll-progress></span>
+
+      <nav
+        class="mobile-nav"
+        id="mobile-navigation"
+        aria-label="Mobile navigation"
+        data-mobile-nav
+      >
+        <a href="./index.html">Profile <span>01</span></a>
+        <a href="./research.html">Research <span>02</span></a>
+        <a href="./industry.html">Industry <span>03</span></a>
+        <a href="./projects.html" aria-current="page"
+          >Projects <span>04</span></a
+        >
+        <a href="./recognition.html">Recognition <span>05</span></a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <header class="page-masthead page-masthead-dark">
+        <div class="shell">
+          <p class="page-kicker reveal">04 / Selected systems</p>
+          <div class="masthead-grid">
+            <h1 class="reveal">
+              Two systems.<br /><em>One recovery test.</em>
+            </h1>
+            <div class="masthead-note reveal">
+              <strong>What holds up</strong>
+              One diagnostic system makes a failed GUI trajectory legible. One
+              generation system keeps a long workflow observable when model
+              calls, queues, and media processing disagree.
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="projects-index" aria-label="Project index">
+        <div class="shell">
+          <div class="project-ledger">
+            <article class="project-entry reveal">
+              <span>01 / Research system</span>
+              <div>
+                <h2>SynTriageGUI</h2>
+                <p>
+                  Human–AI root localization for failed GUI-agent executions.
+                </p>
+              </div>
+              <strong
+                >2025.09 — 2026.08<br />Model training · algorithms</strong
+              >
+            </article>
+
+            <article class="project-entry reveal">
+              <span>02 / Full-stack system</span>
+              <div>
+                <h2>VidForge</h2>
+                <p>
+                  Agentic, stateful video generation for e-commerce product
+                  assets.
+                </p>
+              </div>
+              <strong>2026.05 — 2026.06<br />Workflow · backend · media</strong>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="project-case"
+        id="syntriage"
+        aria-labelledby="syntriage-title"
+      >
+        <div class="shell">
+          <div class="case-header">
+            <div>
+              <p class="case-title-index reveal">01 · Diagnosis</p>
+              <h2 id="syntriage-title" class="reveal">
+                Find the first<br /><em>wrong turn.</em>
+              </h2>
+            </div>
+            <div class="case-header-note reveal">
+              <ul class="case-meta">
+                <li>Research system</li>
+                <li>CLIP + sequence models</li>
+                <li>Bayesian fusion</li>
+                <li>Interval DP</li>
+              </ul>
+              <p>
+                A long trajectory can end with an obvious error while the action
+                that caused it is much earlier. SynTriageGUI treats that
+                ambiguity as a decision problem: estimate risk, then spend human
+                attention where it reduces uncertainty most.
+              </p>
+            </div>
+          </div>
+
+          <div class="case-body">
+            <div class="case-narrative reveal">
+              <section>
+                <p class="meta-label">Problem</p>
+                <h3>Terminal failure hides the origin.</h3>
+                <p>
+                  Errors accumulate through a GUI task. Reviewing every step is
+                  expensive, while trusting the final exception often identifies
+                  a symptom rather than the earliest faulty action.
+                </p>
+              </section>
+              <section>
+                <p class="meta-label">Method</p>
+                <h3>Turn a trajectory into evidence.</h3>
+                <p>
+                  The framework combines model confidence, historical action
+                  success, and evidence from similar traces. Human review is
+                  scheduled over candidate intervals, not blindly over the full
+                  sequence.
+                </p>
+              </section>
+              <section>
+                <p class="meta-label">Engineering</p>
+                <h3>Make experiments reproducible.</h3>
+                <ul>
+                  <li>
+                    Built before/after screenshot, action, control, and
+                    screen-change features with frozen CLIP representations and
+                    caching.
+                  </li>
+                  <li>
+                    Trained pointer-probability, discrete-risk, and monotonic
+                    change-point models with a no-root class and interval soft
+                    labels.
+                  </li>
+                  <li>
+                    Implemented feedback-weighted online updates after human
+                    confirmation or automatic repair.
+                  </li>
+                </ul>
+              </section>
+            </div>
+
+            <div
+              class="instrument-panel reveal"
+              data-instrument
+              data-mode="model"
+            >
+              <div class="instrument-head">
+                <span>Root-cause instrument</span>
+                <span>Trace 016 / candidate interval</span>
+              </div>
+              <h3 class="instrument-title">
+                Risk is distributed.<br /><em>Review is sequential.</em>
+              </h3>
+
+              <div
+                class="trace-map"
+                role="img"
+                aria-label="Eight-step GUI trace example"
+              >
+                <span class="trace-step"><i>01</i>open</span>
+                <span class="trace-step"><i>02</i>select</span>
+                <span class="trace-step"><i>03</i>fill</span>
+                <span class="trace-step"><i>04</i>submit</span>
+                <span class="trace-step is-fault"><i>05</i>verify</span>
+                <span class="trace-step"><i>06</i>error</span>
+                <span class="trace-step"><i>07</i>retry</span>
+                <span class="trace-step"><i>08</i>fail</span>
+              </div>
+
+              <div class="risk-plot" aria-hidden="true">
+                <span class="risk-bar"></span>
+                <span class="risk-bar"></span>
+                <span class="risk-bar"></span>
+                <span class="risk-bar"></span>
+                <span class="risk-bar"></span>
+                <span class="risk-bar"></span>
+                <span class="risk-bar"></span>
+                <span class="risk-bar"></span>
+              </div>
+              <div class="risk-caption">
+                <span>action-level probability</span>
+                <span>step 05 / earliest root</span>
+              </div>
+
+              <div
+                class="instrument-tabs"
+                role="tablist"
+                aria-label="SynTriageGUI capabilities"
+              >
+                <button
+                  type="button"
+                  role="tab"
+                  id="syntriage-tab-model"
+                  aria-selected="true"
+                  aria-controls="syntriage-panel-model"
+                  data-process-tab="model"
+                >
+                  Model
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  id="syntriage-tab-review"
+                  aria-selected="false"
+                  aria-controls="syntriage-panel-review"
+                  data-process-tab="review"
+                >
+                  Review
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  id="syntriage-tab-update"
+                  aria-selected="false"
+                  aria-controls="syntriage-panel-update"
+                  data-process-tab="update"
+                >
+                  Update
+                </button>
+              </div>
+
+              <div
+                class="instrument-detail"
+                id="syntriage-panel-model"
+                role="tabpanel"
+                aria-labelledby="syntriage-tab-model"
+                data-process-panel="model"
+              >
+                <strong>Multimodal sequence evidence</strong>
+                <p>
+                  Screenshots, actions, UI controls, and page changes become
+                  step-level inputs for root-cause models trained under one
+                  reproducible evaluation path.
+                </p>
+              </div>
+              <div
+                class="instrument-detail"
+                id="syntriage-panel-review"
+                role="tabpanel"
+                aria-labelledby="syntriage-tab-review"
+                data-process-panel="review"
+                hidden
+              >
+                <strong>Budget-aware human inspection</strong>
+                <p>
+                  Bayesian evidence fusion feeds an interval dynamic program
+                  that selects the next human check, narrowing the candidate
+                  range without reviewing every step.
+                </p>
+              </div>
+              <div
+                class="instrument-detail"
+                id="syntriage-panel-update"
+                role="tabpanel"
+                aria-labelledby="syntriage-tab-update"
+                data-process-panel="update"
+                hidden
+              >
+                <strong>Feedback that changes the next decision</strong>
+                <p>
+                  Confirmations and repairs update action reliability online,
+                  with feedback-source weighting so later diagnoses reflect what
+                  was learned during the current task.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="project-case"
+        id="vidforge"
+        aria-labelledby="vidforge-title"
+      >
+        <div class="shell">
+          <div class="case-header">
+            <div>
+              <p class="case-title-index reveal">02 · Generation</p>
+              <h2 id="vidforge-title" class="reveal">
+                Keep the long<br /><em>job moving.</em>
+              </h2>
+            </div>
+            <div class="case-header-note reveal">
+              <ul class="case-meta">
+                <li>AI product</li>
+                <li>LangGraph</li>
+                <li>PostgreSQL + Redis</li>
+                <li>FFmpeg</li>
+              </ul>
+              <p>
+                VidForge turns product assets into scripts and finished videos.
+                The difficult part is not one model call; it is keeping the
+                multi-stage job observable, retryable, and useful when an
+                individual shot or dependency fails.
+              </p>
+            </div>
+          </div>
+
+          <div class="case-body">
+            <div class="case-narrative reveal">
+              <section>
+                <p class="meta-label">Problem</p>
+                <h3>Long tasks break the request model.</h3>
+                <p>
+                  Inference and transcoding outlast a normal request. A single
+                  failure near the end of a workflow should not erase the useful
+                  shots, state, and progress that already exist.
+                </p>
+              </section>
+              <section>
+                <p class="meta-label">Workflow</p>
+                <h3>Generate, judge, then route again.</h3>
+                <p>
+                  A LangGraph state graph connects asset understanding, script
+                  generation, video synthesis, and quality evaluation. Weak
+                  outputs enter regeneration branches, with feedback returned to
+                  upstream nodes.
+                </p>
+              </section>
+              <section>
+                <p class="meta-label">Reliability</p>
+                <h3>Progress must survive failure.</h3>
+                <ul>
+                  <li>
+                    Persisted job state in PostgreSQL and streamed progress over
+                    WebSocket.
+                  </li>
+                  <li>
+                    Split divergent workloads across Redis/BullMQ queues with
+                    priority, retries, monitoring, and a Redis-unavailable
+                    degradation path.
+                  </li>
+                  <li>
+                    Stored per-shot execution state and allowed complete shots
+                    or fallback fragments to survive partial failures.
+                  </li>
+                </ul>
+              </section>
+            </div>
+
+            <div class="video-workflow reveal" data-workflow data-stage="brief">
+              <div class="video-workflow-head">
+                <span>Workflow instrument</span>
+                <span>stateful generation / 04 stages</span>
+              </div>
+
+              <div
+                class="filmstrip"
+                role="tablist"
+                aria-label="VidForge workflow stages"
+              >
+                <button
+                  class="film-frame"
+                  type="button"
+                  role="tab"
+                  id="vidforge-tab-brief"
+                  aria-selected="true"
+                  aria-controls="vidforge-panel-brief"
+                  data-workflow-tab="brief"
+                >
+                  <span class="frame-index">01 / Assets</span>
+                  <span class="frame-graphic" aria-hidden="true"></span>
+                  <strong>Understand</strong>
+                  <small>product facts · brand context</small>
+                </button>
+                <button
+                  class="film-frame"
+                  type="button"
+                  role="tab"
+                  id="vidforge-tab-script"
+                  aria-selected="false"
+                  aria-controls="vidforge-panel-script"
+                  data-workflow-tab="script"
+                >
+                  <span class="frame-index">02 / Script</span>
+                  <span class="frame-graphic" aria-hidden="true"></span>
+                  <strong>Compose</strong>
+                  <small>storyboard · selling arc</small>
+                </button>
+                <button
+                  class="film-frame"
+                  type="button"
+                  role="tab"
+                  id="vidforge-tab-render"
+                  aria-selected="false"
+                  aria-controls="vidforge-panel-render"
+                  data-workflow-tab="render"
+                >
+                  <span class="frame-index">03 / Render</span>
+                  <span class="frame-graphic" aria-hidden="true"></span>
+                  <strong>Synthesize</strong>
+                  <small>shots · voice · subtitles</small>
+                </button>
+                <button
+                  class="film-frame"
+                  type="button"
+                  role="tab"
+                  id="vidforge-tab-quality"
+                  aria-selected="false"
+                  aria-controls="vidforge-panel-quality"
+                  data-workflow-tab="quality"
+                >
+                  <span class="frame-index">04 / Review</span>
+                  <span class="frame-graphic" aria-hidden="true"></span>
+                  <strong>Judge</strong>
+                  <small>accept · retry · repair</small>
+                </button>
+              </div>
+
+              <div
+                class="workflow-detail"
+                id="vidforge-panel-brief"
+                role="tabpanel"
+                aria-labelledby="vidforge-tab-brief"
+                data-workflow-panel="brief"
+              >
+                <strong>Ground the generation</strong>
+                <p>
+                  Product assets and selling points are combined with retrieved
+                  scripts, product knowledge, and high-scoring results to keep
+                  the model close to the brand and category.
+                </p>
+              </div>
+              <div
+                class="workflow-detail"
+                id="vidforge-panel-script"
+                role="tabpanel"
+                aria-labelledby="vidforge-tab-script"
+                data-workflow-panel="script"
+                hidden
+              >
+                <strong>Make the sequence inspectable</strong>
+                <p>
+                  A stateful graph turns product context into a storyboard and
+                  per-shot generation tasks, so progress can be traced at a
+                  finer granularity than the finished video.
+                </p>
+              </div>
+              <div
+                class="workflow-detail"
+                id="vidforge-panel-render"
+                role="tabpanel"
+                aria-labelledby="vidforge-tab-render"
+                data-workflow-panel="render"
+                hidden
+              >
+                <strong>Queue the expensive work</strong>
+                <p>
+                  Inference, shot generation, composition, and transcoding run
+                  in separate queues. FFmpeg handles format adaptation, voice,
+                  music, subtitles, and stitching while persisted state makes
+                  retries possible.
+                </p>
+              </div>
+              <div
+                class="workflow-detail"
+                id="vidforge-panel-quality"
+                role="tabpanel"
+                aria-labelledby="vidforge-tab-quality"
+                data-workflow-panel="quality"
+                hidden
+              >
+                <strong>Close the loop</strong>
+                <p>
+                  Quality results decide whether to accept, regenerate, or
+                  return feedback upstream. If assembly fails, completed
+                  fragments remain available for a degraded output.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <dl class="system-anatomy reveal">
+            <div>
+              <dt>Orchestration</dt>
+              <dd>LangGraph state graph across four generation stages</dd>
+            </div>
+            <div>
+              <dt>Durability</dt>
+              <dd>PostgreSQL records and per-shot execution state</dd>
+            </div>
+            <div>
+              <dt>Transport</dt>
+              <dd>WebSocket progress instead of a held request</dd>
+            </div>
+            <div>
+              <dt>Queues</dt>
+              <dd>Redis/BullMQ priority, retries, and monitoring</dd>
+            </div>
+            <div>
+              <dt>Degradation</dt>
+              <dd>Single-shot failure does not block the whole job</dd>
+            </div>
+            <div>
+              <dt>Media</dt>
+              <dd>FFmpeg composition, captions, audio, and fallback</dd>
+            </div>
+          </dl>
+
+          <div class="adjacent-system reveal">
+            <span>↳ 03</span>
+            <div>
+              <h3>LLM-Assisted Testing for Autonomous Driving</h3>
+              <p>
+                A research platform linking scenario generation, execution,
+                evaluation, and failure attribution through multi-agent
+                coordination, retrieval, and cross-module memory.
+              </p>
+              <div
+                class="loop-diagram"
+                role="img"
+                aria-label="Testing workflow"
+              >
+                <span>Scene</span>
+                <span>Execute</span>
+                <span>Evaluate</span>
+                <span>Attribute</span>
+              </div>
+            </div>
+            <blockquote>
+              “The same concern recurs: an automated result is only useful if
+              the next person can inspect how it was reached.”
+            </blockquote>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-contact">
+        <div>
+          <p class="eyebrow">Build something legible</p>
+          <h2>
+            A system that fails<br />
+            should still leave <em>a trail.</em>
+          </h2>
+        </div>
+        <div class="footer-links">
+          <a href="mailto:231250082@smail.nju.edu.cn">
+            231250082@smail.nju.edu.cn
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a href="./research.html">
+            Read the evidence
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+      <div class="shell footer-inner">
+        <p>© <span data-year></span> Taijie Wang</p>
+        <p>Nanjing University · School of Software · October 2026</p>
+        <a href="#main-content">Back to top ↑</a>
+      </div>
+    </footer>
+  </body>
+</html>

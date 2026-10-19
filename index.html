@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Taijie Wang is a software engineering undergraduate at Nanjing University working on LLM-assisted software testing, GUI-agent failure diagnosis, and trustworthy AI."
+      content="Taijie Wang is a software engineering undergraduate at Nanjing University working on software testing, GUI-agent failure diagnosis, and trustworthy AI."
     />
-    <meta name="theme-color" content="#f4f1ea" />
+    <meta name="theme-color" content="#f1efe9" />
     <meta
       name="keywords"
       content="Taijie Wang, software testing, GUI agents, AI for software engineering, trustworthy AI, Nanjing University"
@@ -28,23 +28,22 @@
       content="https://wanglevy9.github.io/assets/images/portrait.jpg"
     />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Taijie Wang | Software Testing &amp; Trustworthy AI"
-    />
-    <meta
-      name="twitter:description"
-      content="Research on testable, traceable, and accountable behavior in AI-driven software systems."
-    />
     <title>Taijie Wang | Software Testing &amp; Trustworthy AI</title>
     <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Manrope:wght@500;600;700&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./assets/css/styles.css?v=20261019-tencent" />
+    <link rel="stylesheet" href="./assets/css/core.css?v=20261019-pages" />
+    <link rel="stylesheet" href="./assets/css/pages.css?v=20261019-pages" />
+    <link
+      rel="preload"
+      as="image"
+      href="./assets/images/portrait.jpg"
+      fetchpriority="high"
+    />
     <noscript>
       <style>
         .reveal {
@@ -53,7 +52,7 @@
         }
       </style>
     </noscript>
-    <script src="./assets/js/site.js?v=20261019-tencent" defer></script>
+    <script src="./assets/js/site.js?v=20261019-pages" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -80,33 +79,34 @@
       }
     </script>
   </head>
-  <body>
+  <body data-page="profile">
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <header class="site-header" data-header>
       <div class="shell header-inner">
-        <a class="wordmark" href="#top" aria-label="Back to the top">
-          <span class="wordmark-mark">WTJ</span>
-          <span class="wordmark-name">Taijie Wang</span>
+        <a
+          class="wordmark"
+          href="./index.html"
+          aria-label="Taijie Wang, profile"
+        >
+          <span class="wordmark-mark" aria-hidden="true">WTJ</span>
+          <span class="wordmark-lockup">
+            <strong>Taijie Wang</strong>
+            <small>Research &amp; systems</small>
+          </span>
         </a>
 
         <nav class="desktop-nav" aria-label="Primary navigation">
-          <a href="#profile"><span>01</span>Profile</a>
-          <a href="#research"><span>02</span>Research</a>
-          <a href="#experience"><span>03</span>Industry</a>
-          <a href="#projects"><span>04</span>Projects</a>
-          <a href="#honors"><span>05</span>Recognition</a>
+          <a href="./index.html" aria-current="page">Profile</a>
+          <a href="./research.html">Research</a>
+          <a href="./industry.html">Industry</a>
+          <a href="./projects.html">Projects</a>
+          <a href="./recognition.html">Recognition</a>
         </nav>
 
         <div class="header-actions">
-          <a
-            class="text-action"
-            href="https://github.com/WANGLEVY9"
-            target="_blank"
-            rel="noreferrer"
-          >
-            GitHub
-            <span aria-hidden="true">↗</span>
+          <a class="text-action" href="mailto:231250082@smail.nju.edu.cn">
+            Contact <span aria-hidden="true">↗</span>
           </a>
           <button
             class="menu-button"
@@ -121,6 +121,7 @@
           </button>
         </div>
       </div>
+      <span class="scroll-progress" data-scroll-progress></span>
 
       <nav
         class="mobile-nav"
@@ -128,61 +129,60 @@
         aria-label="Mobile navigation"
         data-mobile-nav
       >
-        <a href="#profile">Profile <span>01</span></a>
-        <a href="#research">Research <span>02</span></a>
-        <a href="#experience">Industry <span>03</span></a>
-        <a href="#projects">Projects <span>04</span></a>
-        <a href="#honors">Recognition <span>05</span></a>
+        <a href="./index.html" aria-current="page">Profile <span>01</span></a>
+        <a href="./research.html">Research <span>02</span></a>
+        <a href="./industry.html">Industry <span>03</span></a>
+        <a href="./projects.html">Projects <span>04</span></a>
+        <a href="./recognition.html">Recognition <span>05</span></a>
       </nav>
     </header>
 
     <main id="main-content">
-      <section class="hero" id="top" aria-labelledby="hero-title">
-        <div class="hero-grid" aria-hidden="true"></div>
-
+      <section class="home-hero" aria-labelledby="hero-title">
         <div class="shell hero-inner">
-          <div class="hero-kicker reveal">
-            <span>Nanjing University · School of Software</span>
-            <span class="kicker-rule"></span>
-            <span>Nanjing, China</span>
-          </div>
-
           <div class="hero-copy">
+            <div class="hero-kicker reveal">
+              <span>Nanjing University · School of Software</span>
+              <span class="kicker-rule" aria-hidden="true"></span>
+              <span>Nanjing, China</span>
+            </div>
+
             <p class="hero-field reveal">
-              Software Testing &amp; Security · GUI Agents · Trustworthy AI
+              Software testing · GUI agents · trustworthy AI
             </p>
             <h1 id="hero-title" class="reveal">
               <span>Taijie</span>
               <span class="hero-surname">Wang</span>
             </h1>
             <p class="hero-statement reveal">
-              I build and evaluate test methods that make AI-driven software
-              behavior testable, traceable, and accountable—from GUI-agent
-              failure diagnosis to web UI testing and autonomous-system
-              assurance.
+              I study how AI-driven software can be <strong>tested</strong>,
+              <strong>diagnosed</strong>, and made accountable—from the first
+              faulty action in a GUI trajectory to the systems that keep
+              production decisions traceable.
             </p>
 
             <div class="hero-actions reveal">
-              <a class="primary-action" href="#research">
-                Read Research
-                <span aria-hidden="true">↓</span>
+              <a class="action action-primary" href="./research.html">
+                Read the research <span aria-hidden="true">↗</span>
               </a>
-              <a class="secondary-action" href="#projects">
-                Explore Systems
-                <span aria-hidden="true">↓</span>
+              <a class="action action-secondary" href="./projects.html">
+                Explore the systems <span aria-hidden="true">↗</span>
               </a>
             </div>
           </div>
 
-          <div class="portrait-slot reveal">
-            <div class="portrait-frame">
+          <div class="hero-visual reveal">
+            <figure class="hero-portrait">
               <img
                 src="./assets/images/portrait.jpg"
                 alt="Portrait of Taijie Wang"
                 width="1279"
                 height="1706"
+                fetchpriority="high"
               />
-            </div>
+              <figcaption>Portrait / Nanjing</figcaption>
+            </figure>
+
             <div class="trace-card" aria-hidden="true">
               <div class="trace-card-head">
                 <span>Execution trace</span>
@@ -199,78 +199,175 @@
                 <strong>step 03</strong>
               </div>
             </div>
-          </div>
 
+            <figure class="hero-field-photo">
+              <picture>
+                <source
+                  srcset="./assets/images/tencent/pearl-river-dusk.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="./assets/images/tencent/pearl-river-dusk.jpg"
+                  alt="Guangzhou skyline and the Pearl River at dusk"
+                  width="1800"
+                  height="1350"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>
+                <span>Field note 06</span>
+                <span>Guangzhou / dusk</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="shell">
           <dl class="hero-facts reveal">
-            <div class="education-fact">
+            <div>
               <dt>Education</dt>
               <dd>
                 <img
                   class="education-logo"
                   src="./assets/images/nanjing-university-logo.png"
-                  alt="Nanjing University logo"
+                  alt=""
                   width="188"
                   height="176"
                 />
-                <span class="education-copy">
+                <span>
                   <strong>Nanjing University</strong>
-                  <span>2023.09 — 2027.06 (Expected)</span>
-                  <span>B.E. in Software Engineering</span>
+                  <small>B.E. Software Engineering · 2023—2027</small>
                 </span>
               </dd>
             </div>
             <div>
-              <dt>Current Research</dt>
+              <dt>Current research</dt>
               <dd>
-                LLM-assisted testing<br />
-                GUI-agent diagnosis<br />
-                Autonomous-system assurance
+                <span>
+                  LLM-assisted testing<br />
+                  GUI-agent diagnosis<br />
+                  Autonomous-system assurance
+                </span>
               </dd>
             </div>
-            <div class="industry-fact">
-              <dt>Industry Experience</dt>
+            <div>
+              <dt>Industry</dt>
               <dd>
                 <img
                   class="industry-logo"
                   src="./assets/images/tencent-wordmark.png"
-                  alt="Tencent logo"
+                  alt=""
                   width="74"
                   height="15"
                 />
-                <span class="industry-copy">
+                <span>
                   <strong>Tencent</strong>
-                  <span>Weixin Group · Backend Engineering</span>
+                  <small>Weixin Group · Backend engineering</small>
                 </span>
               </dd>
             </div>
           </dl>
         </div>
-
-        <a class="scroll-cue" href="#profile" aria-label="Continue to profile">
-          <span>Scroll to explore</span>
-          <span class="scroll-line" aria-hidden="true"></span>
-        </a>
       </section>
 
-      <section class="profile section" id="profile" data-section>
-        <div class="shell section-grid">
-          <div class="section-index reveal">
-            <span>01</span>
-            <p>Profile</p>
+      <section class="routes" aria-labelledby="routes-title">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow reveal">Open the dossier</p>
+              <h2 id="routes-title" class="reveal">
+                Five chapters,<br /><em>one throughline.</em>
+              </h2>
+            </div>
+            <p class="reveal">
+              Each part of the work now has its own page: the evidence, the
+              production constraints, the systems built from both, and the
+              signals earned along the way.
+            </p>
           </div>
 
-          <div class="profile-intro">
-            <p class="eyebrow reveal">
-              Research profile · Updated October 2026
-            </p>
-            <h2 class="display-title reveal">
+          <div class="route-grid">
+            <a class="route-card reveal" href="./research.html">
+              <span class="route-index">02 / Evidence</span>
+              <span class="route-arrow" aria-hidden="true">↗</span>
+              <span class="route-orbit" aria-hidden="true"></span>
+              <h3>Research<br /><em>before claims.</em></h3>
+              <p>
+                Three submitted manuscripts on agent testing, root-cause
+                localization, and autonomous-system assurance.
+              </p>
+            </a>
+
+            <a class="route-card reveal" href="./industry.html">
+              <span class="route-industry-image" aria-hidden="true">
+                <picture>
+                  <source
+                    srcset="./assets/images/tencent/pearl-river-dusk.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="./assets/images/tencent/pearl-river-dusk.jpg"
+                    alt=""
+                    width="1800"
+                    height="1350"
+                    loading="lazy"
+                  />
+                </picture>
+              </span>
+              <span class="route-index">03 / Industry</span>
+              <span class="route-arrow" aria-hidden="true">↗</span>
+              <h3>Policy,<br /><em>in motion.</em></h3>
+              <p>
+                Governance systems at Tencent, from policy grounding to audit
+                dispatch and recovery—plus field notes from Guangzhou.
+              </p>
+            </a>
+
+            <a class="route-card reveal" href="./projects.html">
+              <span class="route-index">04 / Systems</span>
+              <span class="route-arrow" aria-hidden="true">↗</span>
+              <div class="route-flow" aria-hidden="true">
+                <span>observe <i>01</i></span>
+                <span>locate <i>02</i></span>
+                <span>review <i>03</i></span>
+                <span>recover <i>04</i></span>
+              </div>
+              <h3>Research that<br /><em>runs.</em></h3>
+              <p>
+                SynTriageGUI makes failure diagnosis inspectable. VidForge keeps
+                long generative workflows observable and recoverable.
+              </p>
+            </a>
+
+            <a class="route-card reveal" href="./recognition.html">
+              <span class="route-index">05 / Signals</span>
+              <span class="route-arrow" aria-hidden="true">↗</span>
+              <h3>Work with others,<br /><em>recognized in public.</em></h3>
+              <p>
+                Scholarships, competition results, and the service work that
+                shaped how I organize teams and technical projects.
+              </p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="profile-strip" aria-labelledby="profile-title">
+        <div class="shell profile-grid">
+          <div class="profile-lead reveal">
+            <p class="eyebrow">Research profile · October 2026</p>
+            <h2 id="profile-title">
               Making AI-driven software
               <em>testable, traceable, and accountable.</em>
             </h2>
+            <p class="profile-note">
+              That question shapes the research I read, the experiments I build,
+              and the production systems I choose to work on.
+            </p>
           </div>
 
-          <div class="profile-body reveal">
-            <p class="lead">
+          <div class="profile-detail reveal">
+            <p>
               I am a final-year Software Engineering undergraduate at Nanjing
               University, working where software testing, GUI agents, and
               trustworthy AI meet.
@@ -285,7 +382,8 @@
               University, and build production systems at Tencent's Weixin
               Group.
             </p>
-            <dl class="capability-grid">
+
+            <dl class="coordinate-list">
               <div>
                 <dt>Research</dt>
                 <dd>
@@ -307,731 +405,60 @@
                   · volunteer leadership
                 </dd>
               </div>
+              <div>
+                <dt>Languages</dt>
+                <dd>Chinese · English · CET-6 602</dd>
+              </div>
             </dl>
-            <div class="inline-links">
-              <a href="mailto:231250082@smail.nju.edu.cn"
-                >Email <span>↗</span></a
-              >
+
+            <div class="profile-links">
+              <a href="mailto:231250082@smail.nju.edu.cn">
+                Email <span aria-hidden="true">↗</span>
+              </a>
               <a
                 href="https://github.com/WANGLEVY9"
                 target="_blank"
                 rel="noreferrer"
               >
-                GitHub <span>↗</span>
+                GitHub <span aria-hidden="true">↗</span>
               </a>
-              <a href="#research">Selected research <span>↓</span></a>
+              <a href="./research.html">
+                Selected research <span aria-hidden="true">→</span>
+              </a>
             </div>
           </div>
-
-          <aside class="profile-meta reveal" aria-label="Profile summary">
-            <div>
-              <span>Education</span>
-              <p>
-                B.E. in Software Engineering<br />2023.09 — 2027.06 (Expected)
-              </p>
-            </div>
-            <div>
-              <span>Current appointment</span>
-              <p>
-                Tencent · Weixin Group<br />E-commerce Governance · 2026.05 —
-                Present
-              </p>
-            </div>
-            <div>
-              <span>Languages</span>
-              <p>Chinese · English<br />CET-6 602</p>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <section class="research section" id="research" data-section>
-        <div class="shell">
-          <div class="research-heading">
-            <div class="section-index section-index-light reveal">
-              <span>02</span>
-              <p>Research Experience</p>
-            </div>
-            <h2 class="reveal">
-              Evidence first.<br />
-              Claims second.
-            </h2>
-            <p class="reveal">
-              Three submitted manuscripts on how AI-driven software is tested,
-              diagnosed, and made more dependable.
-            </p>
-          </div>
-
-          <div class="research-list">
-            <article class="research-item reveal">
-              <span class="research-number">A</span>
-              <div class="research-copy">
-                <div class="paper-meta">
-                  <span class="paper-status"
-                    >FSE 2027 Research Track · Submitted</span
-                  >
-                  <span class="paper-role">First author</span>
-                </div>
-                <h3>
-                  Computer-Use Agents for Web UI Testing: What Do We Need to
-                  Know?
-                </h3>
-                <p class="research-affiliation">
-                  Nanyang Technological University · Cybersecurity Lab
-                </p>
-                <p>
-                  A controlled empirical framework that compares visual agents,
-                  structure-aware agents, and scripted tests for web UI testing.
-                  The study separates task completion from check execution and
-                  judgment correctness, then examines preparation cost,
-                  repeatability, and complementary coverage under equal
-                  execution budgets.
-                </p>
-                <ul class="research-tags">
-                  <li>Controlled comparison</li>
-                  <li>Agent evaluation</li>
-                  <li>Coverage</li>
-                </ul>
-              </div>
-              <div class="research-orbit" aria-hidden="true">
-                <span></span><span></span><i></i>
-              </div>
-            </article>
-
-            <article class="research-item reveal">
-              <span class="research-number">B</span>
-              <div class="research-copy">
-                <div class="paper-meta">
-                  <span class="paper-status">TOSEM · Submitted 2026</span>
-                  <span class="paper-role">First author · 2-person team</span>
-                </div>
-                <h3>
-                  SOCRATES: Cost-Aware Human–AI Root Localization for Failed GUI
-                  Agent Executions
-                </h3>
-                <p class="research-affiliation">
-                  Nanjing University · Intelligent Software Engineering Lab
-                </p>
-                <p>
-                  A human–AI method for finding the earliest faulty action in
-                  long GUI trajectories. SOCRATES jointly models action-level
-                  root-cause probability and the cost of human inspection, using
-                  interval dynamic programming to choose what to check next and
-                  shrink the candidate range without exhausting the review
-                  budget.
-                </p>
-                <ul class="research-tags">
-                  <li>Root-cause analysis</li>
-                  <li>Human–AI collaboration</li>
-                  <li>Interval DP</li>
-                </ul>
-              </div>
-              <div
-                class="research-orbit research-orbit-offset"
-                aria-hidden="true"
-              >
-                <span></span><span></span><i></i>
-              </div>
-            </article>
-
-            <article class="research-item reveal">
-              <span class="research-number">C</span>
-              <div class="research-copy">
-                <div class="paper-meta">
-                  <span class="paper-status">TOSEM · Submitted 2026</span>
-                  <span class="paper-role"
-                    >First author · listed second of 3</span
-                  >
-                </div>
-                <h3>
-                  Unmanned Autonomous Systems Testing in the Era of Large
-                  Models: State of the Art, Challenges, and Opportunities
-                </h3>
-                <p class="research-affiliation">
-                  Nanjing University · State Key Laboratory for Novel Software
-                  Technology
-                </p>
-                <p>
-                  A systematic survey spanning autonomous driving, UAVs, and
-                  robotics. The work organizes methods across testing stages,
-                  model techniques, and test granularity, then compares
-                  technical transfer and limits in scenario generation, test
-                  oracles, and result analysis.
-                </p>
-                <ul class="research-tags">
-                  <li>Systematic survey</li>
-                  <li>Autonomous systems</li>
-                  <li>Test oracles</li>
-                </ul>
-              </div>
-              <div
-                class="research-orbit research-orbit-wide"
-                aria-hidden="true"
-              >
-                <span></span><span></span><i></i>
-              </div>
-            </article>
-          </div>
-          <p class="research-footnote reveal">
-            Status reflects the latest CV (October 2026). Submitted manuscripts
-            are not publications; this page will distinguish decisions and
-            camera-ready records as they become available.
-          </p>
-        </div>
-      </section>
-
-      <section class="experience section" id="experience" data-section>
-        <div class="shell section-grid">
-          <div class="section-index reveal">
-            <span>03</span>
-            <p>Industry</p>
-          </div>
-
-          <div class="experience-heading">
-            <p class="eyebrow reveal">Industry experience</p>
-            <h2 class="display-title reveal">
-              Turning governance policy into systems that
-              <em>decide, dispatch, and recover.</em>
-            </h2>
-          </div>
-
-          <div class="timeline">
-            <article class="timeline-item reveal">
-              <div class="timeline-date">
-                <span>2026.05 — Present</span>
-                <img
-                  class="timeline-company-logo"
-                  src="./assets/images/tencent-wordmark.png"
-                  alt="Tencent logo"
-                  width="92"
-                  height="18"
-                />
-              </div>
-              <div class="timeline-content">
-                <p class="timeline-type">
-                  Backend platform · Governance systems
-                </p>
-                <h3>
-                  Tencent · Weixin Group<br />
-                  <span>E-commerce Governance</span>
-                </h3>
-                <p class="timeline-role">
-                  Backend Engineering Intern · 2026.05 — Present
-                </p>
-
-                <ol class="governance-loop">
-                  <li>
-                    <span>01</span>
-                    <strong>Policy grounding</strong>
-                    <small>retrieval + business constraints</small>
-                  </li>
-                  <li>
-                    <span>02</span>
-                    <strong>Decision generation</strong>
-                    <small>LLM rules under governance logic</small>
-                  </li>
-                  <li>
-                    <span>03</span>
-                    <strong>Audit dispatch</strong>
-                    <small>decomposition, batching, routing</small>
-                  </li>
-                  <li>
-                    <span>04</span>
-                    <strong>Review feedback</strong>
-                    <small>validation, fallback, result replay</small>
-                  </li>
-                </ol>
-
-                <div class="impact-list">
-                  <article class="impact-item">
-                    <span class="impact-index">01</span>
-                    <div class="impact-copy">
-                      <p class="impact-kicker">Dispatch architecture</p>
-                      <h4>Weixin Mini Shop audit dispatch platform</h4>
-                      <p>
-                        Owned the business architecture and core-path
-                        implementation for the audit dispatch workbench,
-                        spanning task decomposition, workflow orchestration,
-                        batch consolidation, routing, and result replay. Rebuilt
-                        aggregation and distribution to absorb the 618 campaign
-                        surge while linking policy decisions directly to review
-                        execution.
-                      </p>
-                      <dl class="impact-metrics">
-                        <div>
-                          <dt>Campaign peak</dt>
-                          <dd>~300k QPM</dd>
-                        </div>
-                        <div>
-                          <dt>Batch consolidation</dt>
-                          <dd>~77%</dd>
-                        </div>
-                      </dl>
-                    </div>
-                  </article>
-
-                  <article class="impact-item">
-                    <span class="impact-index">02</span>
-                    <div class="impact-copy">
-                      <p class="impact-kicker">Policy intelligence</p>
-                      <h4>B-side LLM policy engine</h4>
-                      <p>
-                        Developed core modules for the merchant-side audit
-                        policy engine, grounding rule generation and review
-                        decisions in retrieved historical policies and business
-                        knowledge. Connected rule configuration, policy
-                        execution, and audit scheduling into one executable
-                        path, turning governance knowledge into iterable policy
-                        rather than static review guidance.
-                      </p>
-                      <ul class="impact-tags">
-                        <li>Retrieval-grounded rules</li>
-                        <li>Policy execution</li>
-                        <li>Audit orchestration</li>
-                      </ul>
-                    </div>
-                  </article>
-
-                  <article class="impact-item">
-                    <span class="impact-index">03</span>
-                    <div class="impact-copy">
-                      <p class="impact-kicker">Risk-control assurance</p>
-                      <h4>C-side false-positive review</h4>
-                      <p>
-                        Designed and implemented a reusable re-review system for
-                        order routing and policy interceptions. Added secondary
-                        validation, exception fallback, result feedback, and
-                        monitoring to close the strategy feedback loop while
-                        protecting transaction experience.
-                      </p>
-                      <dl class="impact-metrics">
-                        <div>
-                          <dt>Peak review load</dt>
-                          <dd>~100k QPM</dd>
-                        </div>
-                        <div>
-                          <dt>Misflags corrected</dt>
-                          <dd>~3.7% avg.</dd>
-                        </div>
-                      </dl>
-                    </div>
-                  </article>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <div class="tencent-field-notes reveal">
-            <div class="field-notes-heading">
-              <div>
-                <p class="eyebrow">Field notes · Guangzhou</p>
-                <h3>Around the system, <em>a city in motion.</em></h3>
-              </div>
-              <p>
-                A visual record of the weeks around the internship—late light in
-                the office, the Pearl River beyond the glass, and the life that
-                makes the pace sustainable.
-              </p>
-            </div>
-
-            <div
-              class="tencent-gallery"
-              data-tencent-gallery
-              tabindex="0"
-              aria-label="Scrollable photographs from Guangzhou during the Tencent internship"
-            >
-              <figure class="tencent-photo photo-wide">
-                <img
-                  src="./assets/images/tencent/office-dusk.jpg"
-                  alt="View from the Tencent office at dusk, overlooking the Pearl River and Guangzhou skyline"
-                  width="1600"
-                  height="1202"
-                  loading="lazy"
-                />
-                <figcaption>
-                  <span>01 · Office window</span>
-                  <p>Dusk over the Pearl River</p>
-                </figcaption>
-              </figure>
-
-              <figure class="tencent-photo photo-portrait">
-                <img
-                  src="./assets/images/tencent/workspace-golden-hour.jpg"
-                  alt="Golden-hour sunlight filling the office workspace"
-                  width="1280"
-                  height="1704"
-                  loading="lazy"
-                />
-                <figcaption>
-                  <span>02 · Golden hour</span>
-                  <p>Last light across the workspace</p>
-                </figcaption>
-              </figure>
-
-              <figure class="tencent-photo photo-wide">
-                <img
-                  src="./assets/images/tencent/canton-tower.jpg"
-                  alt="Canton Tower framed by the curved architecture of a Guangzhou plaza"
-                  width="1600"
-                  height="1067"
-                  loading="lazy"
-                />
-                <figcaption>
-                  <span>03 · Guangzhou</span>
-                  <p>Canton Tower from the plaza</p>
-                </figcaption>
-              </figure>
-
-              <figure class="tencent-photo photo-wide">
-                <img
-                  src="./assets/images/tencent/weekend-on-the-water.jpg"
-                  alt="Paddleboarding on the water near Guangzhou"
-                  width="1600"
-                  height="1068"
-                  loading="lazy"
-                />
-                <figcaption>
-                  <span>04 · Weekend</span>
-                  <p>A pause between sprints</p>
-                </figcaption>
-              </figure>
-
-              <figure class="tencent-photo photo-narrow">
-                <img
-                  src="./assets/images/tencent/office-lunch.jpg"
-                  alt="A lunch tray with rice, vegetables, fruit, and a side dish at the office"
-                  width="1600"
-                  height="1202"
-                  loading="lazy"
-                />
-                <figcaption>
-                  <span>05 · Everyday</span>
-                  <p>Lunch at the office</p>
-                </figcaption>
-              </figure>
-            </div>
-
-            <div class="gallery-footer">
-              <p>
-                Drag, swipe, or use the arrow keys to move through the series.
-              </p>
-              <div class="gallery-controls">
-                <span data-gallery-counter aria-live="polite">01 / 05</span>
-                <button
-                  type="button"
-                  aria-label="Show previous photograph"
-                  data-gallery-prev
-                >
-                  ←
-                </button>
-                <button
-                  type="button"
-                  aria-label="Show next photograph"
-                  data-gallery-next
-                >
-                  →
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="projects section" id="projects" data-section>
-        <div class="shell">
-          <div class="projects-heading">
-            <div class="section-index reveal">
-              <span>04</span>
-              <p>Selected Work</p>
-            </div>
-            <div>
-              <p class="eyebrow reveal">
-                Research translated into runnable systems
-              </p>
-              <h2 class="display-title reveal">
-                Models, workflows, and infrastructure that
-                <em>hold up outside a notebook.</em>
-              </h2>
-            </div>
-          </div>
-
-          <div class="project-grid">
-            <article class="project-card project-featured reveal">
-              <div class="project-topline">
-                <span>Research system</span>
-                <span>2025.09 — 2026.08</span>
-              </div>
-              <div class="project-visual gui-visual" aria-hidden="true">
-                <div class="gui-window">
-                  <span></span><span></span><span></span>
-                  <b>CHECKOUT / CONFIRM ORDER</b>
-                </div>
-                <div class="gui-path">
-                  <span class="path-step">01 click</span>
-                  <span class="path-step">02 fill</span>
-                  <span class="path-step path-step-fault">03 submit</span>
-                  <span class="path-step">04 verify</span>
-                </div>
-                <div class="gui-annotations">
-                  <span>candidate root</span>
-                  <strong>earliest faulty action</strong>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3>SynTriageGUI · Human–AI diagnosis for failed GUI agents</h3>
-                <p>
-                  A test framework for long GUI trajectories that models action
-                  risk, fuses evidence from confidence, history, and similar
-                  traces, then schedules human inspection where it is most
-                  useful. The training pipeline turns screenshots, controls,
-                  actions, and UI changes into reproducible root-cause
-                  experiments.
-                </p>
-                <ul class="tag-list">
-                  <li>CLIP features</li>
-                  <li>Sequence models</li>
-                  <li>Bayesian fusion</li>
-                  <li>Interval DP</li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="project-card reveal">
-              <div class="project-topline">
-                <span>AI Product</span>
-                <span>2026</span>
-              </div>
-              <div class="project-visual video-visual" aria-hidden="true">
-                <span class="frame frame-a"></span>
-                <span class="frame frame-b"></span>
-                <span class="frame frame-c"></span>
-                <div class="play-mark">▶</div>
-              </div>
-              <div class="project-content">
-                <h3>VidForge · Agentic Video Generation for E-commerce</h3>
-                <p>
-                  A stateful LangGraph workflow that turns product assets into
-                  scripts and finished videos. Durable jobs, dual-queue
-                  scheduling, WebSocket progress, and graceful FFmpeg fallbacks
-                  keep long generation tasks observable and recoverable.
-                </p>
-                <ul class="tag-list">
-                  <li>LangGraph</li>
-                  <li>PostgreSQL + Redis</li>
-                  <li>WebSocket</li>
-                  <li>FFmpeg</li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="project-card project-compact reveal">
-              <div class="project-topline">
-                <span>Research platform</span>
-                <span>2024 — 2026</span>
-              </div>
-              <div class="project-content compact-content">
-                <p class="project-note-mark">↳</p>
-                <h3>LLM-Assisted Testing for Automated Driving</h3>
-                <p>
-                  An end-to-end workflow linking scenario generation, execution,
-                  evaluation, and failure attribution through multi-agent
-                  coordination, retrieval, and cross-module memory.
-                </p>
-                <div class="compact-loop" aria-hidden="true">
-                  <span>Scene</span>
-                  <span>Execute</span>
-                  <span>Evaluate</span>
-                  <span>Attribute</span>
-                </div>
-                <ul class="tag-list">
-                  <li>Multi-agent</li>
-                  <li>RAG</li>
-                  <li>Failure attribution</li>
-                </ul>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="honors section" id="honors" data-section>
-        <div class="shell section-grid">
-          <div class="section-index reveal">
-            <span>05</span>
-            <p>Recognition</p>
-          </div>
-
-          <div class="honors-heading">
-            <p class="eyebrow reveal">
-              Selected awards, service &amp; leadership
-            </p>
-            <h2 class="display-title reveal">
-              External signals, <em>and work done with others.</em>
-            </h2>
-          </div>
-
-          <div class="honors-list">
-            <section class="honor-group" aria-labelledby="honorary-titles">
-              <div class="honor-group-heading reveal">
-                <h3 id="honorary-titles">Honorary Titles</h3>
-                <span>Recognition for service and leadership</span>
-              </div>
-              <div class="honor-row reveal">
-                <span class="honor-year">2025</span>
-                <p>Outstanding Communist Youth League Member</p>
-                <strong>Nanjing University</strong>
-              </div>
-              <div class="honor-row reveal">
-                <span class="honor-year">2025</span>
-                <p>Outstanding Volunteer</p>
-                <strong>Nanjing University</strong>
-              </div>
-            </section>
-
-            <section class="honor-group" aria-labelledby="scholarships">
-              <div class="honor-group-heading reveal">
-                <h3 id="scholarships">Scholarships</h3>
-                <span>Academic and research distinction</span>
-              </div>
-              <div class="honor-row reveal">
-                <span class="honor-year">2026</span>
-                <p>Qingying Feifan Special Scholarship</p>
-                <strong>Nanjing University</strong>
-              </div>
-              <div class="honor-row reveal">
-                <span class="honor-year">2025</span>
-                <p>China Mobile High-Value Scholarship</p>
-                <strong>Nanjing University</strong>
-              </div>
-              <div class="honor-row reveal">
-                <span class="honor-year">2025</span>
-                <p>People's Scholarship for Research and Innovation</p>
-                <strong>Nanjing University</strong>
-              </div>
-              <div class="honor-row reveal">
-                <span class="honor-year">2024</span>
-                <p>People's Scholarship for Academic Competitions</p>
-                <strong>Nanjing University</strong>
-              </div>
-            </section>
-
-            <section class="honor-group" aria-labelledby="competition-awards">
-              <div class="honor-group-heading reveal">
-                <h3 id="competition-awards">Competition Awards</h3>
-                <span>Selected national, provincial, and campus results</span>
-              </div>
-              <div class="honor-row reveal">
-                <span class="honor-year">2026</span>
-                <p>ByteDance AI Full-Stack Developer Contest</p>
-                <strong>Excellent Project</strong>
-              </div>
-              <div class="honor-row reveal">
-                <span class="honor-year">2025</span>
-                <p>Challenge Cup Special Track on "AI+" · National Finals</p>
-                <strong>Outstanding Project</strong>
-              </div>
-              <div class="honor-row reveal">
-                <span class="honor-year">2025</span>
-                <p>
-                  China Undergraduate Mathematical Contest in Modeling · Jiangsu
-                  Province
-                </p>
-                <strong>Second Prize</strong>
-              </div>
-              <div class="honor-row reveal">
-                <span class="honor-year">2025</span>
-                <p>
-                  National College Computer System Ability Competition ·
-                  Compiler System Implementation Track
-                </p>
-                <strong>Second Prize</strong>
-              </div>
-              <div class="honor-row reveal">
-                <span class="honor-year">2024</span>
-                <p>
-                  Baidu "Galaxy Cup" Large Model Creative Development
-                  Competition · Campus Finals
-                </p>
-                <strong>Second Prize</strong>
-              </div>
-              <div class="honor-row reveal">
-                <span class="honor-year">2024</span>
-                <p>
-                  School of Software EL Programming Development Competition ·
-                  Campus Finals
-                </p>
-                <strong>Second Prize</strong>
-              </div>
-            </section>
-
-            <section class="honor-group" aria-labelledby="service-leadership">
-              <div class="honor-group-heading reveal">
-                <h3 id="service-leadership">Service &amp; Leadership</h3>
-                <span>Building communities beyond the lab</span>
-              </div>
-              <div class="honor-row reveal">
-                <span class="honor-year">NJU</span>
-                <p>Red Cross Student Branch</p>
-                <strong>Vice President</strong>
-              </div>
-              <div class="honor-row reveal">
-                <span class="honor-year">NJU</span>
-                <p>Kaijia College Youth Volunteer Association</p>
-                <strong>Executive Chair</strong>
-              </div>
-              <div class="honor-row reveal">
-                <span class="honor-year">NJU</span>
-                <p>School of Software Science and Technology Association</p>
-                <strong>Competition Department Lead</strong>
-              </div>
-              <div class="honor-row reveal">
-                <span class="honor-year">NJU</span>
-                <p>Huawei OpenHarmony Club</p>
-                <strong>Core Member</strong>
-              </div>
-            </section>
-          </div>
-        </div>
-      </section>
-
-      <section class="contact section" id="contact">
-        <div class="contact-field" aria-hidden="true">
-          CONTACT · COLLABORATE · CREATE
-        </div>
-        <div class="shell contact-inner">
-          <p class="eyebrow reveal">Open to thoughtful conversations</p>
-          <h2 class="reveal">
-            Software testing, agentic systems,<br />
-            or a failure worth understanding.
-          </h2>
-          <div class="contact-actions reveal">
-            <a class="contact-email" href="mailto:231250082@smail.nju.edu.cn">
-              231250082@smail.nju.edu.cn
-              <span aria-hidden="true">↗</span>
-            </a>
-            <a
-              class="contact-link"
-              href="https://github.com/WANGLEVY9"
-              target="_blank"
-              rel="noreferrer"
-            >
-              github.com/WANGLEVY9
-              <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-          <p class="contact-note reveal">
-            For paper drafts, research collaboration, or engineering
-            conversations, email is the best place to start.
-          </p>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
+      <div class="shell footer-contact">
+        <div>
+          <p class="eyebrow">Open to thoughtful conversations</p>
+          <h2>
+            Software testing, agentic systems,<br />
+            or a failure <em>worth understanding.</em>
+          </h2>
+        </div>
+        <div class="footer-links">
+          <a href="mailto:231250082@smail.nju.edu.cn">
+            231250082@smail.nju.edu.cn
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a
+            href="https://github.com/WANGLEVY9"
+            target="_blank"
+            rel="noreferrer"
+          >
+            github.com/WANGLEVY9
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
       <div class="shell footer-inner">
         <p>© <span data-year></span> Taijie Wang</p>
-        <p>Nanjing University · School of Software · Updated October 2026</p>
-        <a href="#top">Back to top ↑</a>
+        <p>Nanjing University · School of Software · October 2026</p>
+        <a href="#main-content">Back to top ↑</a>
       </div>
     </footer>
   </body>

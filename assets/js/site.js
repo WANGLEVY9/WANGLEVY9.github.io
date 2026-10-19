@@ -1,12 +1,11 @@
 const header = document.querySelector("[data-header]");
 const menuButton = document.querySelector("[data-menu-button]");
 const mobileNav = document.querySelector("[data-mobile-nav]");
-const year = document.querySelector("[data-year]");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-if (year) {
-  year.textContent = new Date().getFullYear();
-}
+document.querySelectorAll("[data-year]").forEach((element) => {
+  element.textContent = new Date().getFullYear();
+});
 
 function setMenu(open) {
   if (!menuButton || !mobileNav) return;
@@ -35,72 +34,133 @@ document.addEventListener("keydown", (event) => {
 window.addEventListener(
   "resize",
   () => {
-    if (window.innerWidth > 1080) setMenu(false);
+    if (window.innerWidth > 780) setMenu(false);
   },
   { passive: true },
 );
 
-function updateHeader() {
-  header?.classList.toggle("is-scrolled", window.scrollY > 16);
+let scrollFrame = 0;
+
+function updateScrollState() {
+  scrollFrame = 0;
+  const maxScroll = Math.max(
+    0,
+    document.documentElement.scrollHeight - window.innerHeight,
+  );
+  const progress = maxScroll > 0 ? window.scrollY / maxScroll : 0;
+
+  header?.classList.toggle("is-scrolled", window.scrollY > 14);
+  document.documentElement.style.setProperty(
+    "--scroll-progress",
+    Math.min(1, Math.max(0, progress)).toFixed(4),
+  );
 }
 
-updateHeader();
-window.addEventListener("scroll", updateHeader, { passive: true });
+function requestScrollUpdate() {
+  if (scrollFrame) return;
+  scrollFrame = window.requestAnimationFrame(updateScrollState);
+}
+
+updateScrollState();
+window.addEventListener("scroll", requestScrollUpdate, { passive: true });
+window.addEventListener("resize", requestScrollUpdate, { passive: true });
 
 const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        revealObserver.unobserve(entry.target);
-      }
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      revealObserver.unobserve(entry.target);
     });
   },
-  { threshold: 0.13, rootMargin: "0px 0px -36px" },
+  { threshold: 0.12, rootMargin: "0px 0px -34px" },
 );
 
 document.querySelectorAll(".reveal").forEach((element, index) => {
-  element.style.transitionDelay = `${Math.min((index % 4) * 70, 210)}ms`;
+  element.style.transitionDelay = `${Math.min((index % 4) * 64, 192)}ms`;
   revealObserver.observe(element);
 });
 
-const navLinks = [...document.querySelectorAll(".desktop-nav a")];
-const sections = [...document.querySelectorAll("[data-section]")];
+function initTabs(container, tabAttribute, panelAttribute, containerAttribute) {
+  if (!container) return;
 
-const sectionObserver = new IntersectionObserver(
-  (entries) => {
-    const visible = entries
-      .filter((entry) => entry.isIntersecting)
-      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+  const tabs = [...container.querySelectorAll(`[${tabAttribute}]`)];
+  const panels = [...container.querySelectorAll(`[${panelAttribute}]`)];
 
-    if (!visible) return;
+  if (!tabs.length || !panels.length) return;
 
-    navLinks.forEach((link) => {
-      const isActive = link.getAttribute("href") === `#${visible.target.id}`;
-      link.classList.toggle("is-active", isActive);
+  function activate(tab, moveFocus = false) {
+    const value = tab.getAttribute(tabAttribute);
 
-      if (isActive) {
-        link.setAttribute("aria-current", "location");
-      } else {
-        link.removeAttribute("aria-current");
-      }
+    tabs.forEach((candidate) => {
+      candidate.setAttribute("aria-selected", String(candidate === tab));
+      candidate.tabIndex = candidate === tab ? 0 : -1;
     });
-  },
-  { rootMargin: "-25% 0px -60%", threshold: [0.05, 0.3] },
-);
 
-sections.forEach((section) => sectionObserver.observe(section));
+    panels.forEach((panel) => {
+      panel.hidden = panel.getAttribute(panelAttribute) !== value;
+    });
 
-const gallery = document.querySelector("[data-tencent-gallery]");
+    container.setAttribute(containerAttribute, value);
+    if (moveFocus) tab.focus();
+  }
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => activate(tab));
+    tab.addEventListener("keydown", (event) => {
+      let nextIndex = null;
+
+      if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+        nextIndex = (index + 1) % tabs.length;
+      } else if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+        nextIndex = (index - 1 + tabs.length) % tabs.length;
+      } else if (event.key === "Home") {
+        nextIndex = 0;
+      } else if (event.key === "End") {
+        nextIndex = tabs.length - 1;
+      }
+
+      if (nextIndex === null) return;
+      event.preventDefault();
+      activate(tabs[nextIndex], true);
+    });
+  });
+
+  const initiallySelected =
+    tabs.find((tab) => tab.getAttribute("aria-selected") === "true") || tabs[0];
+  activate(initiallySelected);
+}
+
+document.querySelectorAll("[data-instrument]").forEach((container) => {
+  initTabs(container, "data-process-tab", "data-process-panel", "data-mode");
+});
+
+document.querySelectorAll("[data-workflow]").forEach((container) => {
+  initTabs(container, "data-workflow-tab", "data-workflow-panel", "data-stage");
+});
+
+const gallery = document.querySelector("[data-photo-gallery]");
 
 if (gallery) {
+  const gallerySection = gallery.closest(".field-notes");
   const slides = [...gallery.querySelectorAll(".tencent-photo")];
-  const previousButton = document.querySelector("[data-gallery-prev]");
-  const nextButton = document.querySelector("[data-gallery-next]");
-  const counter = document.querySelector("[data-gallery-counter]");
+  const previousButton = gallerySection?.querySelector("[data-gallery-prev]");
+  const nextButton = gallerySection?.querySelector("[data-gallery-next]");
+  const counter = gallerySection?.querySelector("[data-gallery-counter]");
+  const lightbox = gallerySection?.querySelector("[data-photo-lightbox]");
+  const lightboxImage = lightbox?.querySelector("[data-lightbox-image]");
+  const lightboxCaption = lightbox?.querySelector("[data-lightbox-caption]");
+  const lightboxClose = lightbox?.querySelector("[data-lightbox-close]");
+  const lightboxTriggers = slides.map((slide) =>
+    slide.querySelector("[data-lightbox-open]"),
+  );
+  let activeIndex = 0;
+  let lastLightboxTrigger = null;
   let dragging = false;
+  let dragMoved = false;
   let dragStartX = 0;
   let dragStartScroll = 0;
+  let suppressClick = false;
 
   function getLeadingIndex() {
     const leadingEdge = gallery.scrollLeft + 8;
@@ -119,6 +179,8 @@ if (gallery) {
     if (gallery.scrollLeft >= maxScroll - 2) {
       closestIndex = slides.length - 1;
     }
+
+    activeIndex = closestIndex;
 
     if (counter) {
       counter.textContent = `${String(closestIndex + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`;
@@ -141,6 +203,45 @@ if (gallery) {
     });
   }
 
+  function updateLightbox(index) {
+    const safeIndex = Math.min(slides.length - 1, Math.max(0, index));
+    const slide = slides[safeIndex];
+    const trigger = lightboxTriggers[safeIndex];
+    const image = slide.querySelector("img");
+
+    activeIndex = safeIndex;
+    if (lightboxImage) {
+      lightboxImage.src = trigger?.dataset.lightboxSrc || image.src;
+      lightboxImage.alt = image.alt;
+    }
+    if (lightboxCaption) {
+      lightboxCaption.textContent = trigger?.dataset.lightboxCaption || "";
+    }
+  }
+
+  function openLightbox(index) {
+    if (!lightbox || !lightboxImage) return;
+
+    lastLightboxTrigger = lightboxTriggers[index];
+    updateLightbox(index);
+
+    if (typeof lightbox.showModal === "function") {
+      lightbox.showModal();
+    } else {
+      lightbox.setAttribute("open", "");
+    }
+  }
+
+  function closeLightbox() {
+    if (!lightbox) return;
+
+    if (typeof lightbox.close === "function" && lightbox.open) {
+      lightbox.close();
+    } else {
+      lightbox.removeAttribute("open");
+    }
+  }
+
   previousButton?.addEventListener("click", () => moveGallery(-1));
   nextButton?.addEventListener("click", () => moveGallery(1));
 
@@ -160,6 +261,7 @@ if (gallery) {
     if (event.pointerType !== "mouse") return;
 
     dragging = true;
+    dragMoved = false;
     dragStartX = event.clientX;
     dragStartScroll = gallery.scrollLeft;
     gallery.classList.add("is-dragging");
@@ -168,8 +270,11 @@ if (gallery) {
 
   gallery.addEventListener("pointermove", (event) => {
     if (!dragging) return;
+    const delta = event.clientX - dragStartX;
+
+    if (Math.abs(delta) > 4) dragMoved = true;
     event.preventDefault();
-    gallery.scrollLeft = dragStartScroll - (event.clientX - dragStartX);
+    gallery.scrollLeft = dragStartScroll - delta;
   });
 
   gallery.addEventListener("dragstart", (event) => event.preventDefault());
@@ -178,6 +283,7 @@ if (gallery) {
     if (!dragging) return;
 
     dragging = false;
+    suppressClick = dragMoved;
     gallery.classList.remove("is-dragging");
 
     if (gallery.hasPointerCapture(event.pointerId)) {
@@ -185,10 +291,50 @@ if (gallery) {
     }
 
     updateGalleryState();
+    window.setTimeout(() => {
+      suppressClick = false;
+    }, 0);
   }
 
   gallery.addEventListener("pointerup", endGalleryDrag);
   gallery.addEventListener("pointercancel", endGalleryDrag);
+  gallery.addEventListener(
+    "click",
+    (event) => {
+      if (!suppressClick) return;
+      event.preventDefault();
+      event.stopPropagation();
+    },
+    true,
+  );
+
+  lightboxTriggers.forEach((trigger, index) => {
+    trigger?.addEventListener("click", () => openLightbox(index));
+  });
+
+  lightboxClose?.addEventListener("click", closeLightbox);
+  lightbox?.addEventListener("click", (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
+  lightbox?.addEventListener("close", () => {
+    lastLightboxTrigger?.focus();
+  });
+  lightbox?.addEventListener("cancel", () => {
+    if (typeof lightbox.close !== "function") {
+      lightbox.removeAttribute("open");
+    }
+  });
+  lightbox?.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      updateLightbox(activeIndex - 1);
+    }
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      updateLightbox(activeIndex + 1);
+    }
+  });
+
   gallery.addEventListener("scroll", updateGalleryState, { passive: true });
   window.addEventListener("resize", updateGalleryState, { passive: true });
   gallery

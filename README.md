@@ -7,6 +7,17 @@ Pages.
 
 Live site: <https://wanglevy9.github.io/>
 
+## Pages
+
+- `index.html` — profile, current coordinates, and routes into the dossier
+- `research.html` — submitted manuscripts and evidence boundaries
+- `industry.html` — Tencent governance systems and the Guangzhou field notes
+- `projects.html` — SynTriageGUI and VidForge case studies
+- `recognition.html` — scholarships, competition results, and service
+
+Navigation stays at the top of the viewport on every page. Each section has its
+own URL rather than sharing one long-scroll document.
+
 ## Local preview
 
 Open `index.html` directly, or run:
@@ -22,8 +33,14 @@ Then visit `http://127.0.0.1:4173`.
 ```text
 .
 ├── index.html
+├── research.html
+├── industry.html
+├── projects.html
+├── recognition.html
 ├── assets
-│   ├── css/styles.css
+│   ├── css
+│   │   ├── core.css
+│   │   └── pages.css
 │   ├── images
 │   └── js/site.js
 ├── .github/workflows/deploy-pages.yml
@@ -31,40 +48,41 @@ Then visit `http://127.0.0.1:4173`.
     └── DESIGN_SYSTEM.md
 ```
 
-The design rationale, content architecture, palette, typography, component
-rules, and portrait specification are documented in
-`docs/DESIGN_SYSTEM.md`.
-
-The source CV is used locally for content planning and is intentionally ignored
-by Git because it contains private contact information. Publish only a sanitized
-PDF when the public CV download is enabled.
+`core.css` contains design tokens, layout, typography, navigation, footer,
+motion, and shared responsive rules. `pages.css` contains page-specific
+compositions, galleries, project instruments, and page-level responsive rules.
 
 ## Content boundaries
 
-- Three manuscripts listed in the Research section are explicitly marked as
-  submitted, not accepted or published.
+- Three manuscripts in the Research page are explicitly marked as submitted,
+  not accepted or published.
 - The public bio omits private phone, birthday, WeChat, and other non-public
   resume fields.
-- The Tencent section follows the latest CV and includes the owner-approved
+- The Tencent section follows the latest CV and includes owner-approved
   internship outcome metrics. Re-check workplace confidentiality before reusing
-  those figures outside the personal portfolio.
-- The Industry gallery contains five curated images; duplicate or
-  lower-information photos are intentionally excluded. Images are resized and
-  stripped of EXIF metadata before publication.
+  those figures outside this personal portfolio.
+- The Industry gallery currently contains six curated images. New images belong
+  in `assets/images/tencent/`, should be resized before publication, and should
+  be added as another `figure` in `industry.html`; gallery controls and the
+  counter derive their state from the markup.
 - The site uses English for the public research narrative. Resume wording is
   paraphrased rather than copied mechanically.
 
 ## Deployment
 
 Push to `main` to trigger `.github/workflows/deploy-pages.yml`. The workflow
-copies the static files into `_site`, uploads the Pages artifact, and deploys it
-through GitHub Pages. A successful Pages run is verified separately against the
-live URL.
+copies all top-level HTML files and static assets into `_site`, uploads the
+Pages artifact, and deploys through GitHub Pages. Verify the live URLs
+separately after the workflow completes.
 
 ## Checks
 
 ```bash
-npx --yes prettier@3.6.2 --check index.html assets/css/styles.css assets/js/site.js README.md docs/DESIGN_SYSTEM.md
-npx --yes html-validate@9.7.1 index.html
+npx --yes prettier@3.6.2 --check \
+  index.html research.html industry.html projects.html recognition.html \
+  assets/css/core.css assets/css/pages.css assets/js/site.js \
+  README.md docs/DESIGN_SYSTEM.md
+npx --yes html-validate@9.7.1 \
+  index.html research.html industry.html projects.html recognition.html
 node --check assets/js/site.js
 ```

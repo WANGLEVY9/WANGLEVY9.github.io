@@ -3,142 +3,126 @@
 ## 1. Positioning
 
 The site presents Taijie Wang as a researcher and engineer working on the
-reliability of AI-driven software. Its central narrative is not a chronological
-resume dump. It is the connection between three concerns:
+reliability of AI-driven software. It is organized as a compact research
+dossier: evidence, production constraints, runnable systems, and external
+signals each have a distinct page.
 
-1. Testing AI-driven software.
-2. Diagnosing where agent behavior first fails.
-3. Turning research methods into dependable systems.
-
-The visual tone should feel composed, rigorous, quiet, and assured. It should
-avoid startup marketing language, excessive decoration, and generic academic
-blog styling.
+The visual direction combines an editorial research folio with the information
+density of an instrument panel. Photography provides atmosphere; typography
+sets the argument; monospaced labels only annotate technical structure.
 
 ## 2. Information Architecture
 
-| Section       | Purpose                                            | Primary evidence                    |
-| ------------- | -------------------------------------------------- | ----------------------------------- |
-| Hero          | Establish name, affiliation, and research identity | NJU, research statement             |
-| Profile       | Give a concise academic biography                  | Education, affiliations, interests  |
-| Research      | Present the current evidence base                  | Three submitted manuscripts         |
-| Industry      | Show production engineering scope                  | Tencent governance systems          |
-| Selected Work | Turn methods into tangible systems                 | SynTriageGUI, VidForge              |
-| Recognition   | Provide concise external validation                | Competitions, scholarships, service |
-| Contact       | Invite research and engineering conversations      | Email, GitHub, CV                   |
+| Page        | Purpose                                       | Primary evidence                   |
+| ----------- | --------------------------------------------- | ---------------------------------- |
+| Profile     | Establish identity and route into the dossier | NJU, research focus, Tencent       |
+| Research    | Present the current evidence base             | Three submitted manuscripts        |
+| Industry    | Show production engineering and field context | Tencent governance systems, photos |
+| Projects    | Explain methods through runnable systems      | SynTriageGUI, VidForge             |
+| Recognition | Provide concise external validation           | Scholarships, awards, service      |
 
-The Research section doubles as the publication ledger until enough accepted
-work exists to justify a separate Publications page.
+Every page shares a fixed top navigation with a current-page marker and a
+scroll-progress rule. The mobile equivalent is an explicit menu panel.
 
 ## 3. Visual Language
 
 ### Palette
 
-- Paper: `#F4F1EA`
-- Bright paper: `#FBFAF6`
-- Ink: `#17211D`
-- Forest: `#143B34`
-- Deep forest: `#0D2924`
-- Academic blue: `#345B72`
-- Accessible annotation gold: `#85672F`
-- Bright gold on forest: `#C4A46D`
-- Oxblood accent: `#713F3D`
-- Verification signal: `#B0472E`
+- Paper: `#F1EFE9`
+- Bright paper: `#FCFBF7`
+- Ink: `#111817`
+- Forest: `#103A32`
+- Deep forest: `#071F1C`
+- Academic blue: `#2B5368`
+- Annotation gold: `#94723A`
+- Bright gold on forest: `#C5AA73`
+- Verification signal: `#C65435`
+- Signal tint: `#E1A38F`
 
-Gold is an annotation color, not a dominant fill. Forest carries the main
-institutional tone. Blue and oxblood prevent the system from becoming a
-single-hue palette. The verification signal is reserved for the failure nodes,
-status rules, and active trace points that connect the design to the actual
-research subject. Light-background annotation text uses the darker gold so
-small labels retain readable contrast.
+Forest and ink carry the institutional weight. Warm paper keeps long text
+readable. The signal color is reserved for failure nodes, active navigation,
+progress, and selected states so those marks remain meaningful.
 
 ### Typography
 
-- Display and art-directed headlines: Cormorant Garamond, with Iowan Old Style
-  and Georgia as local fallbacks.
-- Body, navigation, buttons, metadata, award rows, and general interface copy:
-  EB Garamond, a more text-safe Garamond companion with matching proportions.
-- Technical instrumentation only: Manrope is reserved for the execution-trace
-  card, GUI diagram labels, and other deliberately designed instrument text.
-- General text keeps natural title case. Uppercase tracking is not used for
-  navigation, section labels, status chips, or metadata because it reads as
-  mixed Chinese/English resume formatting rather than an English editorial page.
-- Display sizes use bounded `clamp()` values and retain stable mobile limits.
+- Display: Instrument Serif, with Iowan Old Style and Georgia fallbacks.
+- Body: Newsreader, with Iowan Old Style and Georgia fallbacks.
+- Technical labels, metadata, counters, and controls: IBM Plex Mono.
+
+Display headlines use tight leading and large optical sizes. Uppercase tracking
+is reserved for short metadata and instrumentation labels; body copy keeps
+natural sentence case.
 
 ### Shape and spacing
 
-- Corners stay square or nearly square.
-- Major sections are full-width bands.
-- Cards are reserved for repeated project items.
+- Corners remain square or nearly square.
 - Borders are thin and structural.
-- Section rhythm uses a generous `96–176px` vertical range.
-- The hero's execution-trace card and the GUI project visual establish a
-  recurring visual grammar: steps, a marked failure point, and a verification
-  boundary.
+- Repeated cards are reserved for project states, field notes, and awards.
+- Sections use generous vertical intervals without turning each page into a
+  single continuous scroll.
+- Image composition is asymmetric: the profile collage overlaps a portrait
+  with a field photograph; the Industry page uses a full-bleed city image.
 
 ## 4. Interaction Principles
 
-- Motion is quiet and directional: short reveals and line travel. The
-  execution-trace card is static so the page stays legible and fast.
-- Every animation has a reduced-motion fallback.
-- A fixed left-side index provides desktop navigation and reflects the active
-  section without consuming vertical space.
-- Tablet and mobile layouts return to a compact top navigation bar with explicit
-  open and close states.
-- Email, GitHub, CV, and future paper/code links remain standard links.
+- Page changes use cross-document view transitions when supported.
+- Content reveals use one IntersectionObserver and a restrained stagger.
+- The top navigation compresses into a blurred bar after scrolling and shows a
+  page-level progress line.
+- The Field Notes gallery supports drag, swipe, arrow keys, visible previous and
+  next controls, a live counter, and a modal lightbox.
+- SynTriageGUI and VidForge use accessible tab patterns with arrow, Home, and
+  End key support.
+- All motion has a reduced-motion fallback.
 
 ## 5. Content Rules
 
-- English is the sole public language for the first international release.
+- English is the sole public language for the current release.
 - Wording should follow professional academic English rather than literal
   translations of resume shorthand.
-- Avoid claims that are not publicly verifiable or ready to announce.
-- Planned submissions must be phrased as ongoing work, not accepted work.
-- The current three manuscripts must remain labeled `Submitted` until a formal
-  decision or camera-ready record is available.
-- Publications should expose `paper`, `code`, `data`, and `demo` as optional
-  links.
-- Project descriptions should foreground the problem and contribution before
-  listing technology.
+- Submitted manuscripts must not be described as published or accepted.
+- Project copy should foreground the problem, decision procedure, and
+  engineering constraints before listing technologies.
 - Do not publish private resume fields such as phone number, birthday, or
   messaging IDs.
-- Tencent outcome metrics may appear only after explicit owner approval and a
-  fresh confidentiality check. Keep the corresponding system scope alongside
-  the numbers so the metrics remain interpretable.
+- Tencent outcome metrics remain paired with system scope and require a fresh
+  confidentiality check before reuse outside this portfolio.
 
-## 6. Portrait Specification
+## 6. Image Specification
 
-The reserved portrait area expects:
-
-- A vertical image with a `4:5` crop.
-- Neutral or architectural background.
-- Soft directional light, natural expression, and restrained clothing.
-- At least `1600 × 2000px`.
-- No heavy beauty retouching or busy laboratory props.
-
-The current portrait is stored at `assets/images/portrait.jpg` and displayed
-with a non-destructive CSS crop. Adjust `object-position`, `transform`, and
-`transform-origin` to refine the composition without modifying the source image.
+- Portrait: vertical `4:5`, neutral or architectural setting, at least
+  `1600 × 2000px`.
+- Field notes: landscape or vertical photographs are both supported; the gallery
+  applies non-destructive crops.
+- Large originals should be resized to about `1800px` on the long edge and
+  compressed before publication. WebP is preferred, with JPEG fallbacks where a
+  `<picture>` element is used.
+- The Industry masthead uses the Pearl River dusk photograph at
+  `assets/images/tencent/pearl-river-dusk.*`.
+- Additional photographs require both a visible caption and a lightbox caption
+  in `industry.html`. Gallery counts update automatically from the number of
+  figures.
 
 ## 7. Components
 
-- `ResearchEntry`: venue, submission status, author role, title, affiliation,
-  summary, and method tags.
-- `NewsEntry`: date, event, and optional source.
-- `ProjectCard`: category, period, visual, description, tags, links.
-- `TimelineItem`: period, type, institution, role, and contribution.
-- `SystemFlow`: ordered policy, decision, dispatch, and review stages that
-  explain how one governance system moves from rule to outcome.
-- `FieldNotesGallery`: horizontal scroll-snap image sequence with captions,
-  keyboard support, drag controls, and a visible progress counter.
-- `HonorRow`: year, award, and level.
-- `LanguageSwitch`: future full Chinese/English content switch. English remains
-  the default public language for the current release.
+- `TopNavigation`: wordmark, desktop page links, contact action, mobile menu,
+  and scroll-progress rule.
+- `PageMasthead`: page index, display headline, and an evidence-boundary note.
+- `PaperEntry`: status, authorship, title, affiliation, contribution summary,
+  method tags, and compact evaluation lens.
+- `GovernanceFlow`: policy grounding, decision generation, audit dispatch, and
+  review feedback.
+- `FieldNotesGallery`: horizontally scrollable, snap-aligned photo sequence with
+  controls and lightbox.
+- `ProjectInstrument`: interactive trace and risk view for SynTriageGUI.
+- `WorkflowInstrument`: four-stage stateful workflow view for VidForge.
+- `AwardGroup`: year, title, and awarding level.
 
 ## 8. Accessibility Baseline
 
-- Semantic regions and heading order.
-- Keyboard-accessible navigation and skip link.
+- Semantic landmarks and heading order on every page.
+- Keyboard-accessible navigation, gallery, lightbox, and project tabs.
 - Visible focus behavior through native browser outlines.
-- Minimum body contrast against both paper and forest backgrounds.
-- Responsive text wrapping down to `320px`.
-- Reduced-motion support.
+- Minimum body contrast against paper, forest, and ink backgrounds.
+- Responsive text and media down to `320px`.
+- Reduced-motion support across CSS animation and JavaScript scrolling.
