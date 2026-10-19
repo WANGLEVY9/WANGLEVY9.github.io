@@ -101,8 +101,9 @@ small labels retain readable contrast.
   listing technology.
 - Do not publish private resume fields such as phone number, birthday, or
   messaging IDs.
-- Do not publish Tencent's internal throughput, correction-rate, or operational
-  metrics; describe the system scope and visible engineering contribution.
+- Tencent outcome metrics may appear only after explicit owner approval and a
+  fresh confidentiality check. Keep the corresponding system scope alongside
+  the numbers so the metrics remain interpretable.
 
 ## 6. Portrait Specification
 
@@ -118,13 +119,17 @@ The current portrait is stored at `assets/images/portrait.jpg` and displayed
 with a non-destructive CSS crop. Adjust `object-position`, `transform`, and
 `transform-origin` to refine the composition without modifying the source image.
 
-## 7. Planned Components
+## 7. Components
 
 - `ResearchEntry`: venue, submission status, author role, title, affiliation,
   summary, and method tags.
 - `NewsEntry`: date, event, and optional source.
 - `ProjectCard`: category, period, visual, description, tags, links.
 - `TimelineItem`: period, type, institution, role, and contribution.
+- `SystemFlow`: ordered policy, decision, dispatch, and review stages that
+  explain how one governance system moves from rule to outcome.
+- `FieldNotesGallery`: horizontal scroll-snap image sequence with captions,
+  keyboard support, drag controls, and a visible progress counter.
 - `HonorRow`: year, award, and level.
 - `LanguageSwitch`: future full Chinese/English content switch. English remains
   the default public language for the current release.

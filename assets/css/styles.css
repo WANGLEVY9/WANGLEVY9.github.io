@@ -1097,8 +1097,8 @@ main,
 
 .timeline-content {
   display: grid;
-  grid-template-columns: minmax(220px, 0.8fr) minmax(280px, 1.2fr);
-  column-gap: 42px;
+  min-width: 0;
+  align-content: start;
 }
 
 .timeline-type {
@@ -1128,50 +1128,325 @@ main,
 }
 
 .timeline-role {
-  grid-column: 1;
   margin: 8px 0 0;
   color: var(--ink-soft);
   font-size: 14px;
 }
 
-.impact-list {
-  grid-column: 2;
-  grid-row: 2 / span 2;
+.governance-loop {
   display: grid;
-  gap: 0;
-  margin: 0;
-  padding: 0;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+  margin: 28px 0 42px;
+  padding: 20px 0;
   border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
   list-style: none;
 }
 
-.impact-list li {
+.governance-loop li {
   position: relative;
-  padding: 16px 0 16px 24px;
-  border-bottom: 1px solid var(--line);
+  display: grid;
+  align-content: start;
+  gap: 4px;
+  padding-right: 22px;
+}
+
+.governance-loop li:not(:last-child)::after {
+  position: absolute;
+  top: 1px;
+  right: 0;
+  color: var(--signal);
+  content: "→";
+  font-family: var(--serif);
+  font-size: 21px;
+  line-height: 1;
+}
+
+.governance-loop span {
+  color: var(--gold);
+  font-family: var(--tech);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.governance-loop strong {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.governance-loop small {
   color: var(--ink-soft);
-  font-size: 14px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.impact-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.impact-item {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 24px;
+  padding: 28px 0 32px;
+  border-bottom: 1px solid var(--line);
+}
+
+.impact-index {
+  color: var(--gold);
+  font-family: var(--serif);
+  font-size: 24px;
+  line-height: 1;
+}
+
+.impact-copy {
+  max-width: 780px;
+}
+
+.impact-kicker {
+  margin: 0 0 5px;
+  color: var(--blue);
+  font-size: 13px;
+  font-style: italic;
+}
+
+.impact-copy h4 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(27px, 2.6vw, 34px);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.impact-copy > p:not(.impact-kicker) {
+  max-width: 740px;
+  margin: 13px 0 0;
+  color: var(--ink-soft);
+  font-size: 15.5px;
+  line-height: 1.68;
+}
+
+.impact-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 180px));
+  gap: 24px;
+  margin: 20px 0 0;
+}
+
+.impact-metrics div {
+  padding-left: 14px;
+  border-left: 1px solid var(--signal);
+}
+
+.impact-metrics dt {
+  color: var(--ink-soft);
+  font-size: 12px;
+}
+
+.impact-metrics dd {
+  margin: 4px 0 0;
+  color: var(--forest);
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.impact-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.impact-tags li {
+  padding: 4px 9px;
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 12px;
+}
+
+.tencent-field-notes {
+  grid-column: 2 / -1;
+  min-width: 0;
+  margin-top: 90px;
+  padding-top: 34px;
+  border-top: 1px solid var(--line);
+}
+
+.field-notes-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.65fr);
+  align-items: end;
+  gap: clamp(36px, 6vw, 82px);
+  margin-bottom: 30px;
+}
+
+.field-notes-heading .eyebrow {
+  margin-bottom: 14px;
+}
+
+.field-notes-heading h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(36px, 4.4vw, 58px);
+  font-weight: 500;
+  line-height: 1.08;
+}
+
+.field-notes-heading h3 em {
+  color: var(--forest);
+  font-weight: 400;
+}
+
+.field-notes-heading > p {
+  max-width: 450px;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 15.5px;
   line-height: 1.65;
 }
 
-.impact-list li::before {
-  position: absolute;
-  top: 24px;
-  left: 0;
-  width: 8px;
-  height: 8px;
-  border: 1px solid var(--signal);
-  border-radius: 50%;
-  content: "";
+.tencent-gallery {
+  display: flex;
+  min-width: 0;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 0 0 16px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  cursor: grab;
 }
 
-.impact-list strong {
+.tencent-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.tencent-gallery.is-dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+  scroll-snap-type: none;
+  user-select: none;
+}
+
+.tencent-photo {
+  flex: 0 0 auto;
+  margin: 0;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  scroll-snap-align: start;
+}
+
+.photo-wide {
+  width: min(58vw, 520px);
+}
+
+.photo-portrait {
+  width: min(31vw, 300px);
+}
+
+.photo-narrow {
+  width: min(36vw, 360px);
+}
+
+.tencent-photo img {
   display: block;
-  margin-bottom: 2px;
-  color: var(--ink);
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  transition: transform 650ms var(--ease);
+}
+
+.photo-portrait img {
+  height: 430px;
+}
+
+.tencent-photo:hover img {
+  transform: scale(1.02);
+}
+
+.tencent-photo figcaption {
+  padding: 15px 16px 18px;
+}
+
+.tencent-photo figcaption span {
+  display: block;
+  color: var(--gold);
+  font-size: 12px;
+  font-style: italic;
+}
+
+.tencent-photo figcaption p {
+  margin: 4px 0 0;
+  font-family: var(--serif);
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.gallery-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 8px;
+}
+
+.gallery-footer > p {
+  margin: 0;
+  color: var(--ink-soft);
   font-size: 13px;
-  font-weight: 750;
-  letter-spacing: 0.02em;
+  font-style: italic;
+}
+
+.gallery-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gallery-controls > span {
+  min-width: 54px;
+  color: var(--ink-soft);
+  font-size: 13px;
+  text-align: right;
+}
+
+.gallery-controls button {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  place-items: center;
+  border: 1px solid var(--line);
+  background: transparent;
+  cursor: pointer;
+  transition:
+    color 200ms ease,
+    background-color 200ms ease,
+    opacity 200ms ease;
+}
+
+.gallery-controls button:hover:not(:disabled) {
+  color: var(--paper-bright);
+  background: var(--ink);
+}
+
+.gallery-controls button:disabled {
+  cursor: default;
+  opacity: 0.35;
 }
 
 .projects {
@@ -1831,9 +2106,19 @@ main,
 
   .experience-heading,
   .timeline,
+  .tencent-field-notes,
   .honors-heading,
   .honors-list {
     grid-column: 2;
+  }
+
+  .governance-loop {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 28px;
+  }
+
+  .governance-loop li:not(:last-child)::after {
+    display: none;
   }
 
   .timeline-item,
@@ -1841,10 +2126,8 @@ main,
     grid-template-columns: 1fr;
   }
 
-  .impact-list {
-    grid-column: 1;
-    grid-row: auto;
-    margin-top: 16px;
+  .field-notes-heading {
+    grid-template-columns: minmax(0, 1fr) minmax(230px, 0.65fr);
   }
 
   .projects-heading {
@@ -2022,6 +2305,7 @@ main,
   .profile-meta,
   .experience-heading,
   .timeline,
+  .tencent-field-notes,
   .honors-heading,
   .honors-list,
   .research-heading > p {
@@ -2104,6 +2388,92 @@ main,
     display: flex;
     align-items: center;
     gap: 12px;
+  }
+
+  .governance-loop {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin: 24px 0 32px;
+  }
+
+  .governance-loop li {
+    gap: 3px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .governance-loop li:last-child {
+    border-bottom: 0;
+  }
+
+  .impact-item {
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 12px;
+    padding: 24px 0 28px;
+  }
+
+  .impact-index {
+    font-size: 19px;
+  }
+
+  .impact-copy > p:not(.impact-kicker) {
+    font-size: 15px;
+  }
+
+  .impact-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .tencent-field-notes {
+    margin-top: 62px;
+    padding-top: 28px;
+  }
+
+  .field-notes-heading {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-bottom: 22px;
+  }
+
+  .tencent-gallery {
+    gap: 12px;
+    margin-right: -16px;
+    padding-right: 16px;
+  }
+
+  .photo-wide {
+    width: 82vw;
+  }
+
+  .photo-portrait {
+    width: 58vw;
+  }
+
+  .photo-narrow {
+    width: 68vw;
+  }
+
+  .tencent-photo img {
+    height: 230px;
+  }
+
+  .photo-portrait img {
+    height: 310px;
+  }
+
+  .tencent-photo figcaption {
+    padding: 12px 13px 15px;
+  }
+
+  .tencent-photo figcaption p {
+    font-size: 19px;
+  }
+
+  .gallery-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
   }
 
   .timeline-company-logo {

@@ -45,8 +45,12 @@ PDF when the public CV download is enabled.
   submitted, not accepted or published.
 - The public bio omits private phone, birthday, WeChat, and other non-public
   resume fields.
-- Tencent's internal traffic and correction metrics stay in the private resume;
-  the public site describes the systems and engineering scope instead.
+- The Tencent section follows the latest CV and includes the owner-approved
+  internship outcome metrics. Re-check workplace confidentiality before reusing
+  those figures outside the personal portfolio.
+- The Industry gallery contains five curated images; duplicate or
+  lower-information photos are intentionally excluded. Images are resized and
+  stripped of EXIF metadata before publication.
 - The site uses English for the public research narrative. Resume wording is
   paraphrased rather than copied mechanically.
 

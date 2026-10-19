@@ -2,6 +2,7 @@ const header = document.querySelector("[data-header]");
 const menuButton = document.querySelector("[data-menu-button]");
 const mobileNav = document.querySelector("[data-mobile-nav]");
 const year = document.querySelector("[data-year]");
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 if (year) {
   year.textContent = new Date().getFullYear();
@@ -89,3 +90,110 @@ const sectionObserver = new IntersectionObserver(
 );
 
 sections.forEach((section) => sectionObserver.observe(section));
+
+const gallery = document.querySelector("[data-tencent-gallery]");
+
+if (gallery) {
+  const slides = [...gallery.querySelectorAll(".tencent-photo")];
+  const previousButton = document.querySelector("[data-gallery-prev]");
+  const nextButton = document.querySelector("[data-gallery-next]");
+  const counter = document.querySelector("[data-gallery-counter]");
+  let dragging = false;
+  let dragStartX = 0;
+  let dragStartScroll = 0;
+
+  function getLeadingIndex() {
+    const leadingEdge = gallery.scrollLeft + 8;
+    return Math.max(
+      0,
+      slides.findIndex(
+        (slide) => slide.offsetLeft + slide.offsetWidth > leadingEdge,
+      ),
+    );
+  }
+
+  function updateGalleryState() {
+    const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+    let closestIndex = getLeadingIndex();
+
+    if (gallery.scrollLeft >= maxScroll - 2) {
+      closestIndex = slides.length - 1;
+    }
+
+    if (counter) {
+      counter.textContent = `${String(closestIndex + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`;
+    }
+
+    if (previousButton) previousButton.disabled = gallery.scrollLeft <= 2;
+    if (nextButton) nextButton.disabled = gallery.scrollLeft >= maxScroll - 2;
+  }
+
+  function moveGallery(direction) {
+    const targetIndex = Math.min(
+      slides.length - 1,
+      Math.max(0, getLeadingIndex() + direction),
+    );
+    const targetLeft = slides[targetIndex].offsetLeft - slides[0].offsetLeft;
+
+    gallery.scrollTo({
+      left: targetLeft,
+      behavior: reducedMotion.matches ? "auto" : "smooth",
+    });
+  }
+
+  previousButton?.addEventListener("click", () => moveGallery(-1));
+  nextButton?.addEventListener("click", () => moveGallery(1));
+
+  gallery.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      moveGallery(-1);
+    }
+
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      moveGallery(1);
+    }
+  });
+
+  gallery.addEventListener("pointerdown", (event) => {
+    if (event.pointerType !== "mouse") return;
+
+    dragging = true;
+    dragStartX = event.clientX;
+    dragStartScroll = gallery.scrollLeft;
+    gallery.classList.add("is-dragging");
+    gallery.setPointerCapture(event.pointerId);
+  });
+
+  gallery.addEventListener("pointermove", (event) => {
+    if (!dragging) return;
+    event.preventDefault();
+    gallery.scrollLeft = dragStartScroll - (event.clientX - dragStartX);
+  });
+
+  gallery.addEventListener("dragstart", (event) => event.preventDefault());
+
+  function endGalleryDrag(event) {
+    if (!dragging) return;
+
+    dragging = false;
+    gallery.classList.remove("is-dragging");
+
+    if (gallery.hasPointerCapture(event.pointerId)) {
+      gallery.releasePointerCapture(event.pointerId);
+    }
+
+    updateGalleryState();
+  }
+
+  gallery.addEventListener("pointerup", endGalleryDrag);
+  gallery.addEventListener("pointercancel", endGalleryDrag);
+  gallery.addEventListener("scroll", updateGalleryState, { passive: true });
+  window.addEventListener("resize", updateGalleryState, { passive: true });
+  gallery
+    .querySelectorAll("img")
+    .forEach((image) => image.addEventListener("load", updateGalleryState));
+
+  updateGalleryState();
+}

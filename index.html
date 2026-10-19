@@ -44,7 +44,7 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Manrope:wght@500;600;700&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./assets/css/styles.css?v=20261019-serif" />
+    <link rel="stylesheet" href="./assets/css/styles.css?v=20261019-tencent" />
     <noscript>
       <style>
         .reveal {
@@ -53,7 +53,7 @@
         }
       </style>
     </noscript>
-    <script src="./assets/js/site.js?v=20261019-serif" defer></script>
+    <script src="./assets/js/site.js?v=20261019-tencent" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -490,7 +490,8 @@
           <div class="experience-heading">
             <p class="eyebrow reveal">Industry experience</p>
             <h2 class="display-title reveal">
-              Building governance systems, <em>from policy to review.</em>
+              Turning governance policy into systems that
+              <em>decide, dispatch, and recover.</em>
             </h2>
           </div>
 
@@ -507,7 +508,9 @@
                 />
               </div>
               <div class="timeline-content">
-                <p class="timeline-type">Industry</p>
+                <p class="timeline-type">
+                  Backend platform · Governance systems
+                </p>
                 <h3>
                   Tencent · Weixin Group<br />
                   <span>E-commerce Governance</span>
@@ -515,30 +518,221 @@
                 <p class="timeline-role">
                   Backend Engineering Intern · 2026.05 — Present
                 </p>
-                <ul class="impact-list">
+
+                <ol class="governance-loop">
                   <li>
-                    <strong>Audit scheduling workbench</strong>
-                    Designed the core architecture connecting task
-                    decomposition, workflow orchestration, batching, dispatch,
-                    and result return, including high-traffic campaign handling
-                    and duplicate-review reduction.
+                    <span>01</span>
+                    <strong>Policy grounding</strong>
+                    <small>retrieval + business constraints</small>
                   </li>
                   <li>
-                    <strong>B-side policy engine</strong>
-                    Connected historical policies and retrieved business
-                    knowledge to rule generation and review decisions, joining
-                    configuration, execution, and audit scheduling into one
-                    updateable path.
+                    <span>02</span>
+                    <strong>Decision generation</strong>
+                    <small>LLM rules under governance logic</small>
                   </li>
                   <li>
-                    <strong>C-side false-positive review</strong>
-                    Built a general re-review workflow with secondary
-                    validation, exception fallbacks, result feedback, and
-                    monitoring for intercepted orders.
+                    <span>03</span>
+                    <strong>Audit dispatch</strong>
+                    <small>decomposition, batching, routing</small>
                   </li>
-                </ul>
+                  <li>
+                    <span>04</span>
+                    <strong>Review feedback</strong>
+                    <small>validation, fallback, result replay</small>
+                  </li>
+                </ol>
+
+                <div class="impact-list">
+                  <article class="impact-item">
+                    <span class="impact-index">01</span>
+                    <div class="impact-copy">
+                      <p class="impact-kicker">Dispatch architecture</p>
+                      <h4>Weixin Mini Shop audit dispatch platform</h4>
+                      <p>
+                        Owned the business architecture and core-path
+                        implementation for the audit dispatch workbench,
+                        spanning task decomposition, workflow orchestration,
+                        batch consolidation, routing, and result replay. Rebuilt
+                        aggregation and distribution to absorb the 618 campaign
+                        surge while linking policy decisions directly to review
+                        execution.
+                      </p>
+                      <dl class="impact-metrics">
+                        <div>
+                          <dt>Campaign peak</dt>
+                          <dd>~300k QPM</dd>
+                        </div>
+                        <div>
+                          <dt>Batch consolidation</dt>
+                          <dd>~77%</dd>
+                        </div>
+                      </dl>
+                    </div>
+                  </article>
+
+                  <article class="impact-item">
+                    <span class="impact-index">02</span>
+                    <div class="impact-copy">
+                      <p class="impact-kicker">Policy intelligence</p>
+                      <h4>B-side LLM policy engine</h4>
+                      <p>
+                        Developed core modules for the merchant-side audit
+                        policy engine, grounding rule generation and review
+                        decisions in retrieved historical policies and business
+                        knowledge. Connected rule configuration, policy
+                        execution, and audit scheduling into one executable
+                        path, turning governance knowledge into iterable policy
+                        rather than static review guidance.
+                      </p>
+                      <ul class="impact-tags">
+                        <li>Retrieval-grounded rules</li>
+                        <li>Policy execution</li>
+                        <li>Audit orchestration</li>
+                      </ul>
+                    </div>
+                  </article>
+
+                  <article class="impact-item">
+                    <span class="impact-index">03</span>
+                    <div class="impact-copy">
+                      <p class="impact-kicker">Risk-control assurance</p>
+                      <h4>C-side false-positive review</h4>
+                      <p>
+                        Designed and implemented a reusable re-review system for
+                        order routing and policy interceptions. Added secondary
+                        validation, exception fallback, result feedback, and
+                        monitoring to close the strategy feedback loop while
+                        protecting transaction experience.
+                      </p>
+                      <dl class="impact-metrics">
+                        <div>
+                          <dt>Peak review load</dt>
+                          <dd>~100k QPM</dd>
+                        </div>
+                        <div>
+                          <dt>Misflags corrected</dt>
+                          <dd>~3.7% avg.</dd>
+                        </div>
+                      </dl>
+                    </div>
+                  </article>
+                </div>
               </div>
             </article>
+          </div>
+
+          <div class="tencent-field-notes reveal">
+            <div class="field-notes-heading">
+              <div>
+                <p class="eyebrow">Field notes · Guangzhou</p>
+                <h3>Around the system, <em>a city in motion.</em></h3>
+              </div>
+              <p>
+                A visual record of the weeks around the internship—late light in
+                the office, the Pearl River beyond the glass, and the life that
+                makes the pace sustainable.
+              </p>
+            </div>
+
+            <div
+              class="tencent-gallery"
+              data-tencent-gallery
+              tabindex="0"
+              aria-label="Scrollable photographs from Guangzhou during the Tencent internship"
+            >
+              <figure class="tencent-photo photo-wide">
+                <img
+                  src="./assets/images/tencent/office-dusk.jpg"
+                  alt="View from the Tencent office at dusk, overlooking the Pearl River and Guangzhou skyline"
+                  width="1600"
+                  height="1202"
+                  loading="lazy"
+                />
+                <figcaption>
+                  <span>01 · Office window</span>
+                  <p>Dusk over the Pearl River</p>
+                </figcaption>
+              </figure>
+
+              <figure class="tencent-photo photo-portrait">
+                <img
+                  src="./assets/images/tencent/workspace-golden-hour.jpg"
+                  alt="Golden-hour sunlight filling the office workspace"
+                  width="1280"
+                  height="1704"
+                  loading="lazy"
+                />
+                <figcaption>
+                  <span>02 · Golden hour</span>
+                  <p>Last light across the workspace</p>
+                </figcaption>
+              </figure>
+
+              <figure class="tencent-photo photo-wide">
+                <img
+                  src="./assets/images/tencent/canton-tower.jpg"
+                  alt="Canton Tower framed by the curved architecture of a Guangzhou plaza"
+                  width="1600"
+                  height="1067"
+                  loading="lazy"
+                />
+                <figcaption>
+                  <span>03 · Guangzhou</span>
+                  <p>Canton Tower from the plaza</p>
+                </figcaption>
+              </figure>
+
+              <figure class="tencent-photo photo-wide">
+                <img
+                  src="./assets/images/tencent/weekend-on-the-water.jpg"
+                  alt="Paddleboarding on the water near Guangzhou"
+                  width="1600"
+                  height="1068"
+                  loading="lazy"
+                />
+                <figcaption>
+                  <span>04 · Weekend</span>
+                  <p>A pause between sprints</p>
+                </figcaption>
+              </figure>
+
+              <figure class="tencent-photo photo-narrow">
+                <img
+                  src="./assets/images/tencent/office-lunch.jpg"
+                  alt="A lunch tray with rice, vegetables, fruit, and a side dish at the office"
+                  width="1600"
+                  height="1202"
+                  loading="lazy"
+                />
+                <figcaption>
+                  <span>05 · Everyday</span>
+                  <p>Lunch at the office</p>
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="gallery-footer">
+              <p>
+                Drag, swipe, or use the arrow keys to move through the series.
+              </p>
+              <div class="gallery-controls">
+                <span data-gallery-counter aria-live="polite">01 / 05</span>
+                <button
+                  type="button"
+                  aria-label="Show previous photograph"
+                  data-gallery-prev
+                >
+                  ←
+                </button>
+                <button
+                  type="button"
+                  aria-label="Show next photograph"
+                  data-gallery-next
+                >
+                  →
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
