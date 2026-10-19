@@ -161,6 +161,7 @@ if (gallery) {
   let dragStartX = 0;
   let dragStartScroll = 0;
   let suppressClick = false;
+  let pointerId = null;
 
   function getLeadingIndex() {
     const leadingEdge = gallery.scrollLeft + 8;
@@ -264,15 +265,21 @@ if (gallery) {
     dragMoved = false;
     dragStartX = event.clientX;
     dragStartScroll = gallery.scrollLeft;
-    gallery.classList.add("is-dragging");
-    gallery.setPointerCapture(event.pointerId);
+    pointerId = event.pointerId;
   });
 
   gallery.addEventListener("pointermove", (event) => {
-    if (!dragging) return;
+    if (!dragging || event.pointerId !== pointerId) return;
     const delta = event.clientX - dragStartX;
 
-    if (Math.abs(delta) > 4) dragMoved = true;
+    if (!dragMoved && Math.abs(delta) <= 6) return;
+
+    if (!dragMoved) {
+      dragMoved = true;
+      gallery.classList.add("is-dragging");
+      gallery.setPointerCapture(event.pointerId);
+    }
+
     event.preventDefault();
     gallery.scrollLeft = dragStartScroll - delta;
   });
@@ -290,6 +297,7 @@ if (gallery) {
       gallery.releasePointerCapture(event.pointerId);
     }
 
+    pointerId = null;
     updateGalleryState();
     window.setTimeout(() => {
       suppressClick = false;
