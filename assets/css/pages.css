@@ -4293,3 +4293,31 @@
     font-size: 21px;
   }
 }
+
+/* Personal photographs retain their landscape and portrait rhythms. */
+.nature-journal .journal-photo:nth-child(n) {
+  width: min(54vw, 560px);
+}
+.nature-journal .journal-photo:nth-child(5),
+.nature-journal .journal-photo:nth-child(7),
+.nature-journal .journal-photo:nth-child(8),
+.nature-journal .journal-photo:nth-child(9) {
+  width: min(33vw, 340px);
+}
+.nature-journal .journal-photo:nth-child(n) .photo-open img {
+  height: 390px;
+}
+.nature-journal .journal-photo:nth-child(5) .photo-open img,
+.nature-journal .journal-photo:nth-child(7) .photo-open img,
+.nature-journal .journal-photo:nth-child(8) .photo-open img,
+.nature-journal .journal-photo:nth-child(9) .photo-open img {
+  height: 460px;
+}
+@media (max-width: 700px) {
+  .nature-journal .journal-photo:nth-child(n) {
+    width: min(78vw, 420px);
+  }
+  .nature-journal .journal-photo:nth-child(n) .photo-open img {
+    height: 320px;
+  }
+}
