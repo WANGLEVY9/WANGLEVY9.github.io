@@ -1,0 +1,159 @@
+.toolbox {
+  margin-top: clamp(64px, 10vw, 120px);
+  scroll-margin-top: 24px;
+}
+
+.toolbox-heading, .bead-toolbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.toolbox h2 {
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  letter-spacing: -.05em;
+}
+.toolbox h2 em { color: var(--accent); font-weight: inherit; }
+.toolbox-heading p { margin: 10px 0 0; color: var(--muted); }
+.toolbox-actions, .bead-filters { display: flex; gap: 7px; flex-wrap: wrap; }
+
+.toolbox-actions button, .bead-filters button {
+  min-height: 38px;
+  border: 1px solid #485575;
+  border-radius: 8px;
+  background: #151c2d;
+  font: 600 .75rem var(--mono);
+  padding: 8px 12px;
+}
+
+.toolbox-actions button:first-child { border-color: #8a77c7; color: #e2d8ff; }
+.toolbox-actions button:hover, .bead-filters button:hover { border-color: var(--accent); }
+
+.bead-board {
+  --board: #0e1525;
+  margin-top: 24px;
+  padding: clamp(12px, 2.2vw, 24px);
+  border: 1px solid var(--border);
+  border-radius: 21px;
+  background: radial-gradient(ellipse at 50% 0, #20203c, transparent 66%), var(--board);
+}
+
+.bead-toolbar { flex-wrap: wrap; align-items: center; margin-block: 0 18px; }
+.bead-toolbar p { color: var(--muted); margin: 0; font-size: .78rem; }
+.bead-filters button { color: var(--muted); background: #121a2a; }
+.bead-filters button[aria-pressed="true"] { color: var(--text); border-color: var(--accent); background: #2b2544; }
+
+.bead-grid {
+  --columns: 8;
+  display: grid;
+  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bead-tile { min-width: 0; position: relative; }
+.bead-tile[data-dragging] { z-index: 3; pointer-events: none; }
+.bead-tile:focus-within { z-index: 1; }
+
+.bead-card {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  width: 100%;
+  height: 145px;
+  padding: 7px;
+  gap: 4px;
+  border: 1px solid #3d4968;
+  border-radius: 11px;
+  color: var(--text);
+  background: linear-gradient(148deg, color-mix(in srgb, var(--bead-ink) 8%, #131a2c), #101624 80%);
+  text-align: center;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.bead-card:hover, .bead-card[aria-pressed="true"] { border-color: var(--bead-ink); }
+.bead-card:focus-visible { outline-offset: 2px; }
+.bead-card > span:last-child { font: 600 .73rem/1.25 var(--mono); padding-block: 3px 4px; }
+
+.bead-window {
+  position: relative;
+  display: grid;
+  min-height: 0;
+  border: 1px solid #9ab3fa19;
+  border-radius: 6px;
+  perspective: 430px;
+  background: radial-gradient(circle at center, color-mix(in srgb, var(--bead-ink) 12%, transparent), transparent 67%),
+    radial-gradient(circle, #bad0ff32 .55px, transparent .75px) 0 0 / 9px 9px,
+    #101627;
+}
+
+.bead-window::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px solid color-mix(in srgb, var(--bead-ink) 35%, transparent);
+  clip-path: polygon(0 0, 11px 0, 11px 11px, 0 11px, 0 0, 100% 0, calc(100% - 11px) 0, calc(100% - 11px) 11px, 100% 11px, 100% 0, 100% 100%, 0 100%, 0 calc(100% - 11px), 11px calc(100% - 11px), 11px 100%, 0 100%, 100% 100%, calc(100% - 11px) 100%, calc(100% - 11px) calc(100% - 11px), 100% calc(100% - 11px));
+  pointer-events: none;
+}
+
+.bead-turn {
+  display: grid;
+  place-items: center;
+  transform-style: preserve-3d;
+  transition: transform 500ms cubic-bezier(.3,.8,.3,1);
+}
+.bead-card[aria-pressed="true"] .bead-turn { transform: rotateY(180deg); }
+
+.bead-front, .bead-back {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  backface-visibility: hidden;
+}
+
+.bead-art {
+  width: clamp(56px, 6vw, 76px);
+  aspect-ratio: 1;
+  overflow: visible;
+  filter: drop-shadow(0 3px 4px #040616c9);
+}
+
+.bead-back {
+  padding: 6px;
+  color: var(--text);
+  transform: rotateY(180deg);
+  font-size: .73rem;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+.bead-back small {
+  color: var(--bead-ink);
+  margin-bottom: 5px;
+  font: 600 .62rem/1.25 var(--mono);
+}
+
+@media (max-width: 1090px) {
+  .bead-grid { --columns: 4; }
+}
+@media (max-width: 570px) {
+  .toolbox-heading { align-items: flex-start; flex-direction: column; }
+  .bead-grid { --columns: 3; gap: 7px; }
+  .bead-card { height: 125px; padding: 5px; }
+  .bead-filters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; }
+  .bead-filters button { min-height: 42px; padding-inline: 6px; }
+}
+@media (max-width: 360px) {
+  .bead-grid { --columns: 2; }
+}
+@media (max-width: 430px) {
+  .topbar, .topbar nav { gap: 10px; }
+  .topbar nav { font-size: .78rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bead-turn { transition: none; }
+}

@@ -8,12 +8,15 @@
     <title>Observatory · Taijie Wang</title>
     <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./assets/css/observatory.css" />
+    <link rel="stylesheet" href="./assets/css/toolbox.css" />
     <script src="./assets/js/observatory.js" defer></script>
+    <script src="./assets/js/toolbox.js" type="module"></script>
   </head>
   <body>
     <header class="topbar">
       <a class="wordmark" href="./index.html">Taijie Wang</a>
       <nav aria-label="External links">
+        <a href="#toolbox">Toolbox</a>
         <a href="./index.html">Portfolio</a>
         <a href="https://github.com/WANGLEVY9">GitHub ↗</a>
       </nav>
@@ -60,6 +63,29 @@
           </article>
           <p class="sr-only" role="status"></p>
         </div>
+      </section>
+      <section class="toolbox" id="toolbox" aria-labelledby="toolbox-title">
+        <header class="toolbox-heading">
+          <div>
+            <h2 id="toolbox-title">Tool<em>box</em></h2>
+            <p>Languages, tools, and systems in beadwork.</p>
+          </div>
+          <div class="toolbox-actions" hidden>
+            <button type="button" data-shuffle>Shuffle tiles</button>
+            <button type="button" data-autoplay>Pause idle motion</button>
+          </div>
+        </header>
+        <div class="bead-board" hidden>
+          <div class="bead-toolbar">
+            <div class="bead-filters" role="group" aria-label="Filter technologies"></div>
+            <p id="bead-instructions">Flip a tile to see how I use it. Drag or swipe to swap tiles. Keyboard: Shift + ← or →.</p>
+          </div>
+          <ul class="bead-grid" aria-label="Technology tiles"></ul>
+          <p class="sr-only" data-bead-status role="status"></p>
+        </div>
+        <noscript>
+          <p>Python, TypeScript, JavaScript, Java, C++, PostgreSQL, Redis, Node.js, Docker, Git, GitHub, Playwright, LangGraph, FFmpeg, Linux, and macOS.</p>
+        </noscript>
       </section>
     </main>
     <footer><a href="mailto:231250082@smail.nju.edu.cn">Get in touch ↗</a></footer>
