@@ -127,6 +127,16 @@
   margin-top: 30px;
 }
 
+.action.hero-github {
+  border-color: #5e5680;
+  box-shadow: inset 0 0 0 1px #9887bd20;
+}
+
+.action.hero-github:hover {
+  border-color: currentColor;
+}
+
+
 .hero-visual {
   display: grid;
   min-height: 650px;

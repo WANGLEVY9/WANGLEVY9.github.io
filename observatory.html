@@ -9,13 +9,16 @@
     <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./assets/css/observatory.css" />
     <link rel="stylesheet" href="./assets/css/toolbox.css" />
+    <link rel="stylesheet" href="./assets/css/fieldwork.css" />
     <script src="./assets/js/observatory.js" defer></script>
+    <script src="./assets/js/fieldwork.js" type="module"></script>
     <script src="./assets/js/toolbox.js" type="module"></script>
   </head>
   <body>
     <header class="topbar">
       <a class="wordmark" href="./index.html">Taijie Wang</a>
       <nav aria-label="External links">
+        <a href="#fieldwork">Workflows</a>
         <a href="#toolbox">Toolbox</a>
         <a href="./index.html">Portfolio</a>
         <a href="https://github.com/WANGLEVY9">GitHub ↗</a>
@@ -64,6 +67,34 @@
           <p class="sr-only" role="status"></p>
         </div>
       </section>
+      <section class="fieldwork" id="fieldwork" aria-labelledby="fieldwork-title">
+        <header class="field-heading">
+          <h2 id="fieldwork-title">Inside the <em>workflows</em></h2>
+          <p>Follow the decisions that turn a scenario, a failed interaction, or a product brief into something you can review.</p>
+        </header>
+        <div class="field-controls" hidden>
+          <div class="track-picker" role="group" aria-label="Choose a workflow">
+            <button type="button" data-track="autonomy" aria-pressed="true">Autonomous testing</button>
+            <button type="button" data-track="gui" aria-pressed="false">SynTriageGUI</button>
+            <button type="button" data-track="video" aria-pressed="false">VidForge</button>
+          </div>
+          <button type="button" data-replay>Play walkthrough</button>
+        </div>
+        <div class="field-board" data-field-board hidden>
+          <div class="field-scene">
+            <canvas class="field-canvas" aria-hidden="true"></canvas>
+            <ol class="field-stages" aria-label="Workflow stages"></ol>
+          </div>
+          <article class="field-readout" aria-live="polite" aria-atomic="true">
+            <p class="kicker" data-stage-index></p>
+            <h3 data-stage-title></h3>
+            <p data-stage-copy></p>
+            <a class="project-link" data-stage-link href="./research.html"></a>
+          </article>
+        </div>
+        <noscript><p><a href="./research.html">Autonomous testing research</a> · <a href="./projects.html#syntriage">SynTriageGUI</a> · <a href="./projects.html#vidforge">VidForge</a></p></noscript>
+      </section>
+
       <section class="toolbox" id="toolbox" aria-labelledby="toolbox-title">
         <header class="toolbox-heading">
           <div>
@@ -88,6 +119,16 @@
         </noscript>
       </section>
     </main>
-    <footer><a href="mailto:231250082@smail.nju.edu.cn">Get in touch ↗</a></footer>
+    <footer class="signal-footer">
+      <div>
+        <p class="kicker">TAIJIE WANG · NANJING UNIVERSITY</p>
+        <h2>Open a <em>channel.</em></h2>
+      </div>
+      <div class="signal-links">
+        <a href="mailto:231250082@smail.nju.edu.cn">Email ↗</a>
+        <a href="./index.html#journal-title">Photo journal ↗</a>
+        <a href="https://github.com/WANGLEVY9">GitHub Profile ↗</a>
+      </div>
+    </footer>
   </body>
 </html>
