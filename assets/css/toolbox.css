@@ -143,11 +143,11 @@
 @media (max-width: 570px) {
   .toolbox-heading { align-items: flex-start; flex-direction: column; }
   .bead-grid { --columns: 3; gap: 7px; }
-  .bead-card { height: 125px; padding: 5px; }
+  .bead-card { height: 138px; padding: 5px; }
   .bead-filters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; }
   .bead-filters button { min-height: 42px; padding-inline: 6px; }
 }
-@media (max-width: 360px) {
+@media (max-width: 445px) {
   .bead-grid { --columns: 2; }
 }
 @media (max-width: 430px) {
