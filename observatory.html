@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0a101b" />
+    <meta name="description" content="An interactive map of Taijie Wang's research and engineering projects." />
+    <title>Observatory · Taijie Wang</title>
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./assets/css/observatory.css" />
+    <script src="./assets/js/observatory.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="wordmark" href="./index.html">Taijie Wang</a>
+      <nav aria-label="External links">
+        <a href="./index.html">Portfolio</a>
+        <a href="https://github.com/WANGLEVY9">GitHub ↗</a>
+      </nav>
+    </header>
+    <main>
+      <section class="intro" aria-labelledby="title">
+        <p class="kicker">TAIJIE WANG / NJU</p>
+        <h1 id="title">Research <em>observatory</em></h1>
+        <p>Explore my work on AI for software testing and engineering.</p>
+      </section>
+
+      <section class="instrument" aria-label="Research and project explorer">
+        <div class="sky">
+          <canvas aria-hidden="true"></canvas>
+          <div class="sky-label"><span></span> PROJECT ATLAS</div>
+          <button class="motion" type="button" hidden>Pause motion</button>
+          <div class="map-controls" role="group" aria-label="Select a project">
+            <button type="button" data-project="autonomy" aria-controls="autonomy" aria-pressed="true">Autonomous systems</button>
+            <button type="button" data-project="gui" aria-controls="gui" aria-pressed="false">SynTriageGUI</button>
+            <button type="button" data-project="video" aria-controls="video" aria-pressed="false">VidForge</button>
+          </div>
+        </div>
+        <div class="readout">
+          <article id="autonomy" class="project">
+            <p class="kicker">AUTONOMOUS DRIVING</p>
+            <h2>Testing the uncertain</h2>
+            <p>I explore how language models can help generate driving scenarios, evaluate vehicle behavior, and trace the causes of failures.</p>
+            <ul class="methods" aria-label="Methods"><li>Scenario generation</li><li>Test oracles</li><li>Failure attribution</li></ul>
+            <a class="project-link" href="./research.html">Read the research <span aria-hidden="true">↗</span></a>
+          </article>
+          <article id="gui" class="project">
+            <p class="kicker">HUMAN–AI COLLABORATION</p>
+            <h2>SynTriageGUI</h2>
+            <p>How can a person inspect an agent’s diagnosis of a GUI failure? This project explores how to surface evidence and let people intervene during diagnosis.</p>
+            <ul class="methods" aria-label="Methods"><li>GUI testing</li><li>Diagnostic evidence</li><li>Human intervention</li></ul>
+            <a class="project-link" href="./projects.html">Explore the project <span aria-hidden="true">↗</span></a>
+          </article>
+          <article id="video" class="project">
+            <p class="kicker">GENERATIVE VIDEO</p>
+            <h2>VidForge</h2>
+            <p>An agentic workflow that turns product assets into finished videos. It coordinates scripting, synthesis, quality checks, and replanning.</p>
+            <ul class="methods" aria-label="Methods"><li>LangGraph</li><li>FFmpeg</li><li>Workflow observability</li></ul>
+            <a class="project-link" href="https://github.com/WANGLEVY9/VidForge">Open the repository <span aria-hidden="true">↗</span></a>
+          </article>
+          <p class="sr-only" role="status"></p>
+        </div>
+      </section>
+    </main>
+    <footer><a href="mailto:231250082@smail.nju.edu.cn">Get in touch ↗</a></footer>
+  </body>
+</html>
